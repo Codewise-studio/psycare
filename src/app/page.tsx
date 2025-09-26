@@ -1,30 +1,40 @@
-import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
-import { CompanyLogos } from "@/components/company-logos"
+
 import { ServicesSection } from "@/components/services-section"
-import { FeatureCards } from "@/components/feature-cards"
-import { CtaSection } from "@/components/cta-section"
+import { FeaturesGrid } from "@/components/features-grid"
+import CtaSection from "@/components/cta-section";
 import { TimelineSection } from "@/components/timeline-section"
 import { ProcessSection } from "@/components/process-section"
-import { PricingSection } from "@/components/pricing-section"
 import { TestimonialSection } from "@/components/testimonial-section"
-import { StatsSection } from "@/components/stats-section"
 import { Footer } from "@/components/footer"
+import Banner2 from "@/components/banner2"
+import PsycareSection from "@/components/psycare-section"
+import { Contacts } from "@/components/contacts"
+import { Team } from "@/components/team"
+import { Navbar } from "@/components/navbar"
+import type { Star } from "lucide-react";
+import { CTASectionMiddle } from "@/components/cta-sectionmiddle"
+
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
-      <Header />
+      <Navbar />
       <HeroSection />
-      <CompanyLogos />
+        <p>The future of mental health care starts here
+</p>
+     
       <ServicesSection />
-      <CtaSection />
-      <TimelineSection />
-      <FeatureCards />
-      <ProcessSection />
-      <PricingSection />
-      <TestimonialSection />
-      <StatsSection />
+  {/* <CtaSection /> */}
+      <Banner2 />
+   
+    
+      <FeaturesGrid />
+      <CTASectionMiddle />
+      
+       
+      <Team/>
+       <Contacts /> 
       <Footer />
     </main>
   )

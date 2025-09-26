@@ -1,0 +1,84 @@
+import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Brain, Mic, Video, BarChart3, Users, Shield, Eye, Activity, Target } from "lucide-react"
+
+const features = [
+  {
+    icon: <Mic className="w-5 h-5" />,
+    title: "Note-Free Sessions",
+    description: "AI-powered recording and transcription",
+  },
+  {
+    icon: <Brain className="w-5 h-5" />,
+    title: "Real-time AI Analysis",
+    description: "Instant insights and pattern recognition",
+  },
+  {
+    icon: <Activity className="w-5 h-5" />,
+    title: "Biomarker Monitoring",
+    description: "Track physiological indicators",
+  },
+  {
+    icon: <Video className="w-5 h-5" />,
+    title: "Audio & Video Analysis",
+    description: "Comprehensive behavioral assessment",
+  },
+  {
+    icon: <Eye className="w-5 h-5" />,
+    title: "Gesture Recognition",
+    description: "Advanced emotion and body language AI",
+  },
+  {
+    icon: <BarChart3 className="w-5 h-5" />,
+    title: "Data-Driven Insights",
+    description: "Evidence-based treatment recommendations",
+  },
+  {
+    icon: <Users className="w-5 h-5" />,
+    title: "Patient App",
+    description: "Seamless client engagement platform",
+  },
+  {
+    icon: <Target className="w-5 h-5" />,
+    title: "Personalized Plans",
+    description: "AI-generated treatment pathways",
+  },
+]
+
+export function FeaturesGrid() {
+  return (
+    <section className="py-24 bg-card/30">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center space-y-4 mb-16">
+          <Badge variant="secondary" className="w-fit mx-auto">
+            <Shield className="w-3 h-3 mr-1" />
+            AI-Powered Features
+          </Badge>
+          <h2 className="text-3xl lg:text-4xl font-bold text-balance">
+            Everything you need for modern mental healthcare
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+            Comprehensive AI tools designed to enhance your practice while maintaining the highest standards of patient
+            care and data security.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, index) => (
+            <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 hover:border-[#9d9af0]/50 group">
+              <div className="space-y-4">
+                <div className="w-12 h-12 bg-[#9d9af0]/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-[#9d9af0] group-hover:text-primary-foreground transition-colors">
+                  {feature.icon}
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-lg">{feature.title}</h3>
+                  <p className="text-muted-foreground text-sm">{feature.description}</p>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
