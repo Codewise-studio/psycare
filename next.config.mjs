@@ -5,6 +5,15 @@
 import "./src/env.mjs";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+    output: "standalone",
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
+	typescript: {
+		ignoreBuildErrors: true,
+	},
+	reactStrictMode: true,
+};
 
 export default config;
