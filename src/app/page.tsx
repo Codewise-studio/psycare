@@ -14,27 +14,25 @@ import { Team } from "@/components/team"
 import { Navbar } from "@/components/navbar"
 import type { Star } from "lucide-react";
 import { CTASectionMiddle } from "@/components/cta-sectionmiddle"
-
+import {Thefyuture} from "@/components/Thefyuture"
+import FunctionalitiesSection from "@/components/functionalities-section";
+import AIPracticeSection from "@/components/ai-practice-section";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-        <p>The future of mental health care starts here
-</p>
-     
+      <Thefyuture />
+      <AIPracticeSection />
       <ServicesSection />
   {/* <CtaSection /> */}
       <Banner2 />
-   
-    
+      <FunctionalitiesSection />
       <FeaturesGrid />
       <CTASectionMiddle />
-      
-       
-      <Team/>
-       <Contacts /> 
+      <Team />
+      <Contacts />
       <Footer />
     </main>
   )
