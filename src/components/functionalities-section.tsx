@@ -52,11 +52,7 @@ const containerVariants = {
 }
 
 const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-    scale: 0.9,
-  },
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
   visible: {
     opacity: 1,
     y: 0,
@@ -83,8 +79,6 @@ const titleVariants = {
 }
 
 export default function FunctionalitiesSection() {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
-
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-background via-background/50 to-background relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
@@ -130,6 +124,7 @@ export default function FunctionalitiesSection() {
           </motion.p>
         </motion.div>
 
+        {/* Engagement Section */}
         <motion.div
           className="mb-20"
           initial="hidden"
@@ -156,13 +151,7 @@ export default function FunctionalitiesSection() {
                 <motion.div
                   key={index}
                   variants={cardVariants}
-                  whileHover={{
-                    scale: 1.05,
-                    rotateY: 5,
-                    z: 50,
-                  }}
-                  onHoverStart={() => setHoveredCard(`engagement-${index}`)}
-                  onHoverEnd={() => setHoveredCard(null)}
+                  whileHover={{ scale: 1.05, rotateY: 5, z: 50 }}
                   className="perspective-1000"
                 >
                   <Card className="p-6 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 border-0 text-white relative overflow-hidden group cursor-pointer h-full">
@@ -170,13 +159,10 @@ export default function FunctionalitiesSection() {
                     <div className="absolute -top-10 -right-10 w-20 h-20 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
 
                     <div className="relative z-10 flex flex-col items-center text-center space-y-3">
-                      <motion.div
-                        animate={hoveredCard === `engagement-${index}` ? { rotate: 360 } : { rotate: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center"
-                      >
+                      {/* Icon without rotation, only hover color/scale effect */}
+                      <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-white/30">
                         <Icon className="w-5 h-5" />
-                      </motion.div>
+                      </div>
                       <p className="text-sm font-medium leading-relaxed">{feature.text}</p>
                     </div>
                   </Card>
@@ -186,6 +172,7 @@ export default function FunctionalitiesSection() {
           </motion.div>
         </motion.div>
 
+        {/* Divider */}
         <motion.div
           className="relative mb-20"
           initial={{ scaleX: 0 }}
@@ -198,6 +185,7 @@ export default function FunctionalitiesSection() {
           </div>
         </motion.div>
 
+        {/* Technology Section */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
           <motion.div className="flex items-center mb-12" variants={titleVariants}>
             <div className="flex items-center space-x-4">
@@ -218,13 +206,7 @@ export default function FunctionalitiesSection() {
                 <motion.div
                   key={index}
                   variants={cardVariants}
-                  whileHover={{
-                    scale: 1.05,
-                    rotateY: -5,
-                    z: 50,
-                  }}
-                  onHoverStart={() => setHoveredCard(`technology-${index}`)}
-                  onHoverEnd={() => setHoveredCard(null)}
+                  whileHover={{ scale: 1.05, rotateY: -5, z: 50 }}
                   className="perspective-1000"
                 >
                   <Card className="p-6 bg-gradient-to-br from-teal-500 via-teal-600 to-teal-700 border-0 text-white relative overflow-hidden group cursor-pointer h-full">
@@ -232,13 +214,9 @@ export default function FunctionalitiesSection() {
                     <div className="absolute -top-10 -right-10 w-20 h-20 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
 
                     <div className="relative z-10 flex flex-col items-center text-center space-y-3">
-                      <motion.div
-                        animate={hoveredCard === `technology-${index}` ? { rotate: -360 } : { rotate: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center"
-                      >
+                      <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-white/30">
                         <Icon className="w-5 h-5" />
-                      </motion.div>
+                      </div>
                       <p className="text-sm font-medium leading-relaxed">{feature.text}</p>
                     </div>
                   </Card>

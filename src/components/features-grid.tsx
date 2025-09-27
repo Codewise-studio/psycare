@@ -1,5 +1,8 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { motion } from "framer-motion"
 import { Brain, Mic, Video, BarChart3, Users, Shield, Eye, Activity, Target } from "lucide-react"
 
 const features = [
@@ -45,11 +48,42 @@ const features = [
   },
 ]
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+}
+
 export function FeaturesGrid() {
   return (
     <section className="py-24 bg-card/30">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center space-y-4 mb-16">
+        <motion.div
+          className="text-center space-y-4 mb-16"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <Badge variant="secondary" className="w-fit mx-auto">
             <Shield className="w-3 h-3 mr-1" />
             AI-Powered Features
@@ -61,23 +95,36 @@ export function FeaturesGrid() {
             Comprehensive AI tools designed to enhance your practice while maintaining the highest standards of patient
             care and data security.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+        >
           {features.map((feature, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 hover:border-[#9d9af0]/50 group">
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-[#9d9af0]/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-[#9d9af0] group-hover:text-primary-foreground transition-colors">
-                  {feature.icon}
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              whileHover={{ scale: 1.05, rotateY: 5, z: 50 }}
+              className="perspective-1000"
+            >
+              <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-[#9d9af0]/50 group h-full">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-[#9d9af0]/10 rounded-lg flex items-center justify-center text-[#9d9af0] group-hover:bg-[#9d9af0] group-hover:text-primary-foreground transition-colors">
+                    {feature.icon}
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="font-semibold text-lg">{feature.title}</h3>
+                    <p className="text-muted-foreground text-sm">{feature.description}</p>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="font-semibold text-lg">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm">{feature.description}</p>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

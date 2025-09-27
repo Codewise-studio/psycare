@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Clock, Database, TrendingUp, Brain, Zap, Shield, Target } from "lucide-react"
+import Link from "next/link"
+
 
 const practiceCards = [
   {
@@ -34,20 +36,20 @@ const practiceCards = [
   },
 ]
 
-const floatingIcons = [
-  { icon: Zap, position: "top-20 left-20", delay: 0 },
-  { icon: Shield, position: "top-32 right-32", delay: 1 },
-  { icon: Target, position: "bottom-32 left-32", delay: 2 },
-  { icon: Brain, position: "bottom-20 right-20", delay: 3 },
-]
+// const floatingIcons = [
+//   { icon: Zap, position: "top-20 left-20", delay: 0 },
+//   { icon: Shield, position: "top-32 right-32", delay: 1 },
+//   { icon: Target, position: "bottom-32 left-32", delay: 2 },
+//   { icon: Brain, position: "bottom-20 right-20", delay: 3 },
+// ]
 
 export default function AIPracticeSection() {
   return (
-    <section className="relative min-h-screen bg-background overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center justify-center px-4 py-20 bg-gradient-to-br from-background via-muted/20 to-background overflow-hidden">
       {/* Grid Pattern Background */}
       <div className="absolute inset-0 ai-grid-pattern opacity-30" />
 
-      {/* Floating Background Icons */}
+      {/* Floating Background Icons
       {floatingIcons.map((item, index) => (
         <motion.div
           key={index}
@@ -58,7 +60,7 @@ export default function AIPracticeSection() {
         >
           <item.icon className="w-16 h-16 icon-float" />
         </motion.div>
-      ))}
+      ))} */}
 
       <div className="relative z-10 container mx-auto px-6 py-24">
         {/* Header */}
@@ -192,22 +194,31 @@ export default function AIPracticeSection() {
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+     <motion.div
+      className="text-center mt-20"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.8 }}
+    >
+      <Link href="/about" legacyBehavior>
+        <motion.a
+          className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-3 font-semibold 
+                     bg-[#9d9af0] cursor-pointer group shadow-lg"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ duration: 0.3 }}
         >
-          <motion.button
-            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold 
-              rounded-full hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 
-              shadow-lg hover:shadow-xl transform hover:scale-105"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Experience AI-Powered Practice
-          </motion.button>
-        </motion.div>
+          {/* camada de hover deslizante */}
+          <span className="absolute inset-0 bg-[#93bddc] translate-x-[100%] group-hover:translate-x-0 
+                           rounded-full transition-transform duration-300" />
+          
+          {/* conteúdo do botão */}
+          <span className="relative z-10 text-white flex items-center space-x-2">
+            <span>Experience AI-Powered Practice</span>
+          </span>
+        </motion.a>
+      </Link>
+    </motion.div>
       </div>
     </section>
   )

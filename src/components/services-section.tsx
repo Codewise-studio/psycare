@@ -80,21 +80,31 @@ export function ServicesSection() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          >
-            <Link
-              href="/about"
-              className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-blue-600 to-violet-600 text-white cursor-pointer group shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-violet-600 to-blue-600 translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
-              <span className="relative z-10 flex items-center space-x-2">
-                <span>Get Started Today</span>
-              </span>
-            </Link>
-          </motion.div>
+       <motion.div
+      className="text-center mt-20"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.8 }}
+    >
+      <Link href="/about" legacyBehavior>
+        <motion.a
+          className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-3 font-semibold 
+                     bg-[#9d9af0] cursor-pointer group shadow-lg"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ duration: 0.3 }}
+        >
+          {/* camada de hover deslizante */}
+          <span className="absolute inset-0 bg-[#93bddc] translate-x-[100%] group-hover:translate-x-0 
+                           rounded-full transition-transform duration-300" />
+          
+          {/* conteúdo do botão */}
+          <span className="relative z-10 text-white flex items-center space-x-2">
+            <span>Experience AI-Powered Practice</span>
+          </span>
+        </motion.a>
+      </Link>
+    </motion.div>
         </div>
 
         {/* Image Column - Right Side */}
