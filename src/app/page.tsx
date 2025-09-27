@@ -10,10 +10,12 @@ import { CTASectionMiddle } from "@/components/cta-sectionmiddle"
 import {Thefyuture} from "@/components/Thefyuture"
 import FunctionalitiesSection from "@/components/functionalities-section";
 import AIPracticeSection from "@/components/ai-practice-section";
+import { GradientBackground } from "@/components/ui/gradient-background"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen ">
+        {/* <GradientBackground /> */}
       <Navbar />
       <HeroSection />
       <Thefyuture />
