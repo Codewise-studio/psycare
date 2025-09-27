@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function Contacts() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-12 md:py-16 bg-white text-gray-800">
+    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-white text-gray-800">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-3xl font-bold sm:text-4xl">Contact us</h1>

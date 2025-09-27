@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link"
 import { useState } from "react"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 
 export function Navbar() {
@@ -13,11 +14,14 @@ export function Navbar() {
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
-          <img 
-            src="/pasycare_white_color.png" 
-            alt="Psycare Logo" 
-            className="h-12 sm:h-14 w-auto" 
-          />
+            <Image 
+              src="/pasycare_white_color.png" 
+              alt="Psycare Logo" 
+              width={796}
+              height={269}
+              className="h-12 sm:h-14 w-auto" 
+              unoptimized
+            />
           </Link>
         </div>
 

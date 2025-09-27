@@ -1,18 +1,22 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:gap-12">
           
           {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2">
-              <img
+              <Image
                 src="/pasycare_white_color.png"
                 alt="Psycare Logo"
+                width={796}
+                height={269}
                 className="h-10 w-auto object-contain"
+                unoptimized
               />
             </div>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">

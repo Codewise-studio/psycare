@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 import { Quote } from "lucide-react"
 
 export function TestimonialSection() {
@@ -20,9 +21,11 @@ export function TestimonialSection() {
               </blockquote>
 
               <div className="flex items-center justify-center gap-4">
-                <img
+                <Image
                   src="/business-executive-headshot.png"
                   alt="Client testimonial"
+                  width={60}
+                  height={60}
                   className="w-15 h-15 rounded-full object-cover"
                 />
                 <div className="text-left">

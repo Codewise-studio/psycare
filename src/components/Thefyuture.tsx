@@ -5,7 +5,7 @@ import { SoundWaveAnimation } from './ui/sound-wave-animation';
 
 export function Thefyuture() {
   return (
-    <section className="relative py-24 text-[#9d9af0] font-semibold bg-white overflow-hidden" id="the-future">
+    <section className="relative py-16 sm:py-20 lg:py-24 text-[#9d9af0] font-semibold bg-white overflow-hidden" id="the-future">
       
       {/* Background Animation
       <div className="absolute inset-0 z-0 py-12">

@@ -57,7 +57,7 @@ export function Team() {
 
   return (
     <motion.div
-      className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24"
       initial={{ opacity: 0, y: 50 }}          // 👈 start invisible, slightly down
       whileInView={{ opacity: 1, y: 0 }}       // 👈 fade+slide in on scroll
       viewport={{ once: true, amount: 0.2 }}   // 👈 only trigger once, when 20% is visible
