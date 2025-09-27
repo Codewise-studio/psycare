@@ -14,6 +14,7 @@ const config = {
 		ignoreBuildErrors: true,
 	},
 	reactStrictMode: true,
+	
 };
 
 export default config;

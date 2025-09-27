@@ -2,6 +2,7 @@
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { FloatingIcons } 
 from "./floating-icons"
 import { Brain, Mic, Video, BarChart3, Users, Shield, Eye, Activity, Target } from "lucide-react"
@@ -42,11 +43,14 @@ export function HeroSection() {
   transition={{ duration: 0.8, ease: "easeOut" }}
   className="flex justify-center lg:justify-end"
 >
-  <img
-    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/image-s1FneVtfr7KQQq7MsJXL4O4p27r3PB.png"
-    alt="Modern therapy office with AI analytics overlay"
-    className="w-full max-w-md lg:max-w-lg drop-shadow-xl rounded-xl"
-  />
+  <div className="relative w-full max-w-md lg:max-w-lg aspect-square">
+    <Image
+      src="/hero-image.png"
+      alt="Modern therapy office with AI analytics overlay"
+      fill
+      className="object-cover drop-shadow-xl rounded-xl"
+    />
+  </div>
 </motion.div>
 
         </div>
