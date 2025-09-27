@@ -1,6 +1,7 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import { useState } from "react"
 import {
@@ -17,27 +18,33 @@ import {
   BarChart3,
   Puzzle,
   Code,
+  Target,
+  Shield,
 } from "lucide-react"
 
 const engagementFeatures = [
-  { text: "Immersive VR for anxiety reduction", icon: Brain },
-  { text: "AI audio transcription & analysis", icon: Zap },
-  { text: "AI session insights & follow-up suggestions", icon: Heart },
-  { text: "Diagnostic & treatment support", icon: Monitor },
-  { text: "Patient mood tracking & analysis", icon: Activity },
-  { text: "Automated progress report", icon: FileText },
-  { text: "Patients' homework suggestions", icon: Heart },
-  { text: "Wearable device integration", icon: Watch },
-  { text: "Patient app", icon: Smartphone },
-  { text: "Tele-health integration", icon: Video },
+  { text: "Immersive VR for anxiety reduction", icon: Brain, description: "Virtual reality therapy sessions" },
+  { text: "AI audio transcription & analysis", icon: Zap, description: "Real-time session insights" },
+  {
+    text: "AI session insights & follow-up suggestions",
+    icon: Heart,
+    description: "Personalized care recommendations",
+  },
+  { text: "Diagnostic & treatment support", icon: Monitor, description: "Evidence-based assessments" },
+  { text: "Patient mood tracking & analysis", icon: Activity, description: "Continuous wellness monitoring" },
+  { text: "Automated progress report", icon: FileText, description: "Comprehensive patient summaries" },
+  { text: "Patients' homework suggestions", icon: Target, description: "Tailored therapeutic exercises" },
+  { text: "Wearable device integration", icon: Watch, description: "Biometric data collection" },
+  { text: "Patient app", icon: Smartphone, description: "Mobile therapy companion" },
+  { text: "Tele-health integration", icon: Video, description: "Seamless remote sessions" },
 ]
 
 const technologyFeatures = [
-  { text: "AI video processing & analysis", icon: Video },
-  { text: "AI-enhanced knowledge base", icon: Database },
-  { text: "Real-time feedback with biomarkers", icon: BarChart3 },
-  { text: "Integration of insights for reports", icon: Puzzle },
-  { text: "API for software integration", icon: Code },
+  { text: "AI video processing & analysis", icon: Video, description: "Advanced behavioral insights" },
+  { text: "AI-enhanced knowledge base", icon: Database, description: "Intelligent treatment protocols" },
+  { text: "Real-time feedback with biomarkers", icon: BarChart3, description: "Physiological monitoring" },
+  { text: "Integration of insights for reports", icon: Puzzle, description: "Comprehensive analytics" },
+  { text: "API for software integration", icon: Code, description: "Seamless system connectivity" },
 ]
 
 const containerVariants = {
@@ -52,7 +59,11 @@ const containerVariants = {
 }
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  hidden: {
+    opacity: 0,
+    y: 30,
+    scale: 0.9,
+  },
   visible: {
     opacity: 1,
     y: 0,
@@ -61,109 +72,72 @@ const cardVariants = {
       type: "spring",
       stiffness: 100,
       damping: 15,
-    },
-  },
-}
-
-const titleVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 20,
+      duration: 0.6,
     },
   },
 }
 
 export default function FunctionalitiesSection() {
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
+
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-background via-background/50 to-background relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse delay-500"></div>
-      </div>
+    <section className="py-24 bg-card/30">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center space-y-4 mb-16">
+          <Badge variant="secondary" className="w-fit mx-auto">
+            <Shield className="w-3 h-3 mr-1" />
+            PsyCare Studio Functionalities
+          </Badge>
+          <h2 className="text-3xl lg:text-4xl font-bold text-balance">AI Power for Next-Gen Mental Health Solutions</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+            Comprehensive AI tools designed to enhance engagement and leverage cutting-edge technology for modern mental
+            healthcare.
+          </p>
+        </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <motion.h2
-            className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary via-purple-400 to-teal-400 bg-clip-text text-transparent mb-4"
-            initial={{ scale: 0.9 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            PsyCare Studio
-          </motion.h2>
-          <motion.h3
-            className="text-3xl md:text-4xl font-semibold text-primary mb-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Functionalities
-          </motion.h3>
-          <motion.p
-            className="text-xl text-muted-foreground font-medium max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            AI Power for Next-Gen Mental Health Solutions
-          </motion.p>
-        </motion.div>
-
-        {/* Engagement Section */}
-        <motion.div
-          className="mb-20"
+          className="mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={containerVariants}
         >
-          <motion.div className="flex items-center mb-12" variants={titleVariants}>
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center">
-                <Heart className="w-6 h-6 text-white" />
-              </div>
-              <h4 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-                ENGAGEMENT
-              </h4>
-            </div>
-            <div className="flex-1 ml-8 h-px bg-gradient-to-r from-purple-400/50 to-transparent"></div>
-          </motion.div>
+          <div className="flex items-center justify-center mb-8">
+            <Badge variant="outline" className="text-purple-600 border-purple-200 bg-purple-50">
+              <Heart className="w-3 h-3 mr-1" />
+              ENGAGEMENT
+            </Badge>
+          </div>
 
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6" variants={containerVariants}>
+          <motion.div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6" variants={containerVariants}>
             {engagementFeatures.map((feature, index) => {
               const Icon = feature.icon
+              const isHovered = hoveredCard === `engagement-${index}`
+
               return (
                 <motion.div
                   key={index}
                   variants={cardVariants}
-                  whileHover={{ scale: 1.05, rotateY: 5, z: 50 }}
-                  className="perspective-1000"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  onHoverStart={() => setHoveredCard(`engagement-${index}`)}
+                  onHoverEnd={() => setHoveredCard(null)}
                 >
-                  <Card className="p-6 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 border-0 text-white relative overflow-hidden group cursor-pointer h-full">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute -top-10 -right-10 w-20 h-20 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
-
-                    <div className="relative z-10 flex flex-col items-center text-center space-y-3">
-                      {/* Icon without rotation, only hover color/scale effect */}
-                      <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-white/30">
+                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-purple-300 group h-full">
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <p className="text-sm font-medium leading-relaxed">{feature.text}</p>
+                      <div className="space-y-2">
+                        <h3 className="font-semibold text-sm leading-tight">{feature.text}</h3>
+                        <motion.p
+                          className="text-muted-foreground text-xs"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={isHovered ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {feature.description}
+                        </motion.p>
+                      </div>
                     </div>
                   </Card>
                 </motion.div>
@@ -172,52 +146,61 @@ export default function FunctionalitiesSection() {
           </motion.div>
         </motion.div>
 
-        {/* Divider */}
-        <motion.div
-          className="relative mb-20"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <div className="border-t-2 border-dashed border-primary/30 relative">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full animate-pulse"></div>
-          </div>
-        </motion.div>
-
-        {/* Technology Section */}
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
-          <motion.div className="flex items-center mb-12" variants={titleVariants}>
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-teal-400 to-teal-600 rounded-full flex items-center justify-center">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
-              <h4 className="text-3xl font-bold bg-gradient-to-r from-teal-400 to-teal-600 bg-clip-text text-transparent">
-                TECHNOLOGY
-              </h4>
-            </div>
-            <div className="flex-1 ml-8 h-px bg-gradient-to-r from-teal-400/50 to-transparent"></div>
+        <div className="flex items-center justify-center my-16">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+          <motion.div
+            className="mx-4 w-12 h-12 bg-gradient-to-br from-purple-500/20 to-teal-500/20 rounded-full flex items-center justify-center border border-purple-200/50"
+            animate={{
+              rotate: [0, 360],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              rotate: { duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
+              scale: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+            }}
+          >
+            <Brain className="w-5 h-5 text-purple-600" />
           </motion.div>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+        </div>
 
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6" variants={containerVariants}>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
+          <div className="flex items-center justify-center mb-8">
+            <Badge variant="outline" className="text-teal-600 border-teal-200 bg-teal-50">
+              <Zap className="w-3 h-3 mr-1" />
+              TECHNOLOGY
+            </Badge>
+          </div>
+
+          <motion.div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6" variants={containerVariants}>
             {technologyFeatures.map((feature, index) => {
               const Icon = feature.icon
+              const isHovered = hoveredCard === `technology-${index}`
+
               return (
                 <motion.div
                   key={index}
                   variants={cardVariants}
-                  whileHover={{ scale: 1.05, rotateY: -5, z: 50 }}
-                  className="perspective-1000"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  onHoverStart={() => setHoveredCard(`technology-${index}`)}
+                  onHoverEnd={() => setHoveredCard(null)}
                 >
-                  <Card className="p-6 bg-gradient-to-br from-teal-500 via-teal-600 to-teal-700 border-0 text-white relative overflow-hidden group cursor-pointer h-full">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute -top-10 -right-10 w-20 h-20 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
-
-                    <div className="relative z-10 flex flex-col items-center text-center space-y-3">
-                      <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-white/30">
+                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-teal-300 group h-full">
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <p className="text-sm font-medium leading-relaxed">{feature.text}</p>
+                      <div className="space-y-2">
+                        <h3 className="font-semibold text-sm leading-tight">{feature.text}</h3>
+                        <motion.p
+                          className="text-muted-foreground text-xs"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={isHovered ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {feature.description}
+                        </motion.p>
+                      </div>
                     </div>
                   </Card>
                 </motion.div>
