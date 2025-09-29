@@ -81,15 +81,17 @@ export default function FunctionalitiesSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
 
   return (
-    <section className="py-24 bg-card/30">
+    <section className="py-24 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center space-y-4 mb-16">
-          <Badge variant="secondary" className="w-fit mx-auto">
+          <Badge variant="secondary" className="w-fit mx-auto bg-purple-100 text-purple-700 border-purple-200">
             <Shield className="w-3 h-3 mr-1" />
             PsyCare Studio Functionalities
           </Badge>
-          <h2 className="text-3xl lg:text-4xl font-bold text-balance">AI Power for Next-Gen Mental Health Solutions</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+          <h2 className="text-3xl lg:text-4xl font-bold text-balance text-gray-900">
+            AI Power for Next-Gen Mental Health Solutions
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto text-pretty">
             Comprehensive AI tools designed to enhance engagement and leverage cutting-edge technology for modern mental
             healthcare.
           </p>
@@ -122,15 +124,15 @@ export default function FunctionalitiesSection() {
                   onHoverStart={() => setHoveredCard(`engagement-${index}`)}
                   onHoverEnd={() => setHoveredCard(null)}
                 >
-                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-purple-300 group h-full">
+                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-purple-300 group h-full bg-white border-gray-200">
                     <div className="space-y-4">
                       <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="font-semibold text-sm leading-tight">{feature.text}</h3>
+                        <h3 className="font-semibold text-sm leading-tight text-gray-900">{feature.text}</h3>
                         <motion.p
-                          className="text-muted-foreground text-xs"
+                          className="text-gray-600 text-xs"
                           initial={{ opacity: 0, height: 0 }}
                           animate={isHovered ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
@@ -147,7 +149,7 @@ export default function FunctionalitiesSection() {
         </motion.div>
 
         <div className="flex items-center justify-center my-16">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
           <motion.div
             className="mx-4 w-12 h-12 bg-gradient-to-br from-purple-500/20 to-teal-500/20 rounded-full flex items-center justify-center border border-purple-200/50"
             animate={{
@@ -161,7 +163,7 @@ export default function FunctionalitiesSection() {
           >
             <Brain className="w-5 h-5 text-purple-600" />
           </motion.div>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
         </div>
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
@@ -185,15 +187,15 @@ export default function FunctionalitiesSection() {
                   onHoverStart={() => setHoveredCard(`technology-${index}`)}
                   onHoverEnd={() => setHoveredCard(null)}
                 >
-                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-teal-300 group h-full">
+                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-teal-300 group h-full bg-white border-gray-200">
                     <div className="space-y-4">
                       <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="font-semibold text-sm leading-tight">{feature.text}</h3>
+                        <h3 className="font-semibold text-sm leading-tight text-gray-900">{feature.text}</h3>
                         <motion.p
-                          className="text-muted-foreground text-xs"
+                          className="text-gray-600 text-xs"
                           initial={{ opacity: 0, height: 0 }}
                           animate={isHovered ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}

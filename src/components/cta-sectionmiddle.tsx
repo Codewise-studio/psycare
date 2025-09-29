@@ -1,12 +1,12 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles, Heart, Brain } from "lucide-react"
+import { ArrowRight, Sparkles, Heart, Brain, Phone } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function CTASectionMiddle() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="w-full relative min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-background via-muted/20 to-background overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
         <div
@@ -19,7 +19,7 @@ export function CTASectionMiddle() {
         />
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
+      <div className="w-full  relative ">
         <motion.div
           className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 
             border border-white/10 backdrop-blur-sm shadow-2xl text-center"
@@ -121,27 +121,27 @@ export function CTASectionMiddle() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Button
-                    size="lg"
-                    className="group bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 
-                      text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-xl 
-                      transform hover:scale-105 transition-all duration-300 border-0"
-                  >
-                    Get Started Free
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                <Button
+  as="a"
+  href="#contact"
+  size="lg"
+  className="relative inline-flex items-center overflow-hidden rounded-full px-10 py-4 font-semibold bg-white/80 backdrop-blur-sm border-2 border-gray-300 group cursor-pointer transition-all duration-300"
+>
+  {/* Animated background */}
+  <span className="absolute inset-0 bg-blue-100 translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
 
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="group border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-full
-                      backdrop-blur-sm transition-all duration-300 hover:border-white/30"
-                  >
-                    Watch Demo
-                  </Button>
+  {/* Text and icon */}
+  <span className="relative z-10 flex items-center space-x-2 text-gray-700 group-hover:text-blue-600">
+    <Phone className="w-5 h-5" />
+    <span>Contact Us</span>
+    <span className="bg-white w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-blue-500 transition-colors duration-300">
+      <ArrowRight className="w-5 h-5 text-gray-700 group-hover:text-white transition-colors duration-300" />
+    </span>
+  </span>
+</Button>
                 </div>
 
-                <motion.p
+                {/* <motion.p
                   className="text-sm text-muted-foreground/80 flex items-center justify-center gap-6 flex-wrap"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -159,7 +159,7 @@ export function CTASectionMiddle() {
                     <div className="w-2 h-2 bg-purple-400 rounded-full" />
                     HIPAA compliant
                   </span>
-                </motion.p>
+                </motion.p> */}
               </motion.div>
             </div>
           </div>

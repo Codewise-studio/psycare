@@ -2,7 +2,9 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"  // 👈 add this
+import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Award, BookOpen, Users, Star } from "lucide-react"
 
 interface AdvisoryMember {
   id: string
@@ -11,6 +13,8 @@ interface AdvisoryMember {
   shortCV: string
   role: string
   expertise: string[]
+  credentials: string
+  yearsExperience: number
 }
 
 const advisoryMembers: AdvisoryMember[] = [
@@ -22,6 +26,8 @@ const advisoryMembers: AdvisoryMember[] = [
       "PhD in Clinical Psychology with 15+ years of experience in mental health research and digital therapeutics. Former head of Psychology at Hospital São João.",
     role: "Clinical Psychology Advisor",
     expertise: ["Clinical Psychology", "Digital Health", "Research"],
+    credentials: "PhD, Licensed Clinical Psychologist",
+    yearsExperience: 15,
   },
   {
     id: "2",
@@ -31,6 +37,8 @@ const advisoryMembers: AdvisoryMember[] = [
       "Serial entrepreneur and tech investor. Founded 3 successful healthtech startups. Currently Managing Partner at HealthTech Ventures.",
     role: "Strategic Business Advisor",
     expertise: ["Business Strategy", "HealthTech", "Investment"],
+    credentials: "MBA, Serial Entrepreneur",
+    yearsExperience: 12,
   },
   {
     id: "3",
@@ -40,6 +48,8 @@ const advisoryMembers: AdvisoryMember[] = [
       "MD specializing in Psychiatry and Digital Mental Health. Published researcher with 50+ papers on technology-assisted therapy.",
     role: "Medical Advisor",
     expertise: ["Psychiatry", "Digital Therapeutics", "Medical Research"],
+    credentials: "MD, Board-Certified Psychiatrist",
+    yearsExperience: 18,
   },
   {
     id: "4",
@@ -49,6 +59,8 @@ const advisoryMembers: AdvisoryMember[] = [
       "Former CTO at major European healthtech companies. Expert in AI/ML applications for healthcare and regulatory compliance.",
     role: "Technology Advisor",
     expertise: ["AI/ML", "Healthcare Tech", "Regulatory Compliance"],
+    credentials: "PhD Computer Science, Former CTO",
+    yearsExperience: 14,
   },
 ]
 
@@ -56,136 +68,226 @@ export function Team() {
   const [selectedMember, setSelectedMember] = useState<AdvisoryMember | null>(null)
 
   return (
-    <motion.div
-      className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto"
-      initial={{ opacity: 0, y: 50 }}          // 👈 start invisible, slightly down
-      whileInView={{ opacity: 1, y: 0 }}       // 👈 fade+slide in on scroll
-      viewport={{ once: true, amount: 0.2 }}   // 👈 only trigger once, when 20% is visible
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      {/* Title */}
-      <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
-          Our Leadership
-        </h2>
-        <p className="mt-1 text-gray-600 dark:text-neutral-400">Advisory Board</p>
+    <section className="bg-white py-24 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse" />
+        <div
+          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-2xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
       </div>
 
-      {/* Grid */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: { staggerChildren: 0.2 }, // 👈 animate cards one by one
-          },
-        }}
+        className="max-w-7xl px-6 py-10 sm:px-8 lg:px-12 lg:py-14 mx-auto relative z-10"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {advisoryMembers.map((member) => (
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <motion.div
-            key={member.id}
-            className="flex flex-col rounded-xl p-4 md:p-6 bg-white border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700"
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20 mb-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-x-4">
-              <Image
-                className="rounded-full"
-                src={member.photo}
-                alt={member.name}
-                width={80}
-                height={80}
-              />
-              <div className="grow">
-                <h3 className="font-medium text-gray-800 dark:text-neutral-200">
-                  {member.name}
-                </h3>
-                <p className="text-xs uppercase text-gray-500 dark:text-neutral-500">
-                  {member.role}
-                </p>
-              </div>
-            </div>
-
-            {/* Button with hover effect */}
-            <button
-              onClick={() => setSelectedMember(member)}
-              className="mt-3 self-start inline-flex items-center relative overflow-hidden rounded-full px-3 py-1 text-sm font-semibold bg-[#9d9af0] cursor-pointer group"
-            >
-              <span className="absolute inset-0 bg-[#93bddc] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
-              <span className="relative z-10 text-white">View Details</span>
-            </button>
-
-            <p className="mt-3 text-gray-500 dark:text-neutral-400">
-              {member.shortCV}
-            </p>
-
-            <div className="mt-3 flex flex-wrap gap-2">
-              {member.expertise.map((exp, i) => (
-                <span
-                  key={i}
-                  className="text-xs px-2 py-1 rounded-lg border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400"
-                >
-                  {exp}
-                </span>
-              ))}
-            </div>
+            <Award className="w-4 h-4 text-blue-500" />
+            <span className="text-sm font-medium text-blue-600">Expert Advisory Board</span>
           </motion.div>
-        ))}
+
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-balance"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Meet Our{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
+              Psychology Experts
+            </span>
+          </motion.h2>
+
+          <motion.p
+            className="text-xl text-gray-600 text-pretty leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Leading professionals in clinical psychology, digital health, and mental wellness technology guiding our
+            mission to transform therapeutic practice.
+          </motion.p>
+        </div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+        >
+          {advisoryMembers.map((member) => (
+            <motion.div
+              key={member.id}
+              className="group relative bg-white rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10">
+                <div className="flex flex-col items-center text-center mb-6">
+                  <div className="relative mb-4">
+                    <Image
+                      className="rounded-full border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
+                      src={member.photo || "/placeholder.svg"}
+                      alt={member.name}
+                      width={100}
+                      height={100}
+                    />
+                    <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full p-2">
+                      <Award className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+                  <p className="text-sm font-medium text-blue-600 mb-2">{member.role}</p>
+                  <p className="text-xs text-gray-500 mb-3">{member.credentials}</p>
+
+                  <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
+                    <BookOpen className="w-4 h-4" />
+                    <span>{member.yearsExperience}+ years experience</span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-gray-600 mb-4 line-clamp-3">{member.shortCV}</p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {member.expertise.map((exp, i) => (
+                    <span
+                      key={i}
+                      className="text-xs px-3 py-1 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-700 font-medium"
+                    >
+                      {exp}
+                    </span>
+                  ))}
+                </div>
+
+                <Button
+                  onClick={() => setSelectedMember(member)}
+                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold rounded-full transition-all duration-300 group-hover:scale-105"
+                >
+                  View Full Profile
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-2xl p-8 border border-blue-500/20">
+            <Users className="w-12 h-12 text-blue-500 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Join Our Network of Psychology Professionals</h3>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Connect with leading experts in digital mental health and be part of the future of therapeutic practice.
+            </p>
+            <Button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold px-8 py-3 rounded-full">
+              Learn More About Our Advisory Program
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </motion.div>
       </motion.div>
 
-      {/* Popup Modal */}
       {selectedMember && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50 backdrop-blur-sm p-4">
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="bg-white dark:bg-neutral-900 rounded-xl shadow-lg p-6 max-w-lg w-full relative"
+            className="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full relative max-h-[90vh] overflow-y-auto"
           >
             <button
               onClick={() => setSelectedMember(null)}
-              className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 dark:text-neutral-400 dark:hover:text-white"
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-900 transition-colors"
             >
               ✕
             </button>
 
-            <div className="flex flex-col items-center">
-              <Image
-                className="rounded-full mb-4"
-                src={selectedMember.photo}
-                alt={selectedMember.name}
-                width={100}
-                height={100}
-              />
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-                {selectedMember.name}
-              </h3>
-              <p className="text-sm uppercase text-gray-500 dark:text-neutral-400 mb-4">
-                {selectedMember.role}
-              </p>
-              <p className="text-gray-600 dark:text-neutral-300 mb-4">
-                {selectedMember.shortCV}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {selectedMember.expertise.map((exp, i) => (
-                  <span
-                    key={i}
-                    className="text-xs px-2 py-1 rounded-lg border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400"
-                  >
-                    {exp}
-                  </span>
-                ))}
+            <div className="text-center mb-8">
+              <div className="relative inline-block mb-6">
+                <Image
+                  className="rounded-full border-4 border-blue-500/20 shadow-lg"
+                  src={selectedMember.photo || "/placeholder.svg"}
+                  alt={selectedMember.name}
+                  width={120}
+                  height={120}
+                />
+                <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full p-3">
+                  <Award className="w-5 h-5 text-white" />
+                </div>
+              </div>
+
+              <h3 className="text-3xl font-bold text-gray-900 mb-2">{selectedMember.name}</h3>
+              <p className="text-lg font-medium text-blue-600 mb-2">{selectedMember.role}</p>
+              <p className="text-sm text-gray-500 mb-4">{selectedMember.credentials}</p>
+
+              <div className="flex items-center justify-center gap-6 text-sm text-gray-600 mb-6">
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-4 h-4" />
+                  <span>{selectedMember.yearsExperience}+ years</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Star className="w-4 h-4 text-yellow-500" />
+                  <span>Expert Level</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Professional Background</h4>
+                <p className="text-gray-600 leading-relaxed">{selectedMember.shortCV}</p>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Areas of Expertise</h4>
+                <div className="flex flex-wrap gap-3">
+                  {selectedMember.expertise.map((exp, i) => (
+                    <span
+                      key={i}
+                      className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-700 font-medium"
+                    >
+                      {exp}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
       )}
-    </motion.div>
+    </section>
   )
 }
