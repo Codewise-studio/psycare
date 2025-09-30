@@ -199,14 +199,14 @@ export default function FocusCareSection() {
                 viewport={{ once: true }}
                 className="flex items-center gap-2 mb-4"
               >
-                <Sparkles className="h-6 w-6 text-purple-600" />
-                <span className="text-purple-600 font-semibold text-sm uppercase tracking-wide">AI-Powered Care</span>
+                <Sparkles className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
+                <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">AI-Powered Care</span>
               </motion.div>
 
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance">
+              <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold leading-tight text-balance">
                 <span className="text-gray-900">Focus on care.</span>
                 <br />
-                <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[hsla(229,71%,77%,1)] via-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] bg-clip-text text-transparent">
                   Let AI handle the rest.
                 </span>
               </h2>
@@ -241,14 +241,14 @@ export default function FocusCareSection() {
                   className="flex items-start gap-4 group hover:bg-gray-50 p-3 rounded-xl transition-all duration-300"
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-8 h-8 bg-gradient-to-r from-[#85E1B9] to-[#6fcaa3] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Check className="h-4 w-4 text-white" />
                     </div>
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <feature.icon className="h-5 w-5 text-purple-600" />
-                      <h3 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors duration-300">
+                      <feature.icon className="h-5 w-5 text-[#9d85f3]" />
+                      <h3 className="font-semibold text-gray-900 group-hover:text-[#9d85f3] transition-colors duration-300">
                         {feature.title}
                       </h3>
                     </div>
@@ -259,7 +259,7 @@ export default function FocusCareSection() {
             </motion.div>
 
             {/* CTA Buttons */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
@@ -281,10 +281,10 @@ export default function FocusCareSection() {
               >
                 Watch Demo
               </Button>
-            </motion.div>
+            </motion.div> */}
 
             {/* Trust Indicators */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.4 }}
@@ -298,7 +298,7 @@ export default function FocusCareSection() {
                 ))}
                 <span className="text-sm text-gray-600 ml-2">4.9/5 rating</span>
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* Right Dashboard Mockup */}
@@ -394,17 +394,17 @@ export default function FocusCareSection() {
                 {/* Interactive Elements */}
                 <div className="flex justify-between items-center pt-4">
                   <motion.div
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                    className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center"
+                    // animate={{ scale: [1, 1.1, 1] }}
+                    // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                    // className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center"
                   >
-                    <Clock className="h-6 w-6 text-white" />
+                    {/* <Clock className="h-6 w-6 text-white" /> */}
                   </motion.div>
 
                   <motion.div
                     animate={{ rotate: [0, 180, 360] }}
                     transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-                    className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center"
+                    className="w-12 h-12 bg-gradient-to-r from-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] rounded-full flex items-center justify-center"
                   >
                     <Brain className="h-6 w-6 text-white" />
                   </motion.div>
@@ -431,7 +431,7 @@ export default function FocusCareSection() {
               viewport={{ once: true }}
               className="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg border border-gray-100 p-4"
             >
-              <div className="text-2xl font-bold text-blue-600">24/7</div>
+              <div className="text-2xl font-bold text-[#9BAAEE]">24/7</div>
               <div className="text-sm text-gray-600">AI Support</div>
             </motion.div>
           </motion.div>

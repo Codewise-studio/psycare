@@ -68,24 +68,33 @@ export function Footer() {
 
           {/* Product Links */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4">Product</h3>
-            <ul className="space-y-3">
-              {["Features", "Pricing", "Documentation", "API Reference", "Changelog"].map((item) => (
-                <li key={item}>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-all duration-200 ease-in-out"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+         <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
+    Psycare Studio
+  </h3>
+  <ul className="space-y-2">
+    {[
+      { label: "Why choose Psycare", href: "#whychoosepsycare" },
+      { label: "Features", href: "#features" },
+      { label: "Functionalities", href: "#functionalities" },
+      { label: "Case Studies", href: "#caseStudies" },
+      { label: "Team", href: "#team" },
+      { label: "Testimonials", href: "#testimonials" },
+    ].map((item) => (
+      <li key={item.href}>
+        <a
+          href={item.href}
+          className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors duration-200"
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
           </div>
 
           {/* Contacts */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4">Contacts</h3>
+            <h3 className="text-sm font-semibold text-foreground uppercase mb-4">Contacts</h3>
             <ul className="space-y-3">
               <li>
                 <Link
@@ -108,7 +117,7 @@ export function Footer() {
 
           {/* Address */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4">Address</h3>
+            <h3 className="text-sm font-semibold text-foreground uppercase mb-4">Address</h3>
             <ul className="space-y-3">
               <li>
                 <Link

@@ -24,17 +24,19 @@ export function Navbar() {
         {/* Desktop Navbar */}
         <section className="hidden md:flex items-center border border-gray-200 rounded-full px-6 py-2 bg-white space-x-8">
           <nav className="flex items-center space-x-10 text-sm font-semibold text-gray-800">
-            <a href="#" className="hover:text-black">Homepages</a>
-            <a href="#" className="hover:text-black">About</a>
-            <a href="#" className="hover:text-black">Case studies</a>
-            <a href="#whychoosepsycare" className="hover:text-black">Other</a>
-         <Link href="/contacts" className="hover:text-black">
-  Contacts
-</Link>
+            {/* <a href="/" className="hover:text-black">Home</a> */}
+  {/* <a href="#focusCare" className="hover:text-black">Focus Care</a> */}
+  <a href="#whychoosepsycare" className="hover:text-black">Why choose Psycare</a>
+   <a href="#features" className="hover:text-black">Features</a>
+  <a href="#functionalities" className="hover:text-black">Functionalities</a>
+  <a href="#caseStudies" className="hover:text-black">Case Studies</a> 
+  <a href="#team" className="hover:text-black">Team</a>
+  <a href="#testimonials" className="hover:text-black">Testimonials</a>
+  
           </nav>
 
           <Link
-            href="/about"
+            href="#contact"
             className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-3 font-semibold bg-[#9d9af0] cursor-pointer group"
           >
             <span className="absolute inset-0 bg-[#93bddc] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />

@@ -210,3 +210,6 @@
     transform: translateY(-15px) rotate(3deg);
   }
 }
+html {
+  scroll-behavior: smooth;
+}

@@ -19,7 +19,7 @@ const FloatingIcon = ({ icon: Icon, className, delay = 0 }: { icon: any; classNa
       delay,
     }}
   >
-    <Icon className="w-5 h-5 text-blue-400" />
+    <Icon className="w-5 h-5 text-[#96B9DF]" />
   </motion.div>
 )
 
@@ -50,9 +50,16 @@ export function EnhancedHeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-fit mx-auto lg:mx-0"
           >
-            <Badge
+           <div className="flex items-center space-x-2">
+  <Brain className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
+  <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
+    4/5 Psychologists approve
+  </span>
+</div>
+
+            {/* <Badge
               variant="secondary"
-              className="flex items-center gap-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200 px-4 py-2"
+              className="flex items-center gap-2 bg-gradient-to-r from-blue-100 to-purple-100 text-[#4b65d4] border-blue-200 px-4 py-2"
             >
               <Shield className="w-4 h-4" />
               <span className="font-medium">4/5 Psychologists approve</span>
@@ -61,7 +68,7 @@ export function EnhancedHeroSection() {
                   <div key={i} className="w-2 h-2 bg-yellow-400 rounded-full" />
                 ))}
               </div> */}
-            </Badge>
+            {/* </Badge>  */}
           </motion.div>
 
           <motion.h1
@@ -100,13 +107,13 @@ export function EnhancedHeroSection() {
 
 {/* Learn More button (mais neutro) */}
 <Button
-  className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-6 font-semibold bg-white cursor-pointer group border border-[#95BDDD]"
+  className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-6 font-semibold bg-[#96B9DF] cursor-pointer group border border-[#96B9DF]"
 >
   {/* Background hover */}
-  <span className="absolute inset-0 bg-[#95BDDD] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
+  <span className="absolute inset-0 bg-gradient-to-r from-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
   
   {/* Text + icons */}
-  <span className="relative z-10 text-[#95BDDD] flex items-center space-x-2 group-hover:text-[#ffffff] ">
+  <span className="relative z-10 text-white flex items-center space-x-2 group-hover:text-[#fffff] ">
     <Brain className="w-5 h-5" />
     <span>Learn More</span>
   </span>
@@ -116,15 +123,15 @@ export function EnhancedHeroSection() {
 <Button
   as="a"
   href="#contact"
-  className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-6 font-semibold bg-[#89EBB7] cursor-pointer group shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+  className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-6 font-semibold bg-gradient-to-r from-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] cursor-pointer group shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
 >
   {/* Background hover */}
   <span className="absolute inset-0 bg-[#8CD5BC] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
   
   {/* Text + icons */}
-  <span className="relative z-10 text-black flex items-center space-x-2">
+  <span className="relative z-10 text-white flex items-center space-x-2">
     <span>Contact Us</span>
-    <span className="bg-white text-[#82e8b4] rounded-full w-8 h-8 flex items-center justify-center group-hover:text-[#8CD5BC]  transition-colors duration-300">
+    <span className="bg-white text-[#9BAAEE] rounded-full w-8 h-8 flex items-center justify-center group-hover:text-[#8CD5BC]  transition-colors duration-300">
       <ArrowRight className="w-5 h-5" />
     </span>
   </span>
@@ -169,7 +176,7 @@ export function EnhancedHeroSection() {
             {/* Main Image */}
             <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8 shadow-2xl">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/image-s1FneVtfr7KQQq7MsJXL4O4p27r3PB.png"
+                src="/image24.jpg"
                 alt="Modern therapy office with AI analytics overlay"
                 className="w-full max-w-md lg:max-w-lg drop-shadow-xl rounded-2xl"
               />
