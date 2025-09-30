@@ -17,7 +17,7 @@ const advisoryMembers: AdvisoryMember[] = [
   {
     id: "1",
     name: "Dr. Maria Silva",
-    photo: "/image.png",
+    photo: "/image.webp",
     shortCV:
       "PhD in Clinical Psychology with 15+ years of experience in mental health research and digital therapeutics. Former head of Psychology at Hospital São João.",
     role: "Clinical Psychology Advisor",
@@ -26,7 +26,7 @@ const advisoryMembers: AdvisoryMember[] = [
   {
     id: "2",
     name: "João Santos",
-    photo: "/image1.jpg",
+    photo: "/image1.webp",
     shortCV:
       "Serial entrepreneur and tech investor. Founded 3 successful healthtech startups. Currently Managing Partner at HealthTech Ventures.",
     role: "Strategic Business Advisor",
@@ -35,7 +35,7 @@ const advisoryMembers: AdvisoryMember[] = [
   {
     id: "3",
     name: "Dr. Ana Costa",
-    photo: "/image.png",
+    photo: "/image.webp",
     shortCV:
       "MD specializing in Psychiatry and Digital Mental Health. Published researcher with 50+ papers on technology-assisted therapy.",
     role: "Medical Advisor",
@@ -44,7 +44,7 @@ const advisoryMembers: AdvisoryMember[] = [
   {
     id: "4",
     name: "Carlos Mendes",
-    photo: "/image1.jpg",
+    photo: "/image1.webp",
     shortCV:
       "Former CTO at major European healthtech companies. Expert in AI/ML applications for healthcare and regulatory compliance.",
     role: "Technology Advisor",

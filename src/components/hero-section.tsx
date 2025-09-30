@@ -45,7 +45,7 @@ export function HeroSection() {
 >
   <div className="relative w-full max-w-md lg:max-w-lg aspect-square">
     <Image
-      src="/hero-image.png"
+      src="/hero-image.webp"
       alt="Modern therapy office with AI analytics overlay"
       fill
       className="object-cover drop-shadow-xl rounded-xl"

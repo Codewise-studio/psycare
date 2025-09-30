@@ -70,7 +70,7 @@ export function Contacts() {
         {/* Image */}
         <div className="relative w-full h-72 lg:h-full rounded-2xl overflow-hidden">
           <Image
-            src="/contacts.jpg"
+            src="/contacts.webp"
             alt="Contacts"
             fill
             className="object-cover rounded-2xl transition-transform duration-500 hover:scale-105"

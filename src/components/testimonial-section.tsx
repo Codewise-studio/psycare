@@ -22,7 +22,7 @@ export function TestimonialSection() {
 
               <div className="flex items-center justify-center gap-4">
                 <Image
-                  src="/business-executive-headshot.png"
+                  src="/business-executive-headshot.webp"
                   alt="Client testimonial"
                   width={60}
                   height={60}

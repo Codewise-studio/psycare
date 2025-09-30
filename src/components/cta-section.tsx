@@ -11,7 +11,7 @@ export default function CtaSection() {
     <div className="relative w-full h-[600px] flex items-center justify-center overflow-hidden bg-[#1f1f2e]">
       {/* Imagem de fundo animada */}
       <motion.img
-        src="teste.png"
+        src="teste.webp"
         alt="fundo animado"
         className="absolute inset-0 w-full h-[350px] object-contain opacity-20"
         animate={{
