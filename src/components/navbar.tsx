@@ -63,11 +63,14 @@ export function Navbar() {
       {menuOpen && (
         <div className="md:hidden mt-4 bg-white rounded-2xl shadow-lg py-6 px-6 space-y-6 text-center transition-all duration-300">
           <nav className="flex flex-col space-y-4 text-gray-800 font-semibold">
-            <a href="#" className="hover:text-[#9d9af0]" onClick={() => setMenuOpen(false)}>Homepages</a>
-            <a href="#" className="hover:text-[#9d9af0]" onClick={() => setMenuOpen(false)}>About</a>
-            <a href="#" className="hover:text-[#9d9af0]" onClick={() => setMenuOpen(false)}>Case studies</a>
-            <a href="#" className="hover:text-[#9d9af0]" onClick={() => setMenuOpen(false)}>Other</a>
-            <a href="#" className="hover:text-[#9d9af0]" onClick={() => setMenuOpen(false)}>Template</a>
+          
+            <a href="#whychoosepsycare" className="hover:text-black">Why choose Psycare</a>
+   <a href="#features" className="hover:text-black">Features</a>
+  <a href="#functionalities" className="hover:text-black">Functionalities</a>
+  <a href="#caseStudies" className="hover:text-black">Case Studies</a> 
+  <a href="#team" className="hover:text-black">Team</a>
+  <a href="#testimonials" className="hover:text-black">Testimonials</a>
+  
           </nav>
 
           <Link
