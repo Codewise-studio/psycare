@@ -92,67 +92,66 @@ export function CaseStudiesSection() {
   const [selectedCase, setSelectedCase] = useState(0)
 
   return (
-    <section className="py-4 bg-white relative overflow-hidden">
+    <section className="py-6 bg-white relative overflow-hidden">
       {/* Background Circles */}
       <div className="absolute inset-0">
-      <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
-<div className="absolute top-32 right-20 w-32 h-32 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
-<div className="absolute bottom-20 left-1/4 w-36 h-36 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
-<div className="absolute bottom-40 right-1/3 w-28 h-28 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
-
+        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
+        <div className="absolute top-28 right-16 w-28 h-28 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
+        <div className="absolute bottom-16 left-1/4 w-32 h-32 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-1/3 w-24 h-24 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
       </div>
- 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center space-y-6 mb-16"
+          className="text-center space-y-6 mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-3 ">
-            <Award className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
-            <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
-          Case Studies
+          <div className="inline-flex items-center gap-2 sm:gap-3">
+            <Award className="h-5 w-5 sm:h-6 sm:w-6 text-[hsla(229,71%,77%,1)]" />
+            <span className="text-[hsla(229,71%,77%,1)] font-semibold text-xs sm:text-sm uppercase tracking-wide">
+              Case Studies
             </span>
           </div>
 
-          <h2 className="text-4xl lg:text-6xl font-semibold text-balance text-gray-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-semibold text-gray-900">
             Transforming Mental Health
-            <span className="bg-gradient-to-r from-[hsla(229,71%,77%,1)] via-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[hsla(229,71%,77%,1)] via-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] bg-clip-text text-transparent block sm:inline">
               <br /> One Practice at a Time
             </span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto text-pretty leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Discover how leading mental health professionals are revolutionizing patient care and achieving remarkable
             outcomes with PsyCare's AI-powered platform.
           </p>
         </motion.div>
 
         {/* Case Selector Buttons */}
-        <div className="mb-12">
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
+        <div className="mb-8 sm:mb-12">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
             {caseStudies.map((study, index) => (
               <motion.button
                 key={study.id}
                 onClick={() => setSelectedCase(index)}
-                className={`group relative px-8 py-4 rounded-4xl font-semibold transition-all duration-300 ${
+                className={`group relative px-4 py-2 sm:px-8 sm:py-4 rounded-3xl font-semibold transition-all duration-300 ${
                   selectedCase === index
-                    ? "bg-gradient-to-r  from-[#8CD5BC]/70 to-[#9BAAEE]/70 text-gray-900 shadow-xl"
+                    ? "bg-gradient-to-r from-[#8CD5BC]/70 to-[#9BAAEE]/70 text-gray-900 shadow-xl"
                     : "bg-white text-gray-600 hover:text-gray-900 border-2 border-gray-200 hover:border-teal-300 shadow-md hover:shadow-lg"
                 }`}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3">
                   <div className={`w-3 h-3 rounded-full ${selectedCase === index ? "bg-white" : "bg-[#8CD5BC]"}`}></div>
-                  <span>{study.title}</span>
+                  <span className="text-sm sm:text-base">{study.title}</span>
                 </div>
                 {selectedCase === index && (
                   <motion.div
-                    className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white"
+                    className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-6 border-r-6 border-t-6 border-l-transparent border-r-transparent border-t-white"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.2 }}
@@ -171,14 +170,14 @@ export function CaseStudiesSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.6 }}
-            className="mb-16"
+            className="mb-12 sm:mb-16"
           >
             <Card className="bg-white overflow-hidden">
               <CardContent className="p-0">
-                <div className="grid lg:grid-cols-5 gap-0">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6">
                   {/* Image Section */}
-                  <div className="lg:col-span-2 relative">
-                    <div className="h-96 lg:h-full relative overflow-hidden">
+                  <div className="md:col-span-2 relative">
+                    <div className="h-64 sm:h-80 md:h-full relative overflow-hidden">
                       <img
                         src={caseStudies[selectedCase].image || "/placeholder.svg"}
                         alt={caseStudies[selectedCase].title}
@@ -188,34 +187,34 @@ export function CaseStudiesSection() {
 
                       {/* Floating success badge */}
                       <motion.div
-                        className="absolute top-6 right-6 bg-[#8CD5BC] text-white p-4 rounded-full shadow-xl"
+                        className="absolute top-4 right-4 bg-[#8CD5BC] text-white p-3 rounded-full shadow-lg"
                         animate={{
                           scale: [1, 1.1, 1],
                           rotate: [0, 5, -5, 0],
                         }}
                         transition={{
                           duration: 3,
-                          repeat: Number.POSITIVE_INFINITY,
+                          repeat: Infinity,
                           ease: "easeInOut",
                         }}
                       >
-                        <CheckCircle className="w-6 h-6" />
+                        <CheckCircle className="w-5 h-5" />
                       </motion.div>
 
                       {/* Practice info overlay */}
-                      <div className="absolute bottom-6 left-6 right-6">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4">
-                          <div className="flex items-center gap-4 text-sm text-gray-700">
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-xs sm:text-sm text-gray-700">
+                          <div className="flex flex-wrap gap-2 sm:gap-4">
                             <div className="flex items-center gap-1">
-                              <Building className="w-4 h-4 text-[#96B9DF]" />
+                              <Building className="w-3 h-3 sm:w-4 sm:h-4 text-[#96B9DF]" />
                               {caseStudies[selectedCase].type}
                             </div>
                             <div className="flex items-center gap-1">
-                              <MapPin className="w-4 h-4 text-[#96B9DF]" />
+                              <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-[#96B9DF]" />
                               {caseStudies[selectedCase].location}
                             </div>
                             <div className="flex items-center gap-1">
-                              <Calendar className="w-4 h-4 text-[#96B9DF]" />
+                              <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-[#96B9DF]" />
                               {caseStudies[selectedCase].duration}
                             </div>
                           </div>
@@ -225,151 +224,90 @@ export function CaseStudiesSection() {
                   </div>
 
                   {/* Content Section */}
-                  <div className="lg:col-span-3 p-8 lg:p-12">
-                    <div className="space-y-8">
-                      {/* Header */}
-                      <div className="space-y-4">
-                        <h3 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                          {caseStudies[selectedCase].title}
-                        </h3>
+                  <div className="md:col-span-3 p-4 sm:p-6 lg:p-12 space-y-6">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+                      {caseStudies[selectedCase].title}
+                    </h3>
 
-                        <div className="flex flex-wrap gap-2">
-                          {caseStudies[selectedCase].tags.map((tag, index) => (
-                            <Badge
-                              key={index}
-                              className="bg-gradient-to-br from-[#8CD5BC]/70 to-[#9BAAEE]/70 text-grey-800 px-3 py-1"
-                            >
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Challenge & Solution */}
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div className="space-y-3">
-                          <div className="flex items-center gap-2">
-                            <Target className="w-5 h-5 text-red-500" />
-                            <h4 className="font-bold text-gray-900">Challenge</h4>
-                          </div>
-                          <p className="text-gray-600 leading-relaxed">{caseStudies[selectedCase].challenge}</p>
-                        </div>
-
-                        <div className="space-y-3">
-                          <div className="flex items-center gap-2">
-                            <CheckCircle className="w-5 h-5 text-teal-500" />
-                            <h4 className="font-bold text-gray-900">Solution</h4>
-                          </div>
-                          <p className="text-gray-600 leading-relaxed">{caseStudies[selectedCase].solution}</p>
-                        </div>
-                      </div>
-
-                      {/* Results Grid */}
-                      <div className="grid grid-cols-2 gap-4">
-                        {caseStudies[selectedCase].results.map((result, index) => (
-                          <motion.div
-                            key={index}
-                            className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl border-2 border-gray-100 text-center shadow-lg"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.1 + 0.3 }}
-                            whileHover={{ scale: 1.05, y: -5 }}
-                          >
-                            <div
-                              className={`text-3xl lg:text-4xl font-bold bg-gradient-to-r ${caseStudies[selectedCase].color} bg-clip-text text-transparent mb-2`}
-                            >
-                              {result.metric}
-                            </div>
-                            <div className="text-sm text-gray-600 font-medium">{result.description}</div>
-                          </motion.div>
-                        ))}
-                      </div>
-
-                      {/* Testimonial */}
-                      <Card className="bg-gradient-to-br from-teal-50 to-blue-50  border-sky-50 shadow-lg">
-                        <CardContent className="p-6">
-                          <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 bg-gradient-to-br from-[#8CD5BC] to-[#9BAAEE] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-                              {caseStudies[selectedCase].author
-                                .split(" ")
-                                .map((n) => n[0])
-                                .join("")}
-                            </div>
-                            <div className="flex-1">
-                              <blockquote className="text-lg text-gray-700 mb-3 italic leading-relaxed">
-                                "{caseStudies[selectedCase].testimonial}"
-                              </blockquote>
-                              <div>
-                                <div className="font-bold text-gray-900">{caseStudies[selectedCase].author}</div>
-                                <div className="text-sm text-black font-semibold">
-                                  {caseStudies[selectedCase].role}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
+                    <div className="flex flex-wrap gap-2 sm:gap-3">
+                      {caseStudies[selectedCase].tags.map((tag, index) => (
+                        <Badge
+                          key={index}
+                          className="bg-gradient-to-br from-[#8CD5BC]/70 to-[#9BAAEE]/70 text-grey-800 px-2 py-1 sm:px-3 sm:py-1.5 text-sm sm:text-base"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
                     </div>
+
+                    {/* Challenge & Solution */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <Target className="w-4 h-4 text-red-500" />
+                          <h4 className="font-bold text-gray-900 text-sm sm:text-base">Challenge</h4>
+                        </div>
+                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{caseStudies[selectedCase].challenge}</p>
+                      </div>
+
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-teal-500" />
+                          <h4 className="font-bold text-gray-900 text-sm sm:text-base">Solution</h4>
+                        </div>
+                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{caseStudies[selectedCase].solution}</p>
+                      </div>
+                    </div>
+
+                    {/* Results Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                      {caseStudies[selectedCase].results.map((result, index) => (
+                        <motion.div
+                          key={index}
+                          className="bg-gradient-to-br from-white to-gray-50 p-4 sm:p-6 rounded-2xl border-2 border-gray-100 text-center shadow-lg"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: index * 0.1 + 0.3 }}
+                          whileHover={{ scale: 1.05, y: -5 }}
+                        >
+                          <div
+                            className={`text-2xl sm:text-3xl font-bold bg-gradient-to-r ${caseStudies[selectedCase].color} bg-clip-text text-transparent mb-1 sm:mb-2`}
+                          >
+                            {result.metric}
+                          </div>
+                          <div className="text-xs sm:text-sm text-gray-600 font-medium">{result.description}</div>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    {/* Testimonial */}
+                    <Card className="bg-gradient-to-br from-teal-50 to-blue-50 border-sky-50 shadow-lg">
+                      <CardContent className="p-4 sm:p-6">
+                        <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#8CD5BC] to-[#9BAAEE] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                            {caseStudies[selectedCase].author
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
+                          </div>
+                          <div className="flex-1">
+                            <blockquote className="text-sm sm:text-base text-gray-700 mb-2 sm:mb-3 italic leading-relaxed">
+                              "{caseStudies[selectedCase].testimonial}"
+                            </blockquote>
+                            <div>
+                              <div className="font-bold text-gray-900 text-sm sm:text-base">{caseStudies[selectedCase].author}</div>
+                              <div className="text-xs sm:text-sm text-black font-semibold">{caseStudies[selectedCase].role}</div>
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </motion.div>
         </AnimatePresence>
-
-        {/* Call-to-action */}
-        {/* <motion.div
-          className="bg-gradient-to-r from-teal-50 via-blue-50 to-cyan-50 rounded-3xl p-8 lg:p-12 border-2 border-teal-200"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="text-center space-y-8">
-            <div className="space-y-4">
-              <h3 className="text-3xl lg:text-4xl font-bold text-gray-900">Ready to Transform Your Practice?</h3>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Join these leading practices and discover how PsyCare can help you achieve similar results while
-                improving patient outcomes and reducing administrative burden.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                size="lg"
-                className="group bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white font-bold px-10 py-5 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-              >
-                <TrendingUp className="w-6 h-6 mr-3" />
-                Get Your Success Story
-                <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
-              </Button>
-
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-teal-300 hover:border-teal-500 text-teal-700 hover:text-teal-800 font-bold px-10 py-5 rounded-full transition-all duration-300 bg-white hover:bg-teal-50"
-              >
-                <Users className="w-5 h-5 mr-2" />
-                Schedule Demo
-              </Button>
-            </div>
-
-            <div className="flex items-center justify-center gap-8 text-sm text-gray-600">
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-teal-600" />
-                <span>Free 30-day trial</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-blue-600" />
-                <span>No setup fees</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="w-4 h-4 text-cyan-600" />
-                <span>HIPAA compliant</span>
-              </div>
-            </div>
-          </div>
-        </motion.div> */}
       </div>
     </section>
   )

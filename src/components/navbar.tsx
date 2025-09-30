@@ -74,7 +74,7 @@ export function Navbar() {
           </nav>
 
           <Link
-            href="/about"
+            href="#contact"
             onClick={() => setMenuOpen(false)}
             className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-3 font-semibold bg-[#9d9af0] group w-full justify-center"
           >
