@@ -61,32 +61,30 @@ export function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden mt-4 bg-white rounded-2xl shadow-lg py-6 px-6 space-y-6 text-center transition-all duration-300">
-          <nav className="flex flex-col space-y-4 text-gray-800 font-semibold">
-          
-            <a href="#whychoosepsycare" className="hover:text-black">Why choose Psycare</a>
-   <a href="#features" className="hover:text-black">Features</a>
-  <a href="#functionalities" className="hover:text-black">Functionalities</a>
-  <a href="#caseStudies" className="hover:text-black">Case Studies</a> 
-  <a href="#team" className="hover:text-black">Team</a>
-  <a href="#testimonials" className="hover:text-black">Testimonials</a>
-  
-          </nav>
+{menuOpen && (
+  <div className="md:hidden mt-4 bg-white rounded-2xl shadow-lg py-6 px-6 space-y-6 text-center transition-all duration-300">
+    <nav className="flex flex-col space-y-4 text-gray-800 font-semibold">
+      <a href="#whychoosepsycare" className="hover:text-black" onClick={() => setMenuOpen(false)}>Why choose Psycare</a>
+      <a href="#features" className="hover:text-black" onClick={() => setMenuOpen(false)}>Features</a>
+      <a href="#functionalities" className="hover:text-black" onClick={() => setMenuOpen(false)}>Functionalities</a>
+      <a href="#caseStudies" className="hover:text-black" onClick={() => setMenuOpen(false)}>Case Studies</a>
+      <a href="#team" className="hover:text-black" onClick={() => setMenuOpen(false)}>Team</a>
+      <a href="#testimonials" className="hover:text-black" onClick={() => setMenuOpen(false)}>Testimonials</a>
+    </nav>
 
-          <Link
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-3 font-semibold bg-[#9d9af0] group w-full justify-center"
-          >
-            <span className="absolute inset-0 bg-[#93bddc] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
-            <span className="relative z-10 text-white flex items-center space-x-2">
-              <span>Contact us</span>
-              <span className="bg-white text-[#9d9af0] rounded-full w-8 h-8 flex items-center justify-center group-hover:text-[#93bddc] transition-colors duration-300">
-                →
-              </span>
-            </span>
-          </Link>
+    <Link
+      href="#contact"
+      onClick={() => setMenuOpen(false)}
+      className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-3 font-semibold bg-[#9d9af0] group w-full justify-center"
+    >
+      <span className="absolute inset-0 bg-[#93bddc] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
+      <span className="relative z-10 text-white flex items-center space-x-2">
+        <span>Contact us</span>
+        <span className="bg-white text-[#9d9af0] rounded-full w-8 h-8 flex items-center justify-center group-hover:text-[#93bddc] transition-colors duration-300">
+          →
+        </span>
+      </span>
+    </Link>
         </div>
       )}
     </header>
