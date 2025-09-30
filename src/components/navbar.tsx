@@ -15,7 +15,7 @@ export function Navbar() {
         <div className="flex items-center">
           <Link href="/">
           <Image 
-            src="/pasycare_white_color.png" 
+            src="/pasycare_white_color.webp" 
             alt="Psycare Logo" 
             className="h-12 sm:h-14 w-auto" 
           />

@@ -16,7 +16,7 @@ const benefits = [
       "PsyCare handles documentation automatically so psychologists can build stronger therapeutic relationships. Focus fully on your patients while AI captures every detail.",
     color: "from-[#C4DCE4] to-[#96B9DF]",
     bgColor: "bg-[#C4DCE4]/50",
-     imageSrc: "/image26.png",
+     imageSrc: "/image26.webp",
     imageQuery: "psychologist having meaningful conversation with patient in modern office",
   },
   {
@@ -26,7 +26,7 @@ const benefits = [
       "Automation eliminates scheduling, reminders, and admin tasks—reclaiming 3+ hours every day. Spend your time where it matters most.",
     color: "from-[#96B9DF] to-[#8ECDCC]",
     bgColor: "bg-[#8ECDCC]/50",
-     imageSrc: "/image27.jpg",
+     imageSrc: "/image27.webp",
     imageQuery: "clock showing saved time with calendar and automation icons",
   },
   {
@@ -36,7 +36,7 @@ const benefits = [
       "Intelligent insights help tailor care plans, track progress, and improve outcomes. Data-driven decisions that enhance every patient journey.",
     color: "from-[#8ECDCC] to-[#85E1B9]",
     bgColor: "bg-[#85E1B9]/50",
-    imageSrc: "/image30.jpg",
+    imageSrc: "/image30.webp",
     imageAlt: "AI analytics dashboard showing patient progress and treatment insights",
   },
   {
@@ -46,7 +46,7 @@ const benefits = [
       "See more patients without losing quality, supported by scalable automation. Your practice grows while care standards remain exceptional.",
     color: "from-[#85E1B9] to-[#9BAAEE]",
     bgColor: "bg-[#9BAAEE]/50",
-     imageSrc: "/image28.jpg",
+     imageSrc: "/image28.webp",
     imageQuery: "growing practice with multiple patients and upward trending graph",
   },
 ]

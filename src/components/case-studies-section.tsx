@@ -27,7 +27,7 @@ const caseStudies = [
     location: "Lisboa, Portugal",
     type: "Clínica Privada",
     duration: "6 meses",
-    image: "/hospital (3).jpg",
+    image: "/hospital (3).webp",
     challenge: "High administrative burden and limited session insights",
     solution: "Implemented PsyCare's AI transcription and analytics suite",
     results: [
@@ -49,7 +49,7 @@ const caseStudies = [
     location: "Porto, Portugal",
     type: "Clínica Universitária",
     duration: "8 meses",
-    image: "/hospital (2).jpg",
+    image: "/hospital (2).webp",
     challenge: "Managing high student volume with limited staff",
     solution: "Deployed PsyCare's patient app and automated scheduling",
     results: [
@@ -71,7 +71,7 @@ const caseStudies = [
     location: "Coimbra, Portugal",
     type: "Clínica Pediátrica",
     duration: "4 meses",
-    image: "/hospital (1).jpg",
+    image: "/hospital (1).webp",
     challenge: "Difficulty tracking progress in child therapy sessions",
     solution: "Integrated PsyCare's behavioral analysis and parent portal",
     results: [

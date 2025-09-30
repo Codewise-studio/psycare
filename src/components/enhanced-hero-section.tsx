@@ -177,7 +177,7 @@ export function EnhancedHeroSection() {
             {/* Main Image */}
             <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 ">
               <Image
-                src="/image24.jpg"
+                src="/image24.webp"
                 alt="Modern therapy office with AI analytics overlay"
                 className="w-full max-w-md lg:max-w-lg drop-shadow-xl rounded-2xl"
               />

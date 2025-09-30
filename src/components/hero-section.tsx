@@ -44,7 +44,7 @@ export function HeroSection() {
   className="flex justify-center lg:justify-end"
 >
   <Image
-    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/image-s1FneVtfr7KQQq7MsJXL4O4p27r3PB.png"
+    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/image-s1FneVtfr7KQQq7MsJXL4O4p27r3PB.webp"
     alt="Modern therapy office with AI analytics overlay"
     className="w-full max-w-md lg:max-w-lg drop-shadow-xl rounded-xl"
   />

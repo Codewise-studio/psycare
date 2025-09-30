@@ -11,7 +11,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2">
               <Image
-                src="/pasycare_white_color.png"
+                src="/pasycare_white_color.webp"
                 alt="Psycare Logo"
                 className="h-14 w-auto object-contain"
               />
