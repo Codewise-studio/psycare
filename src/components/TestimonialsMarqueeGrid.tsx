@@ -44,7 +44,7 @@ export const testimonials: Testimonial[] = [
 
 export const TestimonialsMarqueeGrid: React.FC = () => {
   return (
-    <div className="relative w-screen mx-auto px-4 md:px-8 pt-20 overflow-hidden h-full bg-gray-50">
+    <div className="relative w-screen mx-auto px-4 md:px-8 p-20 overflow-hidden h-full bg-gray-50">
       {/* Section Title */}
       <div className="pb-20 text-center">
         <motion.div

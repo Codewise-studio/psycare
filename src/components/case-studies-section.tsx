@@ -92,7 +92,7 @@ export function CaseStudiesSection() {
   const [selectedCase, setSelectedCase] = useState(0)
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-4 bg-white relative overflow-hidden">
       {/* Background Circles */}
       <div className="absolute inset-0">
       <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
