@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Brain, Mic, Video, BarChart3, Users, Shield, Eye, Activity, Target } from "lucide-react"
+import { Brain, Mic, Video, BarChart3, Users, Eye, Activity, Target } from "lucide-react"
 
 const features = [
   {
@@ -47,13 +46,20 @@ const features = [
 
 export function FeaturesGrid() {
   return (
-    <section className="py-24 bg-card/30">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="relative py-24 bg-white overflow-hidden">
+      {/* Blurred gradient circles */}
+      <div className="absolute -top-20 -left-40 w-96 h-96 rounded-full bg-[hsla(179,39%,68%,0.4)] blur-3xl" />
+      <div className="absolute top-20 -right-40 w-[500px] h-[500px] rounded-full bg-[hsla(229,71%,77%,0.35)] blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-6">
         <div className="text-center space-y-4 mb-16">
-          <Badge variant="secondary" className="w-fit mx-auto">
-            <Shield className="w-3 h-3 mr-1" />
-            AI-Powered Features
-          </Badge>
+          <div className="flex items-center gap-2 w-fit mx-auto">
+            <Brain className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
+            <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
+              AI-Powered Features
+            </span>
+          </div>
+
           <h2 className="text-3xl lg:text-4xl font-bold text-balance">
             Everything you need for modern mental healthcare
           </h2>
@@ -65,7 +71,10 @@ export function FeaturesGrid() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/50 group">
+            <Card
+              key={index}
+              className="p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/50 group bg-white/70 backdrop-blur-sm"
+            >
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   {feature.icon}

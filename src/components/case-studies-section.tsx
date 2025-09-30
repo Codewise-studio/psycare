@@ -310,7 +310,7 @@ export function CaseStudiesSection() {
           </motion.div>
         </AnimatePresence>
 
-        <motion.div
+        {/* <motion.div
           className="bg-gradient-to-r from-green-50 via-blue-50 to-purple-50 rounded-3xl p-8 lg:p-12 border-2 border-green-200"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -324,9 +324,9 @@ export function CaseStudiesSection() {
                 Join these leading practices and discover how PsyCare can help you achieve similar results while
                 improving patient outcomes and reducing administrative burden.
               </p>
-            </div>
+            </div> */}
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
                 className="group bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold px-10 py-5 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
@@ -359,9 +359,9 @@ export function CaseStudiesSection() {
                 <Star className="w-4 h-4 text-purple-600" />
                 <span>HIPAA compliant</span>
               </div>
-            </div>
-          </div>
-        </motion.div>
+            </div> */}
+          {/* </div>
+        </motion.div> */}
       </div>
     </section>
   )

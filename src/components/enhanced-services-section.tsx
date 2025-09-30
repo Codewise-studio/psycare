@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Brain, Clock, Target, TrendingUp, ArrowRight } from "lucide-react"
 import { useRef } from "react"
+import Link from "next/link"
+
 
 const benefits = [
   {
@@ -11,8 +13,9 @@ const benefits = [
     title: "Work smarter, care deeper",
     description:
       "PsyCare handles documentation automatically so psychologists can build stronger therapeutic relationships. Focus fully on your patients while AI captures every detail.",
-    color: "from-blue-400 to-cyan-400",
-    bgColor: "bg-blue-50/50",
+    color: "from-[#C4DCE4] to-[#96B9DF]",
+    bgColor: "bg-[#C4DCE4]/50",
+     imageSrc: "/image26.png",
     imageQuery: "psychologist having meaningful conversation with patient in modern office",
   },
   {
@@ -20,8 +23,9 @@ const benefits = [
     title: "More time for patients",
     description:
       "Automation eliminates scheduling, reminders, and admin tasks—reclaiming 3+ hours every day. Spend your time where it matters most.",
-    color: "from-emerald-400 to-teal-400",
-    bgColor: "bg-emerald-50/50",
+    color: "from-[#96B9DF] to-[#8ECDCC]",
+    bgColor: "bg-[#8ECDCC]/50",
+     imageSrc: "/image27.jpg",
     imageQuery: "clock showing saved time with calendar and automation icons",
   },
   {
@@ -29,9 +33,9 @@ const benefits = [
     title: "Personalized treatment, powered by AI",
     description:
       "Intelligent insights help tailor care plans, track progress, and improve outcomes. Data-driven decisions that enhance every patient journey.",
-    color: "from-violet-400 to-purple-400",
-    bgColor: "bg-violet-50/50",
-    imageSrc: "/image26.png",
+    color: "from-[#8ECDCC] to-[#85E1B9]",
+    bgColor: "bg-[#85E1B9]/50",
+    imageSrc: "/image30.jpg",
     imageAlt: "AI analytics dashboard showing patient progress and treatment insights",
   },
   {
@@ -39,8 +43,9 @@ const benefits = [
     title: "Grow without limits",
     description:
       "See more patients without losing quality, supported by scalable automation. Your practice grows while care standards remain exceptional.",
-    color: "from-indigo-400 to-blue-400",
-    bgColor: "bg-indigo-50/50",
+    color: "from-[#85E1B9] to-[#9BAAEE]",
+    bgColor: "bg-[#9BAAEE]/50",
+     imageSrc: "/image28.jpg",
     imageQuery: "growing practice with multiple patients and upward trending graph",
   },
 ]
@@ -58,7 +63,7 @@ export function EnhancedServicesSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen px-4 py-24 md:py-32 bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30 overflow-hidden"
+      className="relative min-h-screen px-4 py-24 md:py-32 bg-gradient-to-br from-white via-white to-purple-50/30 overflow-hidden"
     >
       {/* Background decorative blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -66,7 +71,7 @@ export function EnhancedServicesSection() {
         <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-purple-200/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
           className="text-center space-y-6 mb-24"
@@ -75,13 +80,22 @@ export function EnhancedServicesSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight text-balance">
+      <div className="flex items-center justify-center gap-2">
+  <Brain className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
+  <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
+    AI-Powered Care
+  </span>
+</div>
+
+
+          <h2 className="text-[42px]  md:text-3xl lg:text-5xl font-semibold text-gray-900 leading-tight text-balance">
             Why Choose PsyCare
           </h2>
 
-          <p className="text-xl md:text-2xl text-gray-600 text-pretty max-w-3xl mx-auto leading-relaxed font-light">
-            Empower psychologists to focus on care while AI handles the rest.
-          </p>
+   <p className="text-xl text-gray-600 leading-relaxed max-w-2xl text-center mx-auto">
+  Empower psychologists to focus on care while AI handles the rest.
+</p>
+
         </motion.div>
 
         {/* Benefits List */}
@@ -190,7 +204,7 @@ export function EnhancedServicesSection() {
 
         {/* CTA Section */}
         <motion.div
-          className="mt-32 text-center space-y-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-12 md:p-16 relative overflow-hidden shadow-2xl"
+          className="mt-32 text-center space-y-8 bg-gradient-to-br from-[#9BAAEE] to-[#9BAAEE] rounded-3xl p-12 md:p-16 relative overflow-hidden shadow-2xl"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -209,15 +223,20 @@ export function EnhancedServicesSection() {
               Join thousands of psychologists who are saving time and improving patient outcomes with PsyCare.
             </p>
 
-            <Button
-              size="lg"
-              className="group bg-white hover:bg-gray-50 text-blue-600 font-semibold px-10 py-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-            >
-              Transform Your Practice
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link
+            href="#contact"
+            className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-3 font-semibold bg-white cursor-pointer group"
+          >
+          
+            <span className="relative z-10 text-[#9d9af0] flex items-center space-x-2 ">
+              <span>Transform Your Practice</span>
+              <span className="bg-[#9d9af0] text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-300">
+                →
+              </span>
+            </span>
+          </Link>
 
-            <div className="flex flex-wrap justify-center items-center gap-6 pt-4">
+            {/* <div className="flex flex-wrap justify-center items-center gap-6 pt-4">
               {["No credit card required", "14-day free trial", "HIPAA compliant"].map(
                 (item, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm text-white/90 font-medium">
@@ -226,7 +245,7 @@ export function EnhancedServicesSection() {
                   </div>
                 )
               )}
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>

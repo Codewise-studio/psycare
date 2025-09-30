@@ -203,7 +203,7 @@ export default function FocusCareSection() {
                 <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">AI-Powered Care</span>
               </motion.div>
 
-              <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold leading-tight text-balance">
+              <h2 className="text-[42px] sm:text-3xl lg:text-4xl font-bold leading-tight text-balance">
                 <span className="text-gray-900">Focus on care.</span>
                 <br />
                 <span className="bg-gradient-to-r from-[hsla(229,71%,77%,1)] via-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] bg-clip-text text-transparent">

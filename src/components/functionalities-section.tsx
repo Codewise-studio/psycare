@@ -1,7 +1,6 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import { useState } from "react"
 import {
@@ -83,11 +82,14 @@ export default function FunctionalitiesSection() {
   return (
     <section className="py-24 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <Badge variant="secondary" className="w-fit mx-auto bg-purple-100 text-purple-700 border-purple-200">
-            <Shield className="w-3 h-3 mr-1" />
-            PsyCare Studio Functionalities
-          </Badge>
+          <div className="flex items-center gap-2 w-fit mx-auto">
+            <Shield className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
+            <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
+               PsyCare Studio Functionalities
+            </span>
+          </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-balance text-gray-900">
             AI Power for Next-Gen Mental Health Solutions
           </h2>
@@ -97,6 +99,7 @@ export default function FunctionalitiesSection() {
           </p>
         </div>
 
+        {/* ENGAGEMENT Section */}
         <motion.div
           className="mb-16"
           initial="hidden"
@@ -104,12 +107,18 @@ export default function FunctionalitiesSection() {
           viewport={{ once: true }}
           variants={containerVariants}
         >
-          <div className="flex items-center justify-center mb-8">
-            <Badge variant="outline" className="text-purple-600 border-purple-200 bg-purple-50">
-              <Heart className="w-3 h-3 mr-1" />
-              ENGAGEMENT
-            </Badge>
-          </div>
+          {/* Gradient Badge with Line */}
+          <motion.div className="flex items-center mb-12 justify-center" variants={containerVariants}>
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-[#ADCBE2] to-[#96B9DF] rounded-full flex items-center justify-center">
+                <Heart className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="text-3xl font-bold bg-gradient-to-r from-[#ADCBE2] to-[#96B9DF] bg-clip-text text-transparent">
+                ENGAGEMENT
+              </h4>
+            </div>
+            <div className="flex-1 ml-8 h-px bg-gradient-to-r from-[#ADCBE2]/50 to-transparent"></div>
+          </motion.div>
 
           <motion.div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6" variants={containerVariants}>
             {engagementFeatures.map((feature, index) => {
@@ -124,9 +133,9 @@ export default function FunctionalitiesSection() {
                   onHoverStart={() => setHoveredCard(`engagement-${index}`)}
                   onHoverEnd={() => setHoveredCard(null)}
                 >
-                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-purple-300 group h-full bg-white border-gray-200">
+                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-[#96B9DF] group h-full bg-white border-gray-200">
                     <div className="space-y-4">
-                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                      <div className="w-12 h-12 bg-[#ADCBE2]/50 rounded-lg flex items-center justify-center text-[#96B9DF] group-hover:bg-[#96B9DF] group-hover:text-white transition-colors">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div className="space-y-2">
@@ -148,10 +157,11 @@ export default function FunctionalitiesSection() {
           </motion.div>
         </motion.div>
 
+        {/* Divider with Icon */}
         <div className="flex items-center justify-center my-16">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
           <motion.div
-            className="mx-4 w-12 h-12 bg-gradient-to-br from-purple-500/20 to-teal-500/20 rounded-full flex items-center justify-center border border-purple-200/50"
+            className="mx-4 w-12 h-12 bg-gradient-to-r from-[hsla(229,71%,77%,1)]  to-[hsla(229,71%,77%,1)] rounded-full flex items-center justify-center border border-purple-200/50"
             animate={{
               rotate: [0, 360],
               scale: [1, 1.1, 1],
@@ -161,18 +171,25 @@ export default function FunctionalitiesSection() {
               scale: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
             }}
           >
-            <Brain className="w-5 h-5 text-purple-600" />
+            <Brain className="w-5 h-5 text-[#ffffff]" />
           </motion.div>
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
         </div>
 
+        {/* TECHNOLOGY Section */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
-          <div className="flex items-center justify-center mb-8">
-            <Badge variant="outline" className="text-teal-600 border-teal-200 bg-teal-50">
-              <Zap className="w-3 h-3 mr-1" />
-              TECHNOLOGY
-            </Badge>
-          </div>
+          {/* Gradient Badge with Line */}
+          <motion.div className="flex items-center mb-12 justify-center" variants={containerVariants}>
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-[#85E1B9] to-[#8AD7C3] rounded-full flex items-center justify-center">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="text-3xl font-bold bg-gradient-to-r from-[#85E1B9] to-[#8AD7C3] bg-clip-text text-transparent">
+                TECHNOLOGY
+              </h4>
+            </div>
+            <div className="flex-1 ml-8 h-px bg-gradient-to-r from-[#85E1B9]/50 to-transparent"></div>
+          </motion.div>
 
           <motion.div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6" variants={containerVariants}>
             {technologyFeatures.map((feature, index) => {
@@ -187,9 +204,9 @@ export default function FunctionalitiesSection() {
                   onHoverStart={() => setHoveredCard(`technology-${index}`)}
                   onHoverEnd={() => setHoveredCard(null)}
                 >
-                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-teal-300 group h-full bg-white border-gray-200">
+                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-[#8AD7C3] group h-full bg-white border-gray-200">
                     <div className="space-y-4">
-                      <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                      <div className="w-12 h-12 bg-teal-100/80 rounded-lg flex items-center justify-center text-[#85E1B9] group-hover:bg-[#85E1B9] group-hover:text-white transition-colors">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div className="space-y-2">
