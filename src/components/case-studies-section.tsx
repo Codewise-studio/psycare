@@ -26,7 +26,7 @@ const caseStudies = [
     location: "San Francisco, CA",
     type: "Private Practice",
     duration: "6 months",
-    image: "/modern-therapy-office.jpg",
+    image: "/hospital (3).jpg",
     challenge: "High administrative burden and limited session insights",
     solution: "Implemented PsyCare's AI transcription and analytics suite",
     results: [
@@ -40,7 +40,7 @@ const caseStudies = [
     author: "Dr. Sarah Martinez",
     role: "Clinical Director",
     tags: ["AI Transcription", "Analytics", "Workflow Optimization"],
-    color: "from-blue-500 to-cyan-500",
+    color: "from-teal-500 to-blue-500",
   },
   {
     id: 2,
@@ -48,7 +48,7 @@ const caseStudies = [
     location: "Boston, MA",
     type: "University Clinic",
     duration: "8 months",
-    image: "/university-counseling-center.jpg",
+    image: "/hospital (2).jpg",
     challenge: "Managing high student volume with limited staff",
     solution: "Deployed PsyCare's patient app and automated scheduling",
     results: [
@@ -62,7 +62,7 @@ const caseStudies = [
     author: "Dr. Michael Chen",
     role: "Head of Student Services",
     tags: ["Patient App", "Scheduling", "Crisis Management"],
-    color: "from-purple-500 to-pink-500",
+    color: "from-teal-400 to-blue-400",
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ const caseStudies = [
     location: "Austin, TX",
     type: "Pediatric Clinic",
     duration: "4 months",
-    image: "/child-therapy-room-colorful.jpg",
+    image: "/hospital (1).jpg",
     challenge: "Difficulty tracking progress in child therapy sessions",
     solution: "Integrated PsyCare's behavioral analysis and parent portal",
     results: [
@@ -84,7 +84,7 @@ const caseStudies = [
     author: "Dr. Emily Rodriguez",
     role: "Pediatric Psychologist",
     tags: ["Behavioral Analysis", "Parent Portal", "Child Therapy"],
-    color: "from-green-500 to-teal-500",
+    color: "from-teal-500 to-cyan-500",
   },
 ]
 
@@ -93,14 +93,17 @@ export function CaseStudiesSection() {
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
+      {/* Background Circles */}
       <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-40 h-40 bg-gradient-to-br from-green-100 to-blue-100 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute top-32 right-20 w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full opacity-25 animate-bounce"></div>
-        <div className="absolute bottom-20 left-1/4 w-36 h-36 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-gradient-to-br from-teal-100 to-green-100 rounded-full opacity-30 animate-bounce"></div>
-      </div>
+      <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
+<div className="absolute top-32 right-20 w-32 h-32 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
+<div className="absolute bottom-20 left-1/4 w-36 h-36 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
+<div className="absolute bottom-40 right-1/3 w-28 h-28 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
 
+      </div>
+ 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Section Header */}
         <motion.div
           className="text-center space-y-6 mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -108,15 +111,17 @@ export function CaseStudiesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-50 to-blue-50 rounded-full px-6 py-3 border border-green-200">
-            <Award className="w-5 h-5 text-green-600" />
-            <span className="text-sm font-semibold text-green-700">Success Stories</span>
+          <div className="inline-flex items-center gap-3 ">
+            <Award className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
+            <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
+          Case Studies
+            </span>
           </div>
 
-          <h2 className="text-4xl lg:text-6xl font-bold text-balance text-gray-900">
+          <h2 className="text-4xl lg:text-6xl font-semibold text-balance text-gray-900">
             Transforming Mental Health
-            <span className="block bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-              One Practice at a Time
+            <span className="bg-gradient-to-r from-[hsla(229,71%,77%,1)] via-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] bg-clip-text text-transparent">
+              <br /> One Practice at a Time
             </span>
           </h2>
 
@@ -126,22 +131,23 @@ export function CaseStudiesSection() {
           </p>
         </motion.div>
 
+        {/* Case Selector Buttons */}
         <div className="mb-12">
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {caseStudies.map((study, index) => (
               <motion.button
                 key={study.id}
                 onClick={() => setSelectedCase(index)}
-                className={`group relative px-8 py-4 rounded-2xl font-semibold transition-all duration-300 ${
+                className={`group relative px-8 py-4 rounded-4xl font-semibold transition-all duration-300 ${
                   selectedCase === index
-                    ? "bg-gradient-to-r from-green-600 to-blue-600 text-white shadow-xl"
-                    : "bg-white text-gray-600 hover:text-gray-900 border-2 border-gray-200 hover:border-green-300 shadow-md hover:shadow-lg"
+                    ? "bg-gradient-to-r  from-[#8CD5BC] to-[#9BAAEE] text-white shadow-xl"
+                    : "bg-white text-gray-600 hover:text-gray-900 border-2 border-gray-200 hover:border-teal-300 shadow-md hover:shadow-lg"
                 }`}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <div className="flex items-center gap-3">
-                  <div className={`w-3 h-3 rounded-full ${selectedCase === index ? "bg-white" : "bg-green-400"}`}></div>
+                  <div className={`w-3 h-3 rounded-full ${selectedCase === index ? "bg-white" : "bg-[#8CD5BC]"}`}></div>
                   <span>{study.title}</span>
                 </div>
                 {selectedCase === index && (
@@ -157,6 +163,7 @@ export function CaseStudiesSection() {
           </div>
         </div>
 
+        {/* Case Details */}
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedCase}
@@ -166,7 +173,7 @@ export function CaseStudiesSection() {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <Card className="bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 shadow-2xl overflow-hidden">
+            <Card className="bg-white overflow-hidden">
               <CardContent className="p-0">
                 <div className="grid lg:grid-cols-5 gap-0">
                   {/* Image Section */}
@@ -181,7 +188,7 @@ export function CaseStudiesSection() {
 
                       {/* Floating success badge */}
                       <motion.div
-                        className="absolute top-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-xl"
+                        className="absolute top-6 right-6 bg-[#8CD5BC] text-white p-4 rounded-full shadow-xl"
                         animate={{
                           scale: [1, 1.1, 1],
                           rotate: [0, 5, -5, 0],
@@ -200,15 +207,15 @@ export function CaseStudiesSection() {
                         <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4">
                           <div className="flex items-center gap-4 text-sm text-gray-700">
                             <div className="flex items-center gap-1">
-                              <Building className="w-4 h-4 text-blue-600" />
+                              <Building className="w-4 h-4 text-[#96B9DF]" />
                               {caseStudies[selectedCase].type}
                             </div>
                             <div className="flex items-center gap-1">
-                              <MapPin className="w-4 h-4 text-green-600" />
+                              <MapPin className="w-4 h-4 text-[#96B9DF]" />
                               {caseStudies[selectedCase].location}
                             </div>
                             <div className="flex items-center gap-1">
-                              <Calendar className="w-4 h-4 text-purple-600" />
+                              <Calendar className="w-4 h-4 text-[#96B9DF]" />
                               {caseStudies[selectedCase].duration}
                             </div>
                           </div>
@@ -230,7 +237,7 @@ export function CaseStudiesSection() {
                           {caseStudies[selectedCase].tags.map((tag, index) => (
                             <Badge
                               key={index}
-                              className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200 px-3 py-1"
+                              className="bg-gradient-to-br from-[#8CD5BC]/70 to-[#9BAAEE]/70 text-grey-800 px-3 py-1"
                             >
                               {tag}
                             </Badge>
@@ -250,7 +257,7 @@ export function CaseStudiesSection() {
 
                         <div className="space-y-3">
                           <div className="flex items-center gap-2">
-                            <CheckCircle className="w-5 h-5 text-green-500" />
+                            <CheckCircle className="w-5 h-5 text-teal-500" />
                             <h4 className="font-bold text-gray-900">Solution</h4>
                           </div>
                           <p className="text-gray-600 leading-relaxed">{caseStudies[selectedCase].solution}</p>
@@ -279,10 +286,10 @@ export function CaseStudiesSection() {
                       </div>
 
                       {/* Testimonial */}
-                      <Card className="bg-gradient-to-br from-blue-50 to-purple-50 border-blue-200 shadow-lg">
+                      <Card className="bg-gradient-to-br from-teal-50 to-blue-50  border-sky-50 shadow-lg">
                         <CardContent className="p-6">
                           <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                            <div className="w-12 h-12 bg-gradient-to-br from-[#8CD5BC] to-[#9BAAEE] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
                               {caseStudies[selectedCase].author
                                 .split(" ")
                                 .map((n) => n[0])
@@ -294,7 +301,7 @@ export function CaseStudiesSection() {
                               </blockquote>
                               <div>
                                 <div className="font-bold text-gray-900">{caseStudies[selectedCase].author}</div>
-                                <div className="text-sm text-blue-600 font-semibold">
+                                <div className="text-sm text-black font-semibold">
                                   {caseStudies[selectedCase].role}
                                 </div>
                               </div>
@@ -310,8 +317,9 @@ export function CaseStudiesSection() {
           </motion.div>
         </AnimatePresence>
 
+        {/* Call-to-action */}
         {/* <motion.div
-          className="bg-gradient-to-r from-green-50 via-blue-50 to-purple-50 rounded-3xl p-8 lg:p-12 border-2 border-green-200"
+          className="bg-gradient-to-r from-teal-50 via-blue-50 to-cyan-50 rounded-3xl p-8 lg:p-12 border-2 border-teal-200"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -324,12 +332,12 @@ export function CaseStudiesSection() {
                 Join these leading practices and discover how PsyCare can help you achieve similar results while
                 improving patient outcomes and reducing administrative burden.
               </p>
-            </div> */}
+            </div>
 
-            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                className="group bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold px-10 py-5 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="group bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white font-bold px-10 py-5 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 <TrendingUp className="w-6 h-6 mr-3" />
                 Get Your Success Story
@@ -339,7 +347,7 @@ export function CaseStudiesSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-green-300 hover:border-green-500 text-green-700 hover:text-green-800 font-bold px-10 py-5 rounded-full transition-all duration-300 bg-white hover:bg-green-50"
+                className="border-2 border-teal-300 hover:border-teal-500 text-teal-700 hover:text-teal-800 font-bold px-10 py-5 rounded-full transition-all duration-300 bg-white hover:bg-teal-50"
               >
                 <Users className="w-5 h-5 mr-2" />
                 Schedule Demo
@@ -348,7 +356,7 @@ export function CaseStudiesSection() {
 
             <div className="flex items-center justify-center gap-8 text-sm text-gray-600">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-green-600" />
+                <Clock className="w-4 h-4 text-teal-600" />
                 <span>Free 30-day trial</span>
               </div>
               <div className="flex items-center gap-2">
@@ -356,11 +364,11 @@ export function CaseStudiesSection() {
                 <span>No setup fees</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="w-4 h-4 text-purple-600" />
+                <Star className="w-4 h-4 text-cyan-600" />
                 <span>HIPAA compliant</span>
               </div>
-            </div> */}
-          {/* </div>
+            </div>
+          </div>
         </motion.div> */}
       </div>
     </section>

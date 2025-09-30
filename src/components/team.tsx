@@ -90,26 +90,28 @@ export function Team() {
       >
         <div className="max-w-4xl mx-auto text-center mb-16">
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Award className="w-4 h-4 text-blue-500" />
-            <span className="text-sm font-medium text-blue-600">Expert Advisory Board</span>
+            <Award className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
+            <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
+       Team & Advisors
+            </span>
           </motion.div>
 
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-balance"
+            className="text-[42px] md:text-5xl font-semibold text-gray-900 mb-6 text-balance"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Meet Our{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
-              Psychology Experts
+            <span className="bg-gradient-to-r from-[hsla(229,71%,77%,1)] via-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] bg-clip-text text-transparent">
+              <br />  Psychology Experts
             </span>
           </motion.h2>
 
@@ -159,13 +161,13 @@ export function Team() {
                       width={100}
                       height={100}
                     />
-                    <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full p-2">
+                    <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-[hsla(229,71%,77%,1)] via-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)]  rounded-full p-2">
                       <Award className="w-4 h-4 text-white" />
                     </div>
                   </div>
 
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-sm font-medium text-blue-600 mb-2">{member.role}</p>
+                  <p className="text-sm font-medium text-[#4c8fd6] mb-2">{member.role}</p>
                   <p className="text-xs text-gray-500 mb-3">{member.credentials}</p>
 
                   <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
@@ -180,7 +182,7 @@ export function Team() {
                   {member.expertise.map((exp, i) => (
                     <span
                       key={i}
-                      className="text-xs px-3 py-1 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-700 font-medium"
+                      className="text-xs px-3 py-1 rounded-full bg-[#96B9DF]/30 text-grey-600 font-medium"
                     >
                       {exp}
                     </span>
@@ -189,7 +191,7 @@ export function Team() {
 
                 <Button
                   onClick={() => setSelectedMember(member)}
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold rounded-full transition-all duration-300 group-hover:scale-105"
+                  className="w-full bg-gradient-to-r from-[hsla(229,71%,77%,1)]  to-[hsla(229,71%,77%,1)]  text-white font-semibold rounded-full transition-all duration-300 group-hover:scale-105"
                 >
                   View Full Profile
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -244,14 +246,14 @@ export function Team() {
                   width={120}
                   height={120}
                 />
-                <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full p-3">
+                <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-[hsla(229,71%,77%,1)] via-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)]  rounded-full p-3">
                   <Award className="w-5 h-5 text-white" />
                 </div>
               </div>
 
               <h3 className="text-3xl font-bold text-gray-900 mb-2">{selectedMember.name}</h3>
-              <p className="text-lg font-medium text-blue-600 mb-2">{selectedMember.role}</p>
-              <p className="text-sm text-gray-500 mb-4">{selectedMember.credentials}</p>
+              <p className="text-lg font-medium text-[#4c8fd6] mb-2">{selectedMember.role}</p>
+              <p className="text-xs px-3 py-1 rounded-full text-grey-600 font-medium">{selectedMember.credentials}</p>
 
               <div className="flex items-center justify-center gap-6 text-sm text-gray-600 mb-6">
                 <div className="flex items-center gap-2">
@@ -277,8 +279,7 @@ export function Team() {
                   {selectedMember.expertise.map((exp, i) => (
                     <span
                       key={i}
-                      className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-700 font-medium"
-                    >
+                      className="text-xs px-3 py-1 rounded-full bg-[#96B9DF]/30 text-grey-600 font-medium">
                       {exp}
                     </span>
                   ))}

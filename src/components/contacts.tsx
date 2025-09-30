@@ -55,12 +55,14 @@ export function ContactSection() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#9d9af0]/10 to-[#82e8b4]/10 border border-[#9d9af0]/20 mb-6">
-              <Sparkles className="w-4 h-4 text-[#9d9af0]" />
-              <span className="text-sm font-medium text-[#6c909e]">Get in Touch</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6">
+               <Phone className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
+            <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
+  Get in touch
+            </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#9d9af0] via-[#93bddc] to-[#6c909e] bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-4 text-balance">
               Ready to transform your practice?
             </h2>
 
