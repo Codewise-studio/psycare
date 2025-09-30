@@ -14,6 +14,7 @@ import { EnhancedServicesSection } from "@/components/enhanced-services-section"
 import FocusCareSection from "@/components/focus-care-section"
 import { TestimonialsMarqueeGrid } from "@/components/TestimonialsMarqueeGrid"
 
+import { ScrollToTopButton } from "@/components/scrolltotop"
 
 
 
@@ -48,7 +49,7 @@ export default function HomePage() {
 
 
 
-  <section id="banner2">
+  <section id="banner2 ">
     <Banner2 />
   </section>
 
@@ -77,6 +78,7 @@ export default function HomePage() {
     <Footer />
   </section>
 
+  <ScrollToTopButton />
 </main>
   )
 }
