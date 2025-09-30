@@ -41,7 +41,7 @@ const features = [
 
 export default function AIPracticeSection() {
   return (
-    <section className="relative min-h-screen bg-white text-gray-900 overflow-hidden my-16 md:my-24">
+    <section  id="whychoosepsycare" className="relative min-h-screen bg-white text-gray-900 overflow-hidden my-16 md:my-24">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white" />
@@ -168,9 +168,9 @@ export default function AIPracticeSection() {
             </motion.div>
           ))}
         </div>
-
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center px-4 md:px-0">
-          <motion.div
+{/* 
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center px-4 md:px-0"> */}
+          {/* <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -204,9 +204,9 @@ export default function AIPracticeSection() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
 
-          <motion.div
+          {/* <motion.div
             className="relative"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -241,8 +241,8 @@ export default function AIPracticeSection() {
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               />
             </div>
-          </motion.div>
-        </div>
+          </motion.div> */}
+        {/* </div> */}
       </div>
     </section>
   )

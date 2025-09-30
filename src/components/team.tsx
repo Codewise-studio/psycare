@@ -206,7 +206,7 @@ export function Team() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-2xl p-8 border border-blue-500/20">
+          {/* <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-2xl p-8 border border-blue-500/20">
             <Users className="w-12 h-12 text-blue-500 mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Join Our Network of Psychology Professionals</h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
@@ -216,7 +216,7 @@ export function Team() {
               Learn More About Our Advisory Program
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-          </div>
+          </div> */}
         </motion.div>
       </motion.div>
 

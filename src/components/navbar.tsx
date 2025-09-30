@@ -27,7 +27,7 @@ export function Navbar() {
             <a href="#" className="hover:text-black">Homepages</a>
             <a href="#" className="hover:text-black">About</a>
             <a href="#" className="hover:text-black">Case studies</a>
-            <a href="#" className="hover:text-black">Other</a>
+            <a href="#whychoosepsycare" className="hover:text-black">Other</a>
          <Link href="/contacts" className="hover:text-black">
   Contacts
 </Link>

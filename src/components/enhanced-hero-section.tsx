@@ -97,41 +97,39 @@ export function EnhancedHeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
- <Button
-  size="lg"
-  className="relative inline-flex items-center overflow-hidden rounded-full px-10 py-4 font-semibold bg-gradient-to-r from-blue-600 to-purple-600 group cursor-pointer shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
->
-  {/* Animated background */}
-  <span className="absolute inset-0 bg-purple-500 translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
 
-  {/* Text and icon */}
-  <span className="relative z-10 flex items-center space-x-2 text-white">
-    <Sparkles className="w-5 h-5" />
+{/* Learn More button (mais neutro) */}
+<Button
+  className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-6 font-semibold bg-white cursor-pointer group border border-[#95BDDD]"
+>
+  {/* Background hover */}
+  <span className="absolute inset-0 bg-[#95BDDD] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
+  
+  {/* Text + icons */}
+  <span className="relative z-10 text-[#95BDDD] flex items-center space-x-2 group-hover:text-[#ffffff] ">
+    <Brain className="w-5 h-5" />
     <span>Learn More</span>
-    <span className="bg-white w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-purple-500 transition-colors duration-300">
-      <ArrowRight className="w-5 h-5 text-blue-600 group-hover:text-white transition-colors duration-300" />
-    </span>
   </span>
 </Button>
 
+{/* Contact Us button (Call to Action – destacado) */}
 <Button
   as="a"
   href="#contact"
-  size="lg"
-  className="relative inline-flex items-center overflow-hidden rounded-full px-10 py-4 font-semibold bg-white/80 backdrop-blur-sm border-2 border-gray-300 group cursor-pointer transition-all duration-300"
+  className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-6 font-semibold bg-[#89EBB7] cursor-pointer group shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
 >
-  {/* Animated background */}
-  <span className="absolute inset-0 bg-blue-100 translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
-
-  {/* Text and icon */}
-  <span className="relative z-10 flex items-center space-x-2 text-gray-700 group-hover:text-blue-600">
-    <Phone className="w-5 h-5" />
+  {/* Background hover */}
+  <span className="absolute inset-0 bg-[#8CD5BC] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
+  
+  {/* Text + icons */}
+  <span className="relative z-10 text-black flex items-center space-x-2">
     <span>Contact Us</span>
-    <span className="bg-white w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-blue-500 transition-colors duration-300">
-      <ArrowRight className="w-5 h-5 text-gray-700 group-hover:text-white transition-colors duration-300" />
+    <span className="bg-white text-[#82e8b4] rounded-full w-8 h-8 flex items-center justify-center group-hover:text-[#8CD5BC]  transition-colors duration-300">
+      <ArrowRight className="w-5 h-5" />
     </span>
   </span>
 </Button>
+
 
 
 

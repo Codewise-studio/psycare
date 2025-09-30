@@ -25,7 +25,7 @@ export default function HomePage() {
       <EnhancedHeroSection />
       <FocusCareSection />
       <EnhancedServicesSection />
-      <AIPracticeSection />
+      {/* <AIPracticeSection /> */}
       <Thefyuture />
       
       <Banner2 />
