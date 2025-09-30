@@ -13,16 +13,15 @@ export function Navbar() {
 
         {/* Logo */}
         <div className="flex items-center">
-          <Link href="/">
-            <Image 
+            <Link href="/">
+            <img 
               src="/pasycare_white_color.webp" 
               alt="Psycare Logo" 
               width={796}
               height={269}
               className="h-12 sm:h-14 w-auto" 
-              unoptimized
             />
-          </Link>
+            </Link>
         </div>
 
         {/* Desktop Navbar */}

@@ -95,20 +95,20 @@ export function Team() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <div className="flex items-center gap-x-4">
-              <Image
-                className="rounded-full"
-                src={member.photo}
-                alt={member.name}
-                width={80}
-                height={80}
+              <img
+              className="rounded-full"
+              src={member.photo}
+              alt={member.name}
+              width={80}
+              height={80}
               />
               <div className="grow">
-                <h3 className="font-medium text-gray-800 dark:text-neutral-200">
-                  {member.name}
-                </h3>
-                <p className="text-xs uppercase text-gray-500 dark:text-neutral-500">
-                  {member.role}
-                </p>
+              <h3 className="font-medium text-gray-800 dark:text-neutral-200">
+                {member.name}
+              </h3>
+              <p className="text-xs uppercase text-gray-500 dark:text-neutral-500">
+                {member.role}
+              </p>
               </div>
             </div>
 
@@ -156,31 +156,31 @@ export function Team() {
             </button>
 
             <div className="flex flex-col items-center">
-              <Image
-                className="rounded-full mb-4"
-                src={selectedMember.photo}
-                alt={selectedMember.name}
-                width={100}
-                height={100}
+              <img
+              className="rounded-full mb-4"
+              src={selectedMember.photo}
+              alt={selectedMember.name}
+              width={100}
+              height={100}
               />
               <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-                {selectedMember.name}
+              {selectedMember.name}
               </h3>
               <p className="text-sm uppercase text-gray-500 dark:text-neutral-400 mb-4">
-                {selectedMember.role}
+              {selectedMember.role}
               </p>
               <p className="text-gray-600 dark:text-neutral-300 mb-4">
-                {selectedMember.shortCV}
+              {selectedMember.shortCV}
               </p>
               <div className="flex flex-wrap gap-2">
-                {selectedMember.expertise.map((exp, i) => (
-                  <span
-                    key={i}
-                    className="text-xs px-2 py-1 rounded-lg border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400"
-                  >
-                    {exp}
-                  </span>
-                ))}
+              {selectedMember.expertise.map((exp, i) => (
+                <span
+                key={i}
+                className="text-xs px-2 py-1 rounded-lg border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400"
+                >
+                {exp}
+                </span>
+              ))}
               </div>
             </div>
           </motion.div>

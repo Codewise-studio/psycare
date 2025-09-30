@@ -44,11 +44,12 @@ export function HeroSection() {
   className="flex justify-center lg:justify-end"
 >
   <div className="relative w-full max-w-md lg:max-w-lg aspect-square">
-    <Image
+    <img
       src="/hero-image.webp"
       alt="Modern therapy office with AI analytics overlay"
-      fill
-      className="object-cover drop-shadow-xl rounded-xl"
+      width={512}
+      height={512}
+      className="w-full h-full drop-shadow-xl rounded-xl"
     />
   </div>
 </motion.div>

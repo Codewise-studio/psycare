@@ -21,7 +21,7 @@ export function TestimonialSection() {
               </blockquote>
 
               <div className="flex items-center justify-center gap-4">
-                <Image
+                <img
                   src="/business-executive-headshot.webp"
                   alt="Client testimonial"
                   width={60}
