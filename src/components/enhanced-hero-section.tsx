@@ -4,7 +4,8 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Brain, Mic, Video, BarChart3, Shield, Activity, Target, ArrowRight, Play, Sparkles, Phone } from "lucide-react"
+import Link from "next/link"
+import { Brain, Mic, Video, BarChart3, Shield, Activity, Target, ArrowRight, Play, Sparkles, Phone, Mail } from "lucide-react"
 
 const FloatingIcon = ({ icon: Icon, className, delay = 0 }: { icon: any; className: string; delay?: number }) => (
   <motion.div
@@ -35,12 +36,15 @@ export function EnhancedHeroSection() {
       </div>
 
       {/* Floating Icons */}
-      <FloatingIcon icon={Brain} className="top-20 left-10" delay={0} />
-      <FloatingIcon icon={Mic} className="top-32 right-20" delay={1} />
-      <FloatingIcon icon={Video} className="bottom-32 left-20" delay={2} />
-      <FloatingIcon icon={BarChart3} className="bottom-20 right-32" delay={3} />
-      <FloatingIcon icon={Activity} className="top-1/2 left-10" delay={1.5} />
-      <FloatingIcon icon={Target} className="top-1/3 right-10" delay={2.5} />
+{/* Floating Icons (repositioned for mobile, normal for md+) */}
+<FloatingIcon icon={Brain} className="top-6 left-6 md:top-20 md:left-10 p-2 md:p-3" delay={0} />
+<FloatingIcon icon={Mic} className="top-10 right-6 md:top-32 md:right-20 p-2 md:p-3" delay={1} />
+<FloatingIcon icon={Video} className="bottom-10 left-6 md:bottom-32 md:left-20 p-2 md:p-3" delay={2} />
+<FloatingIcon icon={BarChart3} className="bottom-6 right-6 md:bottom-20 md:right-32 p-2 md:p-3" delay={3} />
+<FloatingIcon icon={Activity} className="top-1/2 left-2 md:left-10 p-2 md:p-3" delay={1.5} />
+<FloatingIcon icon={Target} className="top-1/4 right-4 md:top-1/3 md:right-10 p-2 md:p-3" delay={2.5} />
+
+
 
       <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Enhanced Text Column */}
@@ -99,50 +103,44 @@ export function EnhancedHeroSection() {
           </motion.div>
 
           {/* Enhanced CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-
-{/* Learn More button (mais neutro) */}
-<Button
-  className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-6 font-semibold bg-[#96B9DF] cursor-pointer group border border-[#96B9DF]"
+        <motion.div
+  className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.8 }}
 >
-  {/* Background hover */}
-  <span className="absolute inset-0 bg-gradient-to-r from-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
-  
-  {/* Text + icons */}
-  <span className="relative z-10 text-white flex items-center space-x-2 group-hover:text-[#fffff] ">
-    <Brain className="w-5 h-5" />
-    <span>Learn More</span>
-  </span>
-</Button>
+  {/* Learn More */}
+  <Link href="#whychoosepsycare" scroll={true}>
+    <Button
+      className="inline-flex items-center justify-center relative overflow-hidden rounded-full px-8 h-14 font-semibold bg-[#96B9DF] cursor-pointer group border border-[#96B9DF]"
+    >
+      <span className="absolute inset-0 bg-gradient-to-r from-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
+      <span className="relative z-10 text-white flex items-center justify-center gap-2">
+        <Brain className="w-5 h-5" />
+        <span>Learn More</span>
+      </span>
+    </Button>
+  </Link>
 
-{/* Contact Us button (Call to Action – destacado) */}
-<Button
-  as="a"
-  href="#contact"
-  className="inline-flex items-center relative overflow-hidden rounded-full px-8 py-6 font-semibold bg-gradient-to-r from-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] cursor-pointer group shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
->
-  {/* Background hover */}
-  <span className="absolute inset-0 bg-[#8CD5BC] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
-  
-  {/* Text + icons */}
-  <span className="relative z-10 text-white flex items-center space-x-2">
-    <span>Contact Us</span>
-    <span className="bg-white text-[#9BAAEE] rounded-full w-8 h-8 flex items-center justify-center group-hover:text-[#8CD5BC]  transition-colors duration-300">
-      <ArrowRight className="w-5 h-5" />
-    </span>
-  </span>
-</Button>
-
+  {/* Contact Us */}
+  <Link href="#contact" scroll={true}>
+    <Button
+      className="inline-flex items-center justify-center relative overflow-hidden rounded-full px-8 h-14 font-semibold bg-gradient-to-r from-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] cursor-pointer group shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+    >
+      <span className="absolute inset-0 bg-[#8CD5BC] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
+      <span className="relative z-10 text-white flex items-center justify-center gap-2">
+        <Mail className="w-5 h-5" />
+        <span>Contact Us</span>
+      </span>
+    </Button>
+  </Link>
+</motion.div>
 
 
 
 
-          </motion.div>
+
+
 
           {/* Trust Indicators */}
           {/* <motion.div
