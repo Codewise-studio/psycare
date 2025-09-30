@@ -14,31 +14,32 @@ interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Manu Arora",
+    name: "Manuel Arora",
     quote:
-      "What a fantastic AI Proactiv AI is, I just love it. It has completely transformed the way I approach problems and develop solutions.",
-    src: "https://i.pravatar.cc/150?img=1",
-    designation: "Tech Innovator & Entrepreneur",
+      "PsyCare has transformed how I manage my practice. I can focus fully on my patients while the AI handles all documentation and insights seamlessly.",
+    src: "https://i.pravatar.cc/150?img=12",
+    designation: "Clinical Psychologist & Founder",
   },
   {
-    name: "Tyler Durden",
+    name: "Sofia Duarte",
     quote:
-      "I made a soap with the help of AI, it was so easy to use. I'm so glad this happened because it revolutionized my entire business model and production process.",
-    src: "https://i.pravatar.cc/150?img=2",
-    designation: "Creative Director & Business Owner",
+      "Using PsyCare, I save hours every day on scheduling and reminders. The AI insights have improved patient outcomes dramatically.",
+    src: "https://i.pravatar.cc/150?img=34",
+    designation: "Therapist & Practice Owner",
   },
-{
-    name: "Tyler Durden",
+  {
+    name: "Ricardo Gomes",
     quote:
-      "I made a soap with the help of AI, it was so easy to use. I'm so glad this happened because it revolutionized my entire business model and production process.",
-    src: "https://i.pravatar.cc/150?img=2",
-    designation: "Creative Director & Business Owner",
-  },{
-    name: "Tyler Durden",
+      "The personalized treatment recommendations from PsyCare make every session more effective. My patients appreciate the attention to detail and care.",
+    src: "https://i.pravatar.cc/150?img=45",
+    designation: "Psychologist & Wellness Coach",
+  },
+  {
+    name: "Mariana Silva",
     quote:
-      "I made a soap with the help of AI, it was so easy to use. I'm so glad this happened because it revolutionized my entire business model and production process.",
-    src: "https://i.pravatar.cc/150?img=2",
-    designation: "Creative Director & Business Owner",
+      "PsyCare has revolutionized how I approach therapy. Automation and AI-driven insights give me more time to connect with patients personally.",
+    src: "https://i.pravatar.cc/150?img=56",
+    designation: "Clinical Psychologist & Author",
   },
 ];
 

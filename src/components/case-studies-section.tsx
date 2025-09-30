@@ -22,66 +22,66 @@ import {
 const caseStudies = [
   {
     id: 1,
-    title: "Riverside Mental Health Center",
-    location: "San Francisco, CA",
-    type: "Private Practice",
-    duration: "6 months",
+    title: "Centro de Saúde Mental Lisboa",
+    location: "Lisboa, Portugal",
+    type: "Clínica Privada",
+    duration: "6 meses",
     image: "/hospital (3).jpg",
     challenge: "High administrative burden and limited session insights",
     solution: "Implemented PsyCare's AI transcription and analytics suite",
     results: [
-      { metric: "75%", description: "Reduction in documentation time" },
-      { metric: "40%", description: "Increase in patient satisfaction" },
-      { metric: "60%", description: "More sessions per week" },
-      { metric: "90%", description: "Therapist satisfaction rate" },
+      { metric: "75%", description: "Redução do tempo de documentação" },
+      { metric: "40%", description: "Aumento da satisfação dos pacientes" },
+      { metric: "60%", description: "Mais sessões por semana" },
+      { metric: "90%", description: "Satisfação dos terapeutas" },
     ],
     testimonial:
-      "PsyCare transformed our practice. We can now focus entirely on our patients while AI handles the administrative work.",
-    author: "Dr. Sarah Martinez",
+      "PsyCare transformed our clinic. We can now fully focus on our patients while AI handles administrative tasks.",
+    author: "Dra. Sara Martins",
     role: "Clinical Director",
     tags: ["AI Transcription", "Analytics", "Workflow Optimization"],
     color: "from-teal-500 to-blue-500",
   },
   {
     id: 2,
-    title: "Metro University Counseling",
-    location: "Boston, MA",
-    type: "University Clinic",
-    duration: "8 months",
+    title: "Clínica Universitária do Porto",
+    location: "Porto, Portugal",
+    type: "Clínica Universitária",
+    duration: "8 meses",
     image: "/hospital (2).jpg",
     challenge: "Managing high student volume with limited staff",
     solution: "Deployed PsyCare's patient app and automated scheduling",
     results: [
-      { metric: "200%", description: "Increase in appointment capacity" },
-      { metric: "85%", description: "Reduction in no-shows" },
-      { metric: "95%", description: "Student engagement rate" },
+      { metric: "200%", description: "Aumento da capacidade de marcação de consultas" },
+      { metric: "85%", description: "Redução de faltas às consultas" },
+      { metric: "95%", description: "Engajamento dos estudantes" },
       { metric: "50%", description: "Faster crisis response time" },
     ],
     testimonial:
       "The patient app revolutionized how we connect with students. Crisis interventions are now 50% faster.",
-    author: "Dr. Michael Chen",
+    author: "Dr. Miguel Costa",
     role: "Head of Student Services",
     tags: ["Patient App", "Scheduling", "Crisis Management"],
     color: "from-teal-400 to-blue-400",
   },
   {
     id: 3,
-    title: "Harmony Pediatric Psychology",
-    location: "Austin, TX",
-    type: "Pediatric Clinic",
-    duration: "4 months",
+    title: "Clínica Pediátrica Harmony",
+    location: "Coimbra, Portugal",
+    type: "Clínica Pediátrica",
+    duration: "4 meses",
     image: "/hospital (1).jpg",
     challenge: "Difficulty tracking progress in child therapy sessions",
     solution: "Integrated PsyCare's behavioral analysis and parent portal",
     results: [
-      { metric: "80%", description: "Improvement in treatment outcomes" },
-      { metric: "95%", description: "Parent satisfaction score" },
-      { metric: "65%", description: "Faster diagnosis accuracy" },
-      { metric: "70%", description: "Increase in family engagement" },
+      { metric: "80%", description: "Melhoria nos resultados dos tratamentos" },
+      { metric: "95%", description: "Satisfação dos pais" },
+      { metric: "65%", description: "Maior precisão no diagnóstico" },
+      { metric: "70%", description: "Aumento do envolvimento familiar" },
     ],
     testimonial:
       "Working with children requires special attention to detail. PsyCare's behavioral analysis helps us catch nuances we might miss.",
-    author: "Dr. Emily Rodriguez",
+    author: "Dra. Emília Rodrigues",
     role: "Pediatric Psychologist",
     tags: ["Behavioral Analysis", "Parent Portal", "Child Therapy"],
     color: "from-teal-500 to-cyan-500",
@@ -140,7 +140,7 @@ export function CaseStudiesSection() {
                 onClick={() => setSelectedCase(index)}
                 className={`group relative px-8 py-4 rounded-4xl font-semibold transition-all duration-300 ${
                   selectedCase === index
-                    ? "bg-gradient-to-r  from-[#8CD5BC] to-[#9BAAEE] text-white shadow-xl"
+                    ? "bg-gradient-to-r  from-[#8CD5BC]/70 to-[#9BAAEE]/70 text-gray-900 shadow-xl"
                     : "bg-white text-gray-600 hover:text-gray-900 border-2 border-gray-200 hover:border-teal-300 shadow-md hover:shadow-lg"
                 }`}
                 whileHover={{ scale: 1.05, y: -2 }}
