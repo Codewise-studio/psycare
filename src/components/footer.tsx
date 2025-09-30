@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
           {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2">
-              <img
+              <Image
                 src="/pasycare_white_color.png"
                 alt="Psycare Logo"
                 className="h-14 w-auto object-contain"

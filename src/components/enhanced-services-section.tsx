@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { Brain, Clock, Target, TrendingUp, ArrowRight } from "lucide-react"
 import { useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 
 const benefits = [
@@ -127,13 +128,13 @@ export function EnhancedServicesSection() {
                   >
                     <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                       {benefit.imageSrc ? (
-                        <img
+                        <Image
                           src={benefit.imageSrc}
                           alt={benefit.imageAlt}
                           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         />
                       ) : (
-                        <img
+                        <Image
                           src={`/.jpg?key=kixw6&height=600&width=800&query=${encodeURIComponent(
                             benefit.imageQuery
                           )}`}

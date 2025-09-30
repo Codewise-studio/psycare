@@ -17,28 +17,28 @@ export const testimonials: Testimonial[] = [
     name: "Manuel Arora",
     quote:
       "PsyCare has transformed how I manage my practice. I can focus fully on my patients while the AI handles all documentation and insights seamlessly.",
-    src: "https://i.pravatar.cc/150?img=12",
+    src: "",
     designation: "Clinical Psychologist & Founder",
   },
   {
     name: "Sofia Duarte",
     quote:
       "Using PsyCare, I save hours every day on scheduling and reminders. The AI insights have improved patient outcomes dramatically.",
-    src: "https://i.pravatar.cc/150?img=34",
+    src: "",
     designation: "Therapist & Practice Owner",
   },
   {
     name: "Ricardo Gomes",
     quote:
       "The personalized treatment recommendations from PsyCare make every session more effective. My patients appreciate the attention to detail and care.",
-    src: "https://i.pravatar.cc/150?img=45",
+    src: "",
     designation: "Psychologist & Wellness Coach",
   },
   {
     name: "Mariana Silva",
     quote:
       "PsyCare has revolutionized how I approach therapy. Automation and AI-driven insights give me more time to connect with patients personally.",
-    src: "https://i.pravatar.cc/150?img=56",
+    src: "",
     designation: "Clinical Psychologist & Author",
   },
 ];

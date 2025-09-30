@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -13,7 +14,7 @@ export function Navbar() {
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
-          <img 
+          <Image 
             src="/pasycare_white_color.png" 
             alt="Psycare Logo" 
             className="h-12 sm:h-14 w-auto" 

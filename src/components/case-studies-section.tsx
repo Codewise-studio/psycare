@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -178,7 +179,7 @@ export function CaseStudiesSection() {
                   {/* Image Section */}
                   <div className="md:col-span-2 relative">
                     <div className="h-64 sm:h-80 md:h-full relative overflow-hidden">
-                      <img
+                      <Image
                         src={caseStudies[selectedCase].image || "/placeholder.svg"}
                         alt={caseStudies[selectedCase].title}
                         className="w-full h-full object-cover"

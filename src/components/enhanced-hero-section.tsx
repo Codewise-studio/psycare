@@ -2,6 +2,7 @@
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Brain, Mic, Video, BarChart3, Shield, Activity, Target, ArrowRight, Play, Sparkles, Phone } from "lucide-react"
 
@@ -175,7 +176,7 @@ export function EnhancedHeroSection() {
           <div className="relative">
             {/* Main Image */}
             <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 ">
-              <img
+              <Image
                 src="/image24.jpg"
                 alt="Modern therapy office with AI analytics overlay"
                 className="w-full max-w-md lg:max-w-lg drop-shadow-xl rounded-2xl"
