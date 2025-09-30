@@ -128,13 +128,13 @@ export function EnhancedServicesSection() {
                   >
                     <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                       {benefit.imageSrc ? (
-                        <Image
+                        <img
                           src={benefit.imageSrc}
                           alt={benefit.imageAlt}
                           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         />
                       ) : (
-                        <Image
+                        <img
                           src={`/.jpg?key=kixw6&height=600&width=800&query=${encodeURIComponent(
                             benefit.imageQuery
                           )}`}

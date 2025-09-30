@@ -154,7 +154,7 @@ export function Team() {
               <div className="relative z-10">
                 <div className="flex flex-col items-center text-center mb-6">
                   <div className="relative mb-4">
-                    <Image
+                    <img
                       className="rounded-full border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
                       src={member.photo || "/placeholder.svg"}
                       alt={member.name}
@@ -239,7 +239,7 @@ export function Team() {
 
             <div className="text-center mb-8">
               <div className="relative inline-block mb-6">
-                <Image
+                <img
                   className="rounded-full border-4 border-blue-500/20 shadow-lg"
                   src={selectedMember.photo || "/placeholder.svg"}
                   alt={selectedMember.name}

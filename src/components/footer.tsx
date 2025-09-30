@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2">
-              <Image
+              <img
                 src="/pasycare_white_color.webp"
                 alt="Psycare Logo"
                 className="h-14 w-auto object-contain"
