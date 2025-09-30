@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { motion } from "framer-motion"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {
   Brain,
   Zap,
@@ -44,13 +44,7 @@ const technologyFeatures = [
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
 }
 
 const cardVariants = {
@@ -59,7 +53,63 @@ const cardVariants = {
 }
 
 export default function FunctionalitiesSection() {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
+  const [activeCard, setActiveCard] = useState<string | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  const handleCardInteraction = (key: string) => {
+    if (isMobile) {
+      setActiveCard(activeCard === key ? null : key)
+    } else {
+      setActiveCard(key)
+    }
+  }
+
+  const handleCardLeave = () => {
+    if (!isMobile) setActiveCard(null)
+  }
+
+  const renderFeatureCard = (feature: any, index: number, section: string, hoverColor: string) => {
+    const Icon = feature.icon
+    const key = `${section}-${index}`
+    const isActive = activeCard === key
+
+    return (
+      <motion.div
+        key={key}
+        variants={cardVariants}
+        whileHover={!isMobile ? { scale: 1.05, y: -3 } : {}}
+        onHoverStart={() => !isMobile && handleCardInteraction(key)}
+        onHoverEnd={() => !isMobile && handleCardLeave()}
+        onClick={() => handleCardInteraction(key)}
+      >
+        <Card className={`p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:border-[${hoverColor}] group h-full bg-white border-gray-200`}>
+          <div className="space-y-3 sm:space-y-4">
+            <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-[#ADCBE2]/50 rounded-lg flex items-center justify-center text-[#96B9DF] group-hover:bg-[#96B9DF] group-hover:text-white transition-colors`}>
+              <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+            </div>
+            <div className="space-y-1">
+              <h3 className="font-semibold text-sm sm:text-base leading-tight text-gray-900">{feature.text}</h3>
+              <motion.p
+                className="text-gray-600 text-xs sm:text-sm"
+                initial={{ opacity: 0, height: 0 }}
+                animate={isActive ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {feature.description}
+              </motion.p>
+            </div>
+          </div>
+        </Card>
+      </motion.div>
+    )
+  }
 
   return (
     <section className="py-12 sm:py-24 bg-gray-50/50">
@@ -83,8 +133,7 @@ export default function FunctionalitiesSection() {
 
         {/* ENGAGEMENT Section */}
         <motion.div className="mb-12 sm:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
-          {/* Badge & Title */}
-          <motion.div className="flex flex-col sm:flex-row items-center mb-8 sm:mb-12" variants={containerVariants}>
+          <div className="flex flex-col sm:flex-row items-center mb-8 sm:mb-12">
             <div className="flex items-center space-x-4 mb-4 sm:mb-0">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[#ADCBE2] to-[#96B9DF] rounded-full flex items-center justify-center">
                 <Heart className="w-5 h-5 text-white" />
@@ -94,62 +143,16 @@ export default function FunctionalitiesSection() {
               </h4>
             </div>
             <div className="flex-1 h-px bg-gradient-to-r from-[#ADCBE2]/50 to-transparent"></div>
-          </motion.div>
+          </div>
 
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6" variants={containerVariants}>
-            {engagementFeatures.map((feature, index) => {
-              const Icon = feature.icon
-              const isHovered = hoveredCard === `engagement-${index}`
-
-              return (
-                <motion.div
-                  key={index}
-                  variants={cardVariants}
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  onHoverStart={() => setHoveredCard(`engagement-${index}`)}
-                  onHoverEnd={() => setHoveredCard(null)}
-                >
-                  <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:border-[#96B9DF] group h-full bg-white border-gray-200">
-                    <div className="space-y-3 sm:space-y-4">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#ADCBE2]/50 rounded-lg flex items-center justify-center text-[#96B9DF] group-hover:bg-[#96B9DF] group-hover:text-white transition-colors">
-                        <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                      </div>
-                      <div className="space-y-1">
-                        <h3 className="font-semibold text-sm sm:text-base leading-tight text-gray-900">{feature.text}</h3>
-                        <motion.p
-                          className="text-gray-600 text-xs sm:text-sm"
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={isHovered ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          {feature.description}
-                        </motion.p>
-                      </div>
-                    </div>
-                  </Card>
-                </motion.div>
-              )
-            })}
+            {engagementFeatures.map((feature, index) => renderFeatureCard(feature, index, "engagement", "#96B9DF"))}
           </motion.div>
         </motion.div>
 
-        {/* Divider */}
-        <div className="flex items-center justify-center my-12 sm:my-16">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-          <motion.div
-            className="mx-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[hsla(229,71%,77%,1)] to-[hsla(229,71%,77%,1)] rounded-full flex items-center justify-center border border-purple-200/50"
-            animate={{ rotate: [0, 360], scale: [1, 1.05, 1] }}
-            transition={{ rotate: { duration: 8, repeat: Infinity, ease: "linear" }, scale: { duration: 2, repeat: Infinity, ease: "easeInOut" } }}
-          >
-            <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-          </motion.div>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-        </div>
-
         {/* TECHNOLOGY Section */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
-          {/* Badge & Title */}
-          <motion.div className="flex flex-col sm:flex-row items-center mb-8 sm:mb-12" variants={containerVariants}>
+          <div className="flex flex-col sm:flex-row items-center mb-8 sm:mb-12">
             <div className="flex items-center space-x-4 mb-4 sm:mb-0">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[#85E1B9] to-[#8AD7C3] rounded-full flex items-center justify-center">
                 <Zap className="w-5 h-5 text-white" />
@@ -159,42 +162,10 @@ export default function FunctionalitiesSection() {
               </h4>
             </div>
             <div className="flex-1 h-px bg-gradient-to-r from-[#85E1B9]/50 to-transparent"></div>
-          </motion.div>
+          </div>
 
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6" variants={containerVariants}>
-            {technologyFeatures.map((feature, index) => {
-              const Icon = feature.icon
-              const isHovered = hoveredCard === `technology-${index}`
-
-              return (
-                <motion.div
-                  key={index}
-                  variants={cardVariants}
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  onHoverStart={() => setHoveredCard(`technology-${index}`)}
-                  onHoverEnd={() => setHoveredCard(null)}
-                >
-                  <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:border-[#8AD7C3] group h-full bg-white border-gray-200">
-                    <div className="space-y-3 sm:space-y-4">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-teal-100/80 rounded-lg flex items-center justify-center text-[#85E1B9] group-hover:bg-[#85E1B9] group-hover:text-white transition-colors">
-                        <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                      </div>
-                      <div className="space-y-1">
-                        <h3 className="font-semibold text-sm sm:text-base leading-tight text-gray-900">{feature.text}</h3>
-                        <motion.p
-                          className="text-gray-600 text-xs sm:text-sm"
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={isHovered ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          {feature.description}
-                        </motion.p>
-                      </div>
-                    </div>
-                  </Card>
-                </motion.div>
-              )
-            })}
+            {technologyFeatures.map((feature, index) => renderFeatureCard(feature, index, "technology", "#8AD7C3"))}
           </motion.div>
         </motion.div>
       </div>
