@@ -1,10 +1,9 @@
 "use client"
 
-import { useState } from "react"
-import Image from "next/image"
+import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Award, BookOpen, Users, Star } from "lucide-react"
+import { ArrowRight, Award, BookOpen, Star } from "lucide-react"
 
 interface AdvisoryMember {
   id: string
@@ -15,68 +14,301 @@ interface AdvisoryMember {
   expertise: string[]
   credentials: string
   yearsExperience: number
+  group: "core" | "advisory" | "scientific"
 }
 
 const advisoryMembers: AdvisoryMember[] = [
-  {
+ {
     id: "1",
-    name: "Dr. Maria Silva",
+    name: "Estela Bastos",
     photo: "/image.webp",
     shortCV:
-      "PhD in Clinical Psychology with 15+ years of experience in mental health research and digital therapeutics. Former head of Psychology at Hospital São João.",
-    role: "Clinical Psychology Advisor",
-    expertise: ["Clinical Psychology", "Digital Health", "Research"],
-    credentials: "PhD, Licensed Clinical Psychologist",
+      "",
+    role: "Inventor & Founder",
+    expertise: [""],
+    credentials: "",
     yearsExperience: 15,
+    group: "core",
   },
   {
     id: "2",
-    name: "João Santos",
+    name: "Diogo Adão",
     photo: "/image1.webp",
     shortCV:
-      "Serial entrepreneur and tech investor. Founded 3 successful healthtech startups. Currently Managing Partner at HealthTech Ventures.",
-    role: "Strategic Business Advisor",
-    expertise: ["Business Strategy", "HealthTech", "Investment"],
-    credentials: "MBA, Serial Entrepreneur",
+      "",
+    role: "Head Tech",
+    expertise: [""],
+    credentials: "",
     yearsExperience: 12,
+    group: "core",
   },
   {
     id: "3",
-    name: "Dr. Ana Costa",
+    name: "Helena Pereira",
     photo: "/image.webp",
     shortCV:
-      "MD specializing in Psychiatry and Digital Mental Health. Published researcher with 50+ papers on technology-assisted therapy.",
-    role: "Medical Advisor",
-    expertise: ["Psychiatry", "Digital Therapeutics", "Medical Research"],
-    credentials: "MD, Board-Certified Psychiatrist",
+      "",
+    role: "Behavioural Scientist, PhD",
+    expertise: [""],
+    credentials: "",
     yearsExperience: 18,
+    group: "core",
   },
   {
     id: "4",
-    name: "Carlos Mendes",
+    name: "Marcos",
     photo: "/image1.webp",
     shortCV:
-      "Former CTO at major European healthtech companies. Expert in AI/ML applications for healthcare and regulatory compliance.",
-    role: "Technology Advisor",
-    expertise: ["AI/ML", "Healthcare Tech", "Regulatory Compliance"],
-    credentials: "PhD Computer Science, Former CTO",
+      "",
+    role: "Robotics & AI, PhD",
+    expertise: [""],
+    credentials: "",
     yearsExperience: 14,
+    group: "core",
+  },
+   {
+    id: "5",
+    name: "",
+    photo: "/image1.webp",
+    shortCV:
+      "",
+    role: "DPO",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: 0,
+    group: "core",
+  },
+
+  {
+    id: "6",
+    name: "",
+    photo: "/image.webp",
+    shortCV:
+      "",
+    role: "Psychologist Expert, Professor & Researcher, PhD",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: 15,
+    group: "advisory",
+  },
+  {
+    id: "7",
+    name: "",
+    photo: "/image1.webp",
+    shortCV:
+      "",
+    role: "Psychiatrist Expert, Professor & Researcher, PhD",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: 12,
+    group: "advisory",
+  },
+  {
+    id: "8",
+    name: "Manuel Dias",
+    photo: "/image.webp",
+    shortCV:
+      "",
+    role: "National Technology Officer & Board Member",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: 18,
+    group: "advisory",
+  },
+  {
+    id: "9",
+    name: "",
+    photo: "/image1.webp",
+    shortCV:
+      "",
+    role: "Founding Partner, Law Firm IP, IT & Data Protection",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: 14,
+    group: "advisory",
+  },
+   {
+    id: "10",
+    name: "",
+    photo: "/image1.webp",
+    shortCV:
+      "",
+    role: "IP & Data Protection Professor",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: 0,
+    group: "advisory",
+  },
+
+    {
+    id: "11",
+    name: "",
+    photo: "/image.webp",
+    shortCV:
+      "",
+    role: "Researcher, Professor, Speech Analysis and Responsible AI in Health, PhD",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: 15,
+    group: "scientific",
+  },
+  {
+    id: "12",
+    name: "",
+    photo: "/image1.webp",
+    shortCV:
+      "",
+    role: "Psychologist, Professor, Researcher, Speech Markers, PhD",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: 12,
+    group: "scientific",
+  },
+  {
+    id: "13",
+    name: "",
+    photo: "/image.webp",
+    shortCV:
+      "",
+    role: "Computational Biologist, PhD, Senior Data Scientist",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: 18,
+    group: "scientific",
+  },
+  {
+    id: "14",
+    name: "",
+    photo: "/image1.webp",
+    shortCV:
+      "",
+    role: "Psychologist, Researcher, Synthetic Data, PhD student",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: 14,
+    group: "scientific",
+  },
+  //  {
+  //   id: "15",
+  //   name: "",
+  //   photo: "/image1.webp",
+  //   shortCV:
+  //     "",
+  //   role: "DPO",
+  //   expertise: [""],
+  //   credentials: "",
+  //   yearsExperience: 0,
+  //   group: "core",
+  // },
+
+   {
+    id: "16",
+    name: "",
+    photo: "/image1.webp",
+    shortCV:
+      "",
+    role: "European Universities King´s College London European Hospital",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: 0,
+    group: "scientific",
   },
 ]
 
 export function Team() {
+  const tabs: Array<{ key: AdvisoryMember["group"]; label: string }> = [
+    { key: "core", label: "Core Team" },
+    { key: "advisory", label: "Advisory Board" },
+    { key: "scientific", label: "Scientific Team" },
+  ]
+  const [selectedTab, setSelectedTab] = useState<AdvisoryMember["group"]>("core")
   const [selectedMember, setSelectedMember] = useState<AdvisoryMember | null>(null)
+
+  // refs para rolar até a secção do grupo
+  const groupRefs = {
+    core: useRef<HTMLDivElement | null>(null),
+    advisory: useRef<HTMLDivElement | null>(null),
+    scientific: useRef<HTMLDivElement | null>(null),
+  } as Record<AdvisoryMember["group"], React.RefObject<HTMLDivElement>>
+
+  const filteredMembers = advisoryMembers.filter((m) => m.group === selectedTab)
+
+  // debug: log selectedTab and filtered count when tab changes
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log('selectedTab', selectedTab, 'filteredMembersCount', filteredMembers.length)
+  }, [selectedTab, filteredMembers.length])
+
+  const onTabClick = (key: AdvisoryMember["group"]) => {
+    setSelectedTab(key)
+    const ref = groupRefs[key]
+    if (ref?.current) ref.current.scrollIntoView({ behavior: "smooth", block: "start" })
+  }
+
+  // keyboard navigation for tabs (ArrowLeft / ArrowRight / Home / End)
+  const tabKeys = tabs.map((t) => t.key)
+  const onTabKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    const idx = tabKeys.indexOf(selectedTab)
+    if (idx === -1) return
+
+    const safeIndex = (i: number) => ((i % tabKeys.length) + tabKeys.length) % tabKeys.length
+
+    if (e.key === "ArrowRight") {
+      const nextKey = tabKeys[safeIndex(idx + 1)]
+      if (nextKey) {
+        setSelectedTab(nextKey)
+        const ref = groupRefs[nextKey]
+        if (ref?.current) ref.current.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
+      e.preventDefault()
+      return
+    }
+
+    if (e.key === "ArrowLeft") {
+      const prevKey = tabKeys[safeIndex(idx - 1)]
+      if (prevKey) {
+        setSelectedTab(prevKey)
+        const ref = groupRefs[prevKey]
+        if (ref?.current) ref.current.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
+      e.preventDefault()
+      return
+    }
+
+    if (e.key === "Home") {
+      const firstKey = tabKeys[0]
+      if (firstKey) {
+        setSelectedTab(firstKey)
+        const ref = groupRefs[firstKey]
+        if (ref?.current) ref.current.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
+      e.preventDefault()
+      return
+    }
+
+    if (e.key === "End") {
+      const lastKey = tabKeys[tabKeys.length - 1]
+      if (lastKey) {
+        setSelectedTab(lastKey)
+        const ref = groupRefs[lastKey]
+        if (ref?.current) ref.current.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
+      e.preventDefault()
+      return
+    }
+  }
 
   return (
     <section className="bg-white py-24 relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse" />
+      {/* decorative overlay - must not capture pointer events */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse pointer-events-none" />
         <div
-          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse pointer-events-none"
           style={{ animationDelay: "1s" }}
         />
         <div
-          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-2xl animate-pulse"
+          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-2xl animate-pulse pointer-events-none"
           style={{ animationDelay: "2s" }}
         />
       </div>
@@ -88,7 +320,7 @@ export function Team() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-6">
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 mb-6"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -98,7 +330,7 @@ export function Team() {
           >
             <Award className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
             <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
-       Team & Advisors
+              Team & Advisors
             </span>
           </motion.div>
 
@@ -111,7 +343,7 @@ export function Team() {
           >
             Meet Our{" "}
             <span className="bg-gradient-to-r from-[hsla(229,71%,77%,1)] via-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] bg-clip-text text-transparent">
-              <br />  Psychology Experts
+              <br /> Team & Advisory Board
             </span>
           </motion.h2>
 
@@ -125,9 +357,55 @@ export function Team() {
             Leading professionals in clinical psychology, digital health, and mental wellness technology guiding our
             mission to transform therapeutic practice.
           </motion.p>
+
+          {/* Debug / Visual indicator of active tab */}
+          {/* <div className="mt-4">
+            <span className="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm">
+              Showing: {selectedTab}
+            </span>
+          </div> */}
         </div>
 
+        {/* Tabs */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <div role="tablist" aria-label="Team groups" className="flex items-center justify-center gap-3">
+            {tabs.map((t) => {
+              const active = t.key === selectedTab
+              const count = advisoryMembers.filter((m) => m.group === t.key).length
+              return (
+                <button
+                  key={t.key}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  aria-controls={`team-${t.key}`}
+                  tabIndex={active ? 0 : -1}
+                  onKeyDown={onTabKeyDown}
+                  onClick={() => {
+                    // debug: log clicks
+                    // eslint-disable-next-line no-console
+                    console.log('tab click', t.key)
+                    onTabClick(t.key)
+                  }}
+                  className={`px-4 py-2 rounded-full font-medium transition-all duration-300 focus:outline-none flex items-center gap-2 ${
+                    active
+                      ? "bg-gradient-to-r from-[hsla(229,71%,77%,1)] to-[hsla(179,39%,68%,1)] text-white shadow-md"
+                      : "bg-white border border-gray-200 text-gray-700 hover:shadow-sm"
+                  }`}
+                >
+                  <span>{t.label}</span>
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${active ? 'bg-white/20' : 'bg-gray-100 text-gray-600'}`}>
+                    {count}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* render apenas os membros do tab selecionado */}
         <motion.div
+          key={selectedTab}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           initial="hidden"
           whileInView="visible"
@@ -139,7 +417,7 @@ export function Team() {
             },
           }}
         >
-          {advisoryMembers.map((member) => (
+          {filteredMembers.map((member) => (
             <motion.div
               key={member.id}
               className="group relative bg-white rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
@@ -199,26 +477,6 @@ export function Team() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          {/* <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-2xl p-8 border border-blue-500/20">
-            <Users className="w-12 h-12 text-blue-500 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Join Our Network of Psychology Professionals</h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Connect with leading experts in digital mental health and be part of the future of therapeutic practice.
-            </p>
-            <Button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold px-8 py-3 rounded-full">
-              Learn More About Our Advisory Program
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </div> */}
         </motion.div>
       </motion.div>
 
