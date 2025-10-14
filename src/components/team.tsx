@@ -89,7 +89,7 @@ const advisoryMembers: AdvisoryMember[] = [
     expertise: [""],
     credentials: "",
     yearsExperience: undefined,
-    group: "advisory",
+    group: "scientific",
   },
   {
     id: "7",
@@ -101,7 +101,7 @@ const advisoryMembers: AdvisoryMember[] = [
     expertise: [""],
     credentials: "",
     yearsExperience: undefined,
-    group: "advisory",
+    group: "scientific",
   },
   {
     id: "8",
@@ -201,18 +201,18 @@ const advisoryMembers: AdvisoryMember[] = [
   //   group: "core",
   // },
 
-   {
-    id: "16",
-    name: "",
-    photo: "/team/kcl.webp",
-    shortCV:
-      "",
-    role: "European Universities King´s College London European Hospital",
-    expertise: [""],
-    credentials: "",
-    yearsExperience: undefined,
-    group: "scientific",
-  },
+  //  {
+  //   id: "16",
+  //   name: "",
+  //   photo: "/team/kcl.webp",
+  //   shortCV:
+  //     "",
+  //   role: "European Universities King´s College London European Hospital",
+  //   expertise: [""],
+  //   credentials: "",
+  //   yearsExperience: undefined,
+  //   group: "scientific",
+  // },
 ]
 
 export function Team() {
