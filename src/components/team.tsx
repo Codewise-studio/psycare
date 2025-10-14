@@ -13,7 +13,7 @@ interface AdvisoryMember {
   role: string
   expertise: string[]
   credentials: string
-  yearsExperience: number
+  yearsExperience?: number
   group: "core" | "advisory" | "scientific"
 }
 
@@ -21,171 +21,171 @@ const advisoryMembers: AdvisoryMember[] = [
  {
     id: "1",
     name: "Estela Bastos",
-    photo: "/image.webp",
+    photo: "/team/EstelaBastos.webp",
     shortCV:
-      "short cv",
+      "",
     role: "Inventor & Founder",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 15,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "core",
   },
   {
     id: "2",
     name: "Diogo Adão",
-    photo: "/image1.webp",
+    photo: "/team/DiogoAdao.webp",
     shortCV:
-      "short cv",
+      "",
     role: "Head Tech",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 12,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "core",
   },
   {
     id: "3",
     name: "Helena Pereira",
-    photo: "/image.webp",
+    photo: "/team/HelenaPereira.webp",
     shortCV:
-      "short cv",
+      "",
     role: "Behavioural Scientist, PhD",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 18,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "core",
   },
   {
     id: "4",
-    name: "Marcos",
-    photo: "/image1.webp",
+    name: "Marcos Ferreira",
+    photo: "/team/MarcosFerreira.webp",
     shortCV:
-      "short cv",
+      "",
     role: "Robotics & AI, PhD",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 14,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "core",
   },
    {
     id: "5",
-    name: "",
-    photo: "/image1.webp",
+    name: "Maria João Lupi",
+    photo: "/team/MariaJoaoLupi.webp",
     shortCV:
-      "short cv",
+      "",
     role: "DPO",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 0,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "core",
   },
 
   {
     id: "6",
-    name: "",
-    photo: "/image.webp",
+    name: "Miguel Ricou",
+    photo: "/team/MiguelRicou.webp",
     shortCV:
-      "short cv",
+      "",
     role: "Psychologist Expert, Professor & Researcher, PhD",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 15,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "advisory",
   },
   {
     id: "7",
-    name: "",
-    photo: "/image1.webp",
+    name: "Pedro Morgado",
+    photo: "/team/PedroMorgado.webp",
     shortCV:
-      "short cv",
+      "",
     role: "Psychiatrist Expert, Professor & Researcher, PhD",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 12,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "advisory",
   },
   {
     id: "8",
     name: "Manuel Dias",
-    photo: "/image.webp",
+    photo: "/team/ManuelDias.webp",
     shortCV:
-      "short cv",
+      "",
     role: "National Technology Officer & Board Member",
-    expertise: ["expertise"],
-  credentials: "credentials",
-    yearsExperience: 18,
+    expertise: [""],
+  credentials: "",
+    yearsExperience: undefined,
     group: "advisory",
   },
   {
     id: "9",
-    name: "",
-    photo: "/image1.webp",
+    name: "Patrice Vanderbeeken",
+    photo: "/team/PatriceVanderbeeken.webp",
     shortCV:
-      "short cv",
+      "",
     role: "Founding Partner, Law Firm IP, IT & Data Protection",
-    expertise: ["expertise"],
-     credentials: "credentials",
-    yearsExperience: 14,
+    expertise: [""],
+     credentials: "",
+    yearsExperience: undefined,
     group: "advisory",
   },
    {
     id: "10",
-    name: "",
-    photo: "/image1.webp",
+    name: "Alain Strowel",
+    photo: "/team/AlainStrowel.webp",
     shortCV:
-      "short cv",
+      "",
     role: "IP & Data Protection Professor",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 0,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "advisory",
   },
 
     {
     id: "11",
-    name: "",
-    photo: "/image.webp",
+    name: "Nicholas Cummins",
+    photo: "/team/NicholasCummins.webp",
     shortCV:
-      "short cv",
+      "",
     role: "Researcher, Professor, Speech Analysis and Responsible AI in Health, PhD",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 15,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "scientific",
   },
   {
     id: "12",
-    name: "",
-    photo: "/image1.webp",
+    name: "Miguel Gonçalves",
+    photo: "/team/MiguelGoncalves.webp",
     shortCV:
-      "short cv",
+      "",
     role: "Psychologist, Professor, Researcher, Speech Markers, PhD",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 12,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "scientific",
   },
   {
     id: "13",
-    name: "",
-    photo: "/image.webp",
+    name: "Susana Paço",
+    photo: "/team/SusanaPaco.webp",
     shortCV:
-      "short cv",
+      "",
     role: "Computational Biologist, PhD, Senior Data Scientist",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 18,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "scientific",
   },
   {
     id: "14",
-    name: "",
-    photo: "/image1.webp",
+    name: "Miguel Oliveira",
+    photo: "/team/MiguelOliveira.webp",
     shortCV:
-      "short cv",
+      "",
     role: "Psychologist, Researcher, Synthetic Data, PhD student",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 14,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "scientific",
   },
   //  {
@@ -204,13 +204,13 @@ const advisoryMembers: AdvisoryMember[] = [
    {
     id: "16",
     name: "",
-    photo: "/image1.webp",
+    photo: "/team/kcl.webp",
     shortCV:
-      "short cv",
+      "",
     role: "European Universities King´s College London European Hospital",
-    expertise: ["expertise"],
-    credentials: "credentials",
-    yearsExperience: 0,
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
     group: "scientific",
   },
 ]
@@ -433,11 +433,9 @@ export function Team() {
                 <div className="flex flex-col items-center text-center mb-6">
                   <div className="relative mb-4">
                     <img
-                      className="rounded-full border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
+                      className={`rounded-full w-24 h-24 object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300 ${member.id === '7' ? 'object-[center top]' : ''}`}
                       src={member.photo || "/placeholder.svg"}
                       alt={member.name}
-                      width={100}
-                      height={100}
                     />
                     <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-[hsla(229,71%,77%,1)] via-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)]  rounded-full p-2">
                       <Award className="w-4 h-4 text-white" />
@@ -445,26 +443,36 @@ export function Team() {
                   </div>
 
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-sm font-medium text-[#4c8fd6] mb-2">{member.role}</p>
-                  <p className="text-xs text-gray-500 mb-3">{member.credentials}</p>
+                  {member.role && member.role.trim() !== "" && (
+                    <p className="text-sm font-medium text-[#4c8fd6] mb-2">{member.role}</p>
+                  )}
+                  {member.credentials && member.credentials.trim() !== "" && (
+                    <p className="text-xs text-gray-500 mb-3">{member.credentials}</p>
+                  )}
 
-                  <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
-                    <BookOpen className="w-4 h-4" />
-                    <span>{member.yearsExperience}+ years experience</span>
-                  </div>
+                  {typeof member.yearsExperience === 'number' && member.yearsExperience > 0 && (
+                    <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
+                      <BookOpen className="w-4 h-4" />
+                      <span>{member.yearsExperience}+ years experience</span>
+                    </div>
+                  )}
                 </div>
 
-                <p className="text-sm text-gray-600 mb-4 line-clamp-3">{member.shortCV}</p>
+                {member.shortCV && member.shortCV.trim() !== "" && (
+                  <p className="text-sm text-gray-600 mb-4 line-clamp-3">{member.shortCV}</p>
+                )}
 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {member.expertise.map((exp, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-3 py-1 rounded-full bg-[#96B9DF]/30 text-grey-600 font-medium"
-                    >
-                      {exp}
-                    </span>
-                  ))}
+                  {member.expertise
+                    .filter((e) => e && e.trim() !== "")
+                    .map((exp, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-3 py-1 rounded-full bg-[#96B9DF]/30 text-grey-600 font-medium"
+                      >
+                        {exp}
+                      </span>
+                    ))}
                 </div>
 
                 <Button
@@ -498,11 +506,9 @@ export function Team() {
             <div className="text-center mb-8">
               <div className="relative inline-block mb-6">
                 <img
-                  className="rounded-full border-4 border-blue-500/20 shadow-lg"
+                  className={`rounded-full w-32 h-32 object-cover border-4 border-blue-500/20 shadow-lg ${selectedMember.id === '7' ? 'object-[center top]' : ''}`}
                   src={selectedMember.photo || "/placeholder.svg"}
                   alt={selectedMember.name}
-                  width={120}
-                  height={120}
                 />
                 <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-[hsla(229,71%,77%,1)] via-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)]  rounded-full p-3">
                   <Award className="w-5 h-5 text-white" />
@@ -510,19 +516,25 @@ export function Team() {
               </div>
 
               <h3 className="text-3xl font-bold text-gray-900 mb-2">{selectedMember.name}</h3>
-              <p className="text-lg font-medium text-[#4c8fd6] mb-2">{selectedMember.role}</p>
-              <p className="text-xs px-3 py-1 rounded-full text-grey-600 font-medium">{selectedMember.credentials}</p>
+              {selectedMember.role && selectedMember.role.trim() !== "" && (
+                <p className="text-lg font-medium text-[#4c8fd6] mb-2">{selectedMember.role}</p>
+              )}
+              {selectedMember.credentials && selectedMember.credentials.trim() !== "" && (
+                <p className="text-xs px-3 py-1 rounded-full text-grey-600 font-medium">{selectedMember.credentials}</p>
+              )}
 
-              <div className="flex items-center justify-center gap-6 text-sm text-gray-600 mb-6">
-                <div className="flex items-center gap-2">
-                  <BookOpen className="w-4 h-4" />
-                  <span>{selectedMember.yearsExperience}+ years</span>
+                <div className="flex items-center justify-center gap-6 text-sm text-gray-600 mb-6">
+                  {typeof selectedMember.yearsExperience === 'number' && selectedMember.yearsExperience > 0 && (
+                    <div className="flex items-center gap-2">
+                      <BookOpen className="w-4 h-4" />
+                      <span>{selectedMember.yearsExperience}+ years</span>
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2">
+                    <Star className="w-4 h-4 text-yellow-500" />
+                    <span>Expert Level</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-yellow-500" />
-                  <span>Expert Level</span>
-                </div>
-              </div>
             </div>
 
             <div className="space-y-6">
@@ -531,18 +543,20 @@ export function Team() {
                 <p className="text-gray-600 leading-relaxed">{selectedMember.shortCV}</p>
               </div>
 
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Areas of Expertise</h4>
-                <div className="flex flex-wrap gap-3">
-                  {selectedMember.expertise.map((exp, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-3 py-1 rounded-full bg-[#96B9DF]/30 text-grey-600 font-medium">
-                      {exp}
-                    </span>
-                  ))}
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Areas of Expertise</h4>
+                  <div className="flex flex-wrap gap-3">
+                    {selectedMember.expertise
+                      .filter((e) => e && e.trim() !== "")
+                      .map((exp, i) => (
+                        <span
+                          key={i}
+                          className="text-xs px-3 py-1 rounded-full bg-[#96B9DF]/30 text-grey-600 font-medium">
+                          {exp}
+                        </span>
+                      ))}
+                  </div>
                 </div>
-              </div>
             </div>
           </motion.div>
         </div>
