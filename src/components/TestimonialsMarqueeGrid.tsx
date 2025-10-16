@@ -73,18 +73,34 @@ export const TestimonialsMarqueeGrid: React.FC = () => {
           <span className="bg-gradient-to-r from-[#9BAAEE] via-[#8CD5BC] to-[#9BAAEE] bg-clip-text text-transparent">
             Real Impact
           </span>
-          <p className="text-sm sm:text-base mt-4 text-neutral-600 dark:text-neutral-400">
+          <p className="text-sm sm:text-base mt-4 text-neutral-600 dark:text-neutral-400 hidden md:block">
             Tap or hover to read
           </p>
         </motion.h2>
 
-        {/* Pause/Play Button for Mobile */}
-        <button
-          onClick={() => setGlobalPaused(!globalPaused)}
-          className="md:hidden mt-4 px-4 py-2 bg-[#9BAAEE] text-white rounded-full text-sm font-medium"
-        >
-          {globalPaused ? "Play" : "Pause"} Marquee
-        </button>
+        {/* Control Button for Mobile */}
+        <div className="md:hidden mt-4 flex justify-center">
+          <button
+            onClick={() => setGlobalPaused(!globalPaused)}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#9BAAEE] to-[#8CD5BC] text-white rounded-xl text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            {globalPaused ? (
+              <>
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                </svg>
+                Resume
+              </>
+            ) : (
+              <>
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+                Pause
+              </>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Testimonials Grid */}
