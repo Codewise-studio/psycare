@@ -43,6 +43,8 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const TestimonialsMarqueeGrid: React.FC = () => {
+  const [globalPaused, setGlobalPaused] = useState(false);
+
   return (
     <div className="relative w-screen mx-auto px-4 md:px-8 py-20 overflow-hidden h-full bg-gray-50">
       {/* Section Title */}
@@ -75,19 +77,27 @@ export const TestimonialsMarqueeGrid: React.FC = () => {
             Tap or hover to read
           </p>
         </motion.h2>
+
+        {/* Pause/Play Button for Mobile */}
+        <button
+          onClick={() => setGlobalPaused(!globalPaused)}
+          className="md:hidden mt-4 px-4 py-2 bg-[#9BAAEE] text-white rounded-full text-sm font-medium"
+        >
+          {globalPaused ? "Play" : "Pause"} Marquee
+        </button>
       </div>
 
       {/* Testimonials Grid */}
       <div className="relative">
         <div className="h-full overflow-hidden w-full">
-          <TestimonialsGrid />
+          <TestimonialsGrid globalPaused={globalPaused} />
         </div>
       </div>
     </div>
   );
 };
 
-export const TestimonialsGrid: React.FC = () => {
+export const TestimonialsGrid: React.FC<{ globalPaused?: boolean }> = ({ globalPaused = false }) => {
   const first = testimonials.slice(0, 6);
   const second = testimonials.slice(6, 12);
 
@@ -106,7 +116,7 @@ export const TestimonialsGrid: React.FC = () => {
         pauseOnHover
         speed={40}
         gradient={false}
-        play={!paused}
+        play={!globalPaused && !paused}
       >
         {list.map((testimonial: Testimonial, index: number) => {
           const isExpanded = expandedIndex === index;

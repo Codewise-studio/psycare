@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Mail, Phone, Send, Sparkles, CheckCircle } from "lucide-react"
+import { Mail, Phone, Send, Sparkles, CheckCircle, AlertCircle } from "lucide-react"
+import emailjs from '@emailjs/browser'
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -17,20 +18,34 @@ export function ContactSection() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          to_email: 'specific@email.com', // Replace with the specific email
+        },
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      )
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-
-    setTimeout(() => {
-      setIsSubmitted(false)
+      setIsSubmitted(true)
       setFormData({ name: "", email: "", company: "", message: "" })
-    }, 3000)
+    } catch (err) {
+      setError('Failed to send message. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -190,6 +205,21 @@ export function ContactSection() {
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">Message Sent!</h3>
                     <p className="text-muted-foreground">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                    <Button
+                      onClick={() => setIsSubmitted(false)}
+                      className="mt-4 bg-gray-500 hover:bg-gray-600"
+                    >
+                      Send Another Message
+                    </Button>
+                  </div>
+                )}
+
+                {error && (
+                  <div className="text-center py-4">
+                    <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <AlertCircle className="w-8 h-8 text-white" />
+                    </div>
+                    <p className="text-red-600">{error}</p>
                   </div>
                 )}
               </div>

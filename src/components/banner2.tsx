@@ -99,7 +99,7 @@ const Banner2 = () => {
       ))}
 
       {/* Particle system */}
-      {particles.map((particle) => (
+      {mounted && particles.map((particle) => (
         <motion.div
           key={particle.id}
           className="absolute rounded-full bg-white/40"

@@ -20,7 +20,7 @@ import { ScrollToTopButton } from "@/components/scrolltotop"
 
 export default function HomePage() {
   return (
-<main className="min-h-screen">
+    <main className="min-h-screen relative">
   <Navbar />
 
   {/* Colocando o id fora do componente */}
@@ -28,11 +28,11 @@ export default function HomePage() {
     <EnhancedHeroSection />
   </section>
 
-  <section id="focusCare">
+  <section id="focusCare" className="min-h-screen">
     <FocusCareSection />
   </section>
 
-  <section id="whychoosepsycare">
+  <section id="whychoosepsycare" className="min-h-screen">
     <EnhancedServicesSection />
   </section>
 
@@ -43,7 +43,7 @@ export default function HomePage() {
     <Thefyuture />
   </section>
 
-   <section id="features">
+   <section id="features" className="min-h-screen">
     <FeaturesGrid />
   </section>
 
@@ -53,28 +53,28 @@ export default function HomePage() {
     <Banner2 />
   </section>
 
-  <section id="functionalities">
+  <section id="functionalities" className="min-h-screen">
     <FunctionalitiesSection />
   </section>
 
-  <section id="caseStudies">
+  <section id="caseStudies" className="min-h-screen">
     <CaseStudiesSection />
   </section>
 
 
-  <section id="team">
+  <section id="team" className="min-h-screen">
     <Team />
   </section>
 
-  <section id="testimonials">
+  <section id="testimonials" className="min-h-screen">
      <TestimonialsMarqueeGrid /> 
   </section>
   
-  <section id="contact">
+  <section id="contact" className="min-h-screen">
     <ContactSection />
   </section>
 
-  <section id="footer">
+  <section id="footer" className="min-h-screen">
     <Footer />
   </section>
 

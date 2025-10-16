@@ -104,7 +104,7 @@ export default function FunctionalitiesSection() {
             <div className="flex-1 ml-8 h-px bg-gradient-to-r from-[#ADCBE2]/50 to-transparent"></div>
           </motion.div>
 
-          <motion.div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6" variants={containerVariants}>
+          <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" variants={containerVariants}>
             {engagementFeatures.map((feature, index) => {
               const Icon = feature.icon
               const key = `engagement-${index}`
@@ -158,7 +158,7 @@ export default function FunctionalitiesSection() {
             <div className="flex-1 ml-8 h-px bg-gradient-to-r from-[#85E1B9]/50 to-transparent"></div>
           </motion.div>
 
-          <motion.div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6" variants={containerVariants}>
+          <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" variants={containerVariants}>
             {technologyFeatures.map((feature, index) => {
               const Icon = feature.icon
               const key = `technology-${index}`
@@ -174,22 +174,22 @@ export default function FunctionalitiesSection() {
                   onClick={() => handleCardClick(key)}
                 >
                   <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-[#8AD7C3] group h-full bg-white border-gray-200">
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-teal-100/80 rounded-lg flex items-center justify-center text-[#85E1B9] group-hover:bg-[#85E1B9] group-hover:text-white transition-colors">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div className="space-y-2">
-                        <h3 className="font-semibold text-sm leading-tight text-gray-900">{feature.text}</h3>
-                        <motion.p
-                          className="text-gray-600 text-xs"
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={isHovered ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          {feature.description}
-                        </motion.p>
-                      </div>
+                  <div className="space-y-4">
+                    <div className="w-12 h-12 bg-teal-100/80 rounded-lg flex items-center justify-center text-[#85E1B9] group-hover:bg-[#85E1B9] group-hover:text-white transition-colors">
+                    <Icon className="w-5 h-5" />
                     </div>
+                    <div className="space-y-2">
+                    <h3 className="font-semibold text-sm leading-tight text-gray-900">{feature.text}</h3>
+                    <motion.p
+                      className="text-gray-600 text-xs"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={isHovered ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {feature.description}
+                    </motion.p>
+                    </div>
+                  </div>
                   </Card>
                 </motion.div>
               )

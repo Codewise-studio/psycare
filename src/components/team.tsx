@@ -368,7 +368,7 @@ export function Team() {
 
         {/* Tabs */}
         <div className="max-w-4xl mx-auto mb-8">
-          <div role="tablist" aria-label="Team groups" className="flex items-center justify-center gap-3">
+          <div role="tablist" aria-label="Team groups" className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-3">
             {tabs.map((t) => {
               const active = t.key === selectedTab
               const count = advisoryMembers.filter((m) => m.group === t.key).length
@@ -387,14 +387,14 @@ export function Team() {
                     console.log('tab click', t.key)
                     onTabClick(t.key)
                   }}
-                  className={`px-4 py-2 rounded-full font-medium transition-all duration-300 focus:outline-none flex items-center gap-2 ${
+                  className={`w-full sm:w-auto px-3 py-1 sm:px-4 sm:py-2 rounded-full font-medium transition-all duration-300 focus:outline-none flex items-center justify-center gap-2 ${
                     active
                       ? "bg-gradient-to-r from-[hsla(229,71%,77%,1)] to-[hsla(179,39%,68%,1)] text-white shadow-md"
                       : "bg-white border border-gray-200 text-gray-700 hover:shadow-sm"
                   }`}
                 >
-                  <span>{t.label}</span>
-                  <span className={`text-xs px-2 py-0.5 rounded-full ${active ? 'bg-white/20' : 'bg-gray-100 text-gray-600'}`}>
+                  <span className="text-sm sm:text-base">{t.label}</span>
+                  <span className={`text-xs px-2 py-0.5 rounded-full hidden sm:inline-block ${active ? 'bg-white/20' : 'bg-gray-100 text-gray-600'}`}>
                     {count}
                   </span>
                 </button>
@@ -406,7 +406,7 @@ export function Team() {
         {/* render apenas os membros do tab selecionado */}
         <motion.div
           key={selectedTab}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
