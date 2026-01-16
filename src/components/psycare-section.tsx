@@ -36,7 +36,7 @@ export default function PsycareSection() {
   // }, [controls, inView]);
 
   return (
-    <section className="py-20 px-6 bg-gray-50">
+    <section className="section-y section-x bg-gray-50">
       {/* Title */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-2">Our Features</h1>

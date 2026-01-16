@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 export function CTASectionMiddle() {
   return (
-    <section className="w-full relative min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-background via-muted/20 to-background overflow-hidden">
+    <section className="w-full relative min-h-screen flex items-center justify-center section-x section-y section-visuals bg-gradient-to-br from-background via-muted/20 to-background">
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
         <div
@@ -19,7 +19,7 @@ export function CTASectionMiddle() {
         />
       </div>
 
-      <div className="w-full  relative ">
+      <div className="section-container relative">
         <motion.div
           className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 
             border border-white/10 backdrop-blur-sm shadow-2xl text-center"

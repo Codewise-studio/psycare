@@ -4,8 +4,8 @@ import { Quote } from "lucide-react"
 
 export function TestimonialSection() {
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="section-y section-x bg-muted/30">
+      <div className="section-container">
         <div className="max-w-4xl mx-auto text-center">
           <Badge variant="secondary" className="mb-8">
             Testimonial

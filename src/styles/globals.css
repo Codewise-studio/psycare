@@ -133,10 +133,46 @@ body {
   }
 }
 
+@layer components {
+  .section-y {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-x {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-container {
+    @apply mx-auto w-full max-w-7xl;
+  }
+
+  .section-visuals {
+    overflow: visible;
+  }
+}
+
+section[id] {
+  scroll-margin-top: 96px;
+}
+
 .gradient-mesh {
   background: radial-gradient(circle at 20% 50%, oklch(0.72 0.15 285 / 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, oklch(0.65 0.12 200 / 0.08) 0%, transparent 50%),
     radial-gradient(circle at 40% 80%, oklch(0.58 0.18 320 / 0.08) 0%, transparent 50%);
+}
+
+.science-blob {
+  animation: scienceFloat 18s ease-in-out infinite;
+}
+
+@keyframes scienceFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.1) rotate(4deg);
+  }
 }
 
 .floating-icon {

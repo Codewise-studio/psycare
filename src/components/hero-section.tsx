@@ -23,7 +23,7 @@ export function HeroSection() {
   ]
 
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center px-4 py-20 bg-gradient-to-br from-background via-muted/20 to-background overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center justify-center section-x section-y section-visuals bg-gradient-to-br from-background via-muted/20 to-background">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-96 h-96 rounded-full border border-primary/20"></div>
@@ -33,7 +33,7 @@ export function HeroSection() {
 
       <FloatingIcons />
 
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 section-container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Image Column */}
         <div className="flex justify-center lg:justify-end">
          {/* Image Column */}

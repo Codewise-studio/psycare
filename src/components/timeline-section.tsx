@@ -25,8 +25,8 @@ export function TimelineSection() {
   ]
 
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="section-y section-x bg-muted/30">
+      <div className="section-container">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4">
             Timeline

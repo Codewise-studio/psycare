@@ -27,7 +27,7 @@ const FloatingIcon = ({ icon: Icon, className, delay = 0 }: { icon: any; classNa
 
 export function EnhancedHeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 bg-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center section-x section-y section-visuals bg-white">
       {/* Enhanced Background */}
       <div className="absolute inset-0">
     
@@ -46,7 +46,7 @@ export function EnhancedHeroSection() {
 
 
 
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 section-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Enhanced Text Column */}
         <div className="space-y-8 text-center lg:text-left">
           <motion.div
@@ -58,7 +58,7 @@ export function EnhancedHeroSection() {
            <div className="flex items-center space-x-2">
   <Brain className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
   <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
-    4/5 Psychologists approve
+    Built with clinicians. Evidence-led. Privacy-first.
   </span>
 </div>
 
@@ -95,10 +95,10 @@ export function EnhancedHeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <p className="text-xl md:text-2xl text-gray-600 text-pretty leading-relaxed">
-             At PsyCare, we combine expert psychological support with innovative technology to make mental health care more accessible, personal, and effective.
+             At PsyCare, we combine expert psychological and psychiatry support with innovative technology to make mental health care more accessible, personal, and effective.
             </p>
             <p className="text-lg text-gray-500">
-              Join thousands of professionals who save 3+ hours daily with intelligent automation.
+              Designed with clinicians for psychology and psychiatry.
             </p>
           </motion.div>
 
@@ -130,7 +130,7 @@ export function EnhancedHeroSection() {
       <span className="absolute inset-0 bg-[#8CD5BC] translate-x-[100%] group-hover:translate-x-0 rounded-full transition-transform duration-300" />
       <span className="relative z-10 text-white flex items-center justify-center gap-2">
         <Mail className="w-5 h-5" />
-        <span>Contact Us</span>
+        <span>Request demo</span>
       </span>
     </Button>
   </Link>
@@ -188,10 +188,10 @@ export function EnhancedHeroSection() {
               >
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-sm font-medium text-gray-700">Live Session</span>
+                  <span className="text-sm font-medium text-gray-700">Speech-to-text</span>
                 </div>
-                <div className="text-2xl font-bold text-gray-900 mt-1">98%</div>
-                <div className="text-xs text-gray-500">Accuracy</div>
+                <div className="text-2xl font-bold text-gray-900 mt-1">Up to 98%</div>
+                <div className="text-xs text-gray-500">Accuracy (supported languages)</div>
               </motion.div>
 
               <motion.div
@@ -203,8 +203,8 @@ export function EnhancedHeroSection() {
                   <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse" />
                   <span className="text-sm font-medium text-gray-700">Time Saved</span>
                 </div>
-                <div className="text-2xl font-bold text-gray-900 mt-1">3.2h</div>
-                <div className="text-xs text-gray-500">Per Day</div>
+                <div className="text-2xl font-bold text-gray-900 mt-1">Up to 1.8h</div>
+                <div className="text-xs text-gray-500">Saved every day</div>
               </motion.div>
             </div>
 

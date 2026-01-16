@@ -52,7 +52,7 @@ const Banner2 = () => {
   }))
 
   return (
-    <section className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-gradient-to-br from-[#4483c7] via-[#96B9DF] to-[#4483c7]">
+    <section className="relative w-full h-screen flex items-center justify-center section-x section-y section-visuals bg-gradient-to-br from-[#4483c7] via-[#96B9DF] to-[#4483c7]">
       {/* Animated gradient mesh background */}
  <motion.div
   className="absolute inset-0"
@@ -153,7 +153,7 @@ const Banner2 = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto max-w-6xl px-6 text-center">
+      <div className="relative z-10 section-container max-w-6xl text-center">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: mounted ? 1 : 0 }} transition={{ duration: 0.5 }}>
           {/* Subtitle */}
           <motion.div

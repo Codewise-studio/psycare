@@ -16,84 +16,47 @@ import {
   Calendar,
   Users,
   Clock,
-  Target,
   Award,
 } from "lucide-react"
 
 const caseStudies = [
   {
     id: 1,
-    title: "Centro de Saúde Mental Lisboa",
-    location: "Lisboa, Portugal",
-    type: "Clínica Privada",
-    duration: "6 meses",
+    title: "Adult outpatient psychology clinic",
+    location: "Lisbon, Portugal",
+    type: "Outpatient Psychology",
+    duration: "Ongoing",
     image: "/hospital (3).webp",
-    challenge: "High administrative burden and limited session insights",
-    solution: "Implemented PsyCare's AI transcription and analytics suite",
+    context:
+      "An outpatient clinic providing weekly psychotherapy sessions for adults with anxiety and mood-related difficulties.",
+    intervention:
+      "PsyCare supported clinicians through secure speech-to-text transcription, structured session summaries and progress tracking across multiple sessions.",
+    outcome:
+      "",
+    note:
+      "",
     results: [
-      { metric: "75%", description: "Redução do tempo de documentação" },
-      { metric: "40%", description: "Aumento da satisfação dos pacientes" },
-      { metric: "60%", description: "Mais sessões por semana" },
-      { metric: "90%", description: "Satisfação dos terapeutas" },
+      { metric: "30%", description: "~30% reduction in documentation time" },
+      { metric: "40%", description: "Increased consistency in clinical records" },
+      { metric: "60%", description: "Clearer longitudinal view of patientreported outcomes after 6 weeks" },
+      { metric: "90%", description: "Psychologists’ satisfaction with Psycare" },
     ],
     testimonial:
       "PsyCare transformed our clinic. We can now fully focus on our patients while AI handles administrative tasks.",
-    author: "Dra. Sara Martins",
-    role: "Clinical Director",
+    author: "",
+    role: "",
     tags: ["AI Transcription", "Analytics", "Workflow Optimization"],
     color: "from-teal-500 to-blue-500",
   },
-  {
-    id: 2,
-    title: "Clínica Universitária do Porto",
-    location: "Porto, Portugal",
-    type: "Clínica Universitária",
-    duration: "8 meses",
-    image: "/hospital (2).webp",
-    challenge: "Managing high student volume with limited staff",
-    solution: "Deployed PsyCare's patient app and automated scheduling",
-    results: [
-      { metric: "200%", description: "Aumento da capacidade de marcação de consultas" },
-      { metric: "85%", description: "Redução de faltas às consultas" },
-      { metric: "95%", description: "Engajamento dos estudantes" },
-      { metric: "50%", description: "Faster crisis response time" },
-    ],
-    testimonial:
-      "The patient app revolutionized how we connect with students. Crisis interventions are now 50% faster.",
-    author: "Dr. Miguel Costa",
-    role: "Head of Student Services",
-    tags: ["Patient App", "Scheduling", "Crisis Management"],
-    color: "from-teal-400 to-blue-400",
-  },
-  {
-    id: 3,
-    title: "Clínica Pediátrica Harmony",
-    location: "Coimbra, Portugal",
-    type: "Clínica Pediátrica",
-    duration: "4 meses",
-    image: "/hospital (1).webp",
-    challenge: "Difficulty tracking progress in child therapy sessions",
-    solution: "Integrated PsyCare's behavioral analysis and parent portal",
-    results: [
-      { metric: "80%", description: "Melhoria nos resultados dos tratamentos" },
-      { metric: "95%", description: "Satisfação dos pais" },
-      { metric: "65%", description: "Maior precisão no diagnóstico" },
-      { metric: "70%", description: "Aumento do envolvimento familiar" },
-    ],
-    testimonial:
-      "Working with children requires special attention to detail. PsyCare's behavioral analysis helps us catch nuances we might miss.",
-    author: "Dra. Emília Rodrigues",
-    role: "Pediatric Psychologist",
-    tags: ["Behavioral Analysis", "Parent Portal", "Child Therapy"],
-    color: "from-teal-500 to-cyan-500",
-  },
+ 
 ]
 
 export function CaseStudiesSection() {
   const [selectedCase, setSelectedCase] = useState(0)
+  const selectedStudy = caseStudies[selectedCase]
 
   return (
-    <section className="py-6 bg-white relative overflow-hidden">
+    <section className="section-y section-x section-visuals bg-white relative">
       {/* Background Circles */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
@@ -102,7 +65,7 @@ export function CaseStudiesSection() {
         <div className="absolute bottom-32 right-1/3 w-24 h-24 rounded-full bg-[hsla(179,39%,68%,0.35)] blur-xl animate-pulse"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="section-container relative z-10">
         {/* Section Header */}
         <motion.div
           className="text-center space-y-6 mb-12 sm:mb-16"
@@ -114,7 +77,7 @@ export function CaseStudiesSection() {
           <div className="inline-flex items-center gap-2 sm:gap-3">
             <Award className="h-5 w-5 sm:h-6 sm:w-6 text-[hsla(229,71%,77%,1)]" />
             <span className="text-[hsla(229,71%,77%,1)] font-semibold text-xs sm:text-sm uppercase tracking-wide">
-              Case Studies
+             Clinical usecases
             </span>
           </div>
 
@@ -180,14 +143,14 @@ export function CaseStudiesSection() {
                   <div className="md:col-span-2 relative">
                     <div className="h-64 sm:h-80 md:h-full relative overflow-hidden">
                       <img
-                        src={caseStudies[selectedCase].image || "/placeholder.svg"}
-                        alt={caseStudies[selectedCase].title}
+                        src={caseStudies[selectedCase]?.image || "/placeholder.svg"}
+                        alt={caseStudies[selectedCase]?.title || "Case study"}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
                       {/* Floating success badge */}
-                      <motion.div
+                      {/* <motion.div
                         className="absolute top-4 right-4 bg-[#8CD5BC] text-white p-3 rounded-full shadow-lg"
                         animate={{
                           scale: [1, 1.1, 1],
@@ -200,10 +163,10 @@ export function CaseStudiesSection() {
                         }}
                       >
                         <CheckCircle className="w-5 h-5" />
-                      </motion.div>
+                      </motion.div> */}
 
                       {/* Practice info overlay */}
-                      <div className="absolute bottom-4 left-4 right-4">
+                      {/* <div className="absolute bottom-4 left-4 right-4">
                         <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-xs sm:text-sm text-gray-700">
                           <div className="flex flex-wrap gap-2 sm:gap-4">
                             <div className="flex items-center gap-1">
@@ -220,18 +183,18 @@ export function CaseStudiesSection() {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
 
                   {/* Content Section */}
                   <div className="md:col-span-3 p-4 sm:p-6 lg:p-12 space-y-6">
                     <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
-                      {caseStudies[selectedCase].title}
+                      {caseStudies[selectedCase]?.title}
                     </h3>
 
                     <div className="flex flex-wrap gap-2 sm:gap-3">
-                      {caseStudies[selectedCase].tags.map((tag, index) => (
+                      {caseStudies[selectedCase]?.tags.map((tag, index) => (
                         <Badge
                           key={index}
                           className="bg-gradient-to-br from-[#8CD5BC]/70 to-[#9BAAEE]/70 text-grey-800 px-2 py-1 sm:px-3 sm:py-1.5 text-sm sm:text-base"
@@ -241,28 +204,29 @@ export function CaseStudiesSection() {
                       ))}
                     </div>
 
-                    {/* Challenge & Solution */}
+                    {/* Context / Intervention / Outcome / Note */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <Target className="w-4 h-4 text-red-500" />
-                          <h4 className="font-bold text-gray-900 text-sm sm:text-base">Challenge</h4>
-                        </div>
-                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{caseStudies[selectedCase].challenge}</p>
-                      </div>
-
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-teal-500" />
-                          <h4 className="font-bold text-gray-900 text-sm sm:text-base">Solution</h4>
-                        </div>
-                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{caseStudies[selectedCase].solution}</p>
-                      </div>
+                      {[
+                        { label: "Context", value: selectedStudy?.context, Icon: Building },
+                        { label: "Intervention", value: selectedStudy?.intervention, Icon: CheckCircle },
+                        { label: "Outcome", value: selectedStudy?.outcome, Icon: TrendingUp },
+                        { label: "Note", value: selectedStudy?.note, Icon: Star },
+                      ]
+                        .filter((item) => item.value && item.value.trim().length > 0)
+                        .map((item) => (
+                          <div key={item.label} className="space-y-2">
+                            <div className="flex items-center gap-2">
+                              <item.Icon className="w-4 h-4 text-[#9d9af0]" />
+                              <h4 className="font-bold text-gray-900 text-sm sm:text-base">{item.label}</h4>
+                            </div>
+                            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{item.value}</p>
+                          </div>
+                        ))}
                     </div>
 
                     {/* Results Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                      {caseStudies[selectedCase].results.map((result, index) => (
+                      {caseStudies[selectedCase]?.results?.map((result, index) => (
                         <motion.div
                           key={index}
                           className="bg-gradient-to-br from-white to-gray-50 p-4 sm:p-6 rounded-2xl border-2 border-gray-100 text-center shadow-lg"
@@ -272,7 +236,7 @@ export function CaseStudiesSection() {
                           whileHover={{ scale: 1.05, y: -5 }}
                         >
                           <div
-                            className={`text-2xl sm:text-3xl font-bold bg-gradient-to-r ${caseStudies[selectedCase].color} bg-clip-text text-transparent mb-1 sm:mb-2`}
+                            className={`text-2xl sm:text-3xl font-bold bg-gradient-to-r ${caseStudies[selectedCase]?.color} bg-clip-text text-transparent mb-1 sm:mb-2`}
                           >
                             {result.metric}
                           </div>
@@ -285,19 +249,19 @@ export function CaseStudiesSection() {
                     <Card className="bg-gradient-to-br from-teal-50 to-blue-50 border-sky-50 shadow-lg">
                       <CardContent className="p-4 sm:p-6">
                         <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-                          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#8CD5BC] to-[#9BAAEE] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-                            {caseStudies[selectedCase].author
-                              .split(" ")
+                          {/* <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#8CD5BC] to-[#9BAAEE] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                            {caseStudies[selectedCase]?.author
+                              ?.split(" ")
                               .map((n) => n[0])
                               .join("")}
-                          </div>
+                          </div> */}
                           <div className="flex-1">
                             <blockquote className="text-sm sm:text-base text-gray-700 mb-2 sm:mb-3 italic leading-relaxed">
-                              "{caseStudies[selectedCase].testimonial}"
+                              "{caseStudies[selectedCase]?.testimonial || ""}"
                             </blockquote>
                             <div>
-                              <div className="font-bold text-gray-900 text-sm sm:text-base">{caseStudies[selectedCase].author}</div>
-                              <div className="text-xs sm:text-sm text-black font-semibold">{caseStudies[selectedCase].role}</div>
+                              <div className="font-bold text-gray-900 text-sm sm:text-base">{caseStudies[selectedCase]?.author}</div>
+                              <div className="text-xs sm:text-sm text-black font-semibold">{caseStudies[selectedCase]?.role}</div>
                             </div>
                           </div>
                         </div>

@@ -22,24 +22,19 @@ import {
 } from "lucide-react"
 
 const engagementFeatures = [
-  { text: "Immersive VR for anxiety reduction", icon: Brain, description: "Virtual reality therapy sessions" },
-  { text: "AI audio transcription & analysis", icon: Zap, description: "Real-time session insights" },
-  { text: "AI session insights & follow-up suggestions", icon: Heart, description: "Personalized care recommendations" },
-  { text: "Diagnostic & treatment support", icon: Monitor, description: "Evidence-based assessments" },
-  { text: "Patient mood tracking & analysis", icon: Activity, description: "Continuous wellness monitoring" },
-  { text: "Automated progress report", icon: FileText, description: "Comprehensive patient summaries" },
-  { text: "Patients' homework suggestions", icon: Target, description: "Tailored therapeutic exercises" },
-  { text: "Wearable device integration", icon: Watch, description: "Biometric data collection" },
-  { text: "Patient app", icon: Smartphone, description: "Mobile therapy companion" },
-  { text: "Tele-health integration", icon: Video, description: "Seamless remote sessions" },
+  { text: "Clinical pilots", icon: Brain, description: "" },
+  { text: "Validation methodology", icon: Zap, description: "" },
+  { text: "Outcome metrics", icon: Heart, description: "" },
+  { text: "Research roadmap", icon: Monitor, description: "" },
+ 
 ]
 
 const technologyFeatures = [
-  { text: "AI video processing & analysis", icon: Video, description: "Advanced behavioral insights" },
-  { text: "AI-enhanced knowledge base", icon: Database, description: "Intelligent treatment protocols" },
-  { text: "Real-time feedback with biomarkers", icon: BarChart3, description: "Physiological monitoring" },
-  { text: "Integration of insights for reports", icon: Puzzle, description: "Comprehensive analytics" },
-  { text: "API for software integration", icon: Code, description: "Seamless system connectivity" },
+  { text: "Security (encryption, access control, audit logs)", icon: Video, description: "" },
+  { text: "Privacy (GDPR-by-design, data minimization)", icon: Database, description: "" },
+  { text: "AI governance (human-in-the-loop, evaluation)", icon: BarChart3, description: "" },
+  { text: "Deployment (cloud / on-prem if applicable)", icon: Puzzle, description: "" },
+
 ]
 
 const containerVariants = {
@@ -49,7 +44,7 @@ const containerVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30, scale: 0.9 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 100, damping: 15, duration: 0.6 } },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { type: "spring" as const, stiffness: 100, damping: 15 } },
 }
 
 export default function FunctionalitiesSection() {
@@ -70,8 +65,8 @@ export default function FunctionalitiesSection() {
   }
 
   return (
-    <section className="py-24 bg-gray-50/50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="section-y section-x bg-gray-50/50">
+      <div className="section-container">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
           <div className="flex items-center gap-2 w-fit mx-auto">
@@ -89,22 +84,75 @@ export default function FunctionalitiesSection() {
           </p>
         </div>
 
-        {/* ENGAGEMENT Section */}
-        <motion.div className="mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
-          {/* Gradient Badge with Line */}
+        {/* TECHNOLOGY Section */}
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
           <motion.div className="flex items-center mb-12 justify-center" variants={containerVariants}>
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-[#85E1B9] to-[#8AD7C3] rounded-full flex items-center justify-center">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="text-3xl font-bold bg-gradient-to-r from-[#85E1B9] to-[#8AD7C3] bg-clip-text text-transparent">
+                TECHNOLOGY
+              </h4>
+            </div>
+            <div className="flex-1 ml-8 h-px bg-gradient-to-r from-[#85E1B9]/50 to-transparent"></div>
+          </motion.div>
+
+          <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6" variants={containerVariants}>
+            {technologyFeatures.map((feature, index) => {
+              const Icon = feature.icon
+              const key = `technology-${index}`
+              const isHovered = hoveredCard === key
+
+              return (
+                <motion.div
+                  key={key}
+                  variants={cardVariants}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  onHoverStart={() => !isMobile && setHoveredCard(key)}
+                  onHoverEnd={() => !isMobile && setHoveredCard(null)}
+                  onClick={() => handleCardClick(key)}
+                >
+                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-[#8AD7C3] group h-full bg-white border-gray-200">
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-teal-100/80 rounded-lg flex items-center justify-center text-[#85E1B9] group-hover:bg-[#85E1B9] group-hover:text-white transition-colors">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="font-semibold text-sm leading-tight text-gray-900">{feature.text}</h3>
+                        <motion.p
+                          className="text-gray-600 text-xs"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={isHovered ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {feature.description}
+                        </motion.p>
+                      </div>
+                    </div>
+                  </Card>
+                </motion.div>
+              )
+            })}
+          </motion.div>
+        </motion.div>
+
+        {/* Science & Validation Section */}
+        {/* <motion.div className="mt-20 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
+          {/* Gradient Badge with Line */}
+          {/* <motion.div className="flex items-center mb-12 justify-center" variants={containerVariants}>
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12 bg-gradient-to-r from-[#ADCBE2] to-[#96B9DF] rounded-full flex items-center justify-center">
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <h4 className="text-3xl font-bold bg-gradient-to-r from-[#ADCBE2] to-[#96B9DF] bg-clip-text text-transparent">
-                ENGAGEMENT
+                Science & Validation
               </h4>
             </div>
             <div className="flex-1 ml-8 h-px bg-gradient-to-r from-[#ADCBE2]/50 to-transparent"></div>
-          </motion.div>
+          </motion.div> */} 
 
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" variants={containerVariants}>
+          {/* <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" variants={containerVariants}>
             {engagementFeatures.map((feature, index) => {
               const Icon = feature.icon
               const key = `engagement-${index}`
@@ -140,62 +188,15 @@ export default function FunctionalitiesSection() {
                 </motion.div>
               )
             })}
-          </motion.div>
-        </motion.div>
-
-        {/* Divider and TECHNOLOGY Section remain unchanged */}
-        {/* TECHNOLOGY Section */}
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
-          <motion.div className="flex items-center mb-12 justify-center" variants={containerVariants}>
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-[#85E1B9] to-[#8AD7C3] rounded-full flex items-center justify-center">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
-              <h4 className="text-3xl font-bold bg-gradient-to-r from-[#85E1B9] to-[#8AD7C3] bg-clip-text text-transparent">
-                TECHNOLOGY
-              </h4>
-            </div>
-            <div className="flex-1 ml-8 h-px bg-gradient-to-r from-[#85E1B9]/50 to-transparent"></div>
-          </motion.div>
-
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" variants={containerVariants}>
-            {technologyFeatures.map((feature, index) => {
-              const Icon = feature.icon
-              const key = `technology-${index}`
-              const isHovered = hoveredCard === key
-
-              return (
-                <motion.div
-                  key={key}
-                  variants={cardVariants}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  onHoverStart={() => !isMobile && setHoveredCard(key)}
-                  onHoverEnd={() => !isMobile && setHoveredCard(null)}
-                  onClick={() => handleCardClick(key)}
-                >
-                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-[#8AD7C3] group h-full bg-white border-gray-200">
-                  <div className="space-y-4">
-                    <div className="w-12 h-12 bg-teal-100/80 rounded-lg flex items-center justify-center text-[#85E1B9] group-hover:bg-[#85E1B9] group-hover:text-white transition-colors">
-                    <Icon className="w-5 h-5" />
-                    </div>
-                    <div className="space-y-2">
-                    <h3 className="font-semibold text-sm leading-tight text-gray-900">{feature.text}</h3>
-                    <motion.p
-                      className="text-gray-600 text-xs"
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={isHovered ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {feature.description}
-                    </motion.p>
-                    </div>
-                  </div>
-                  </Card>
-                </motion.div>
-              )
-            })}
-          </motion.div>
-        </motion.div>
+          </motion.div> */}
+        {/* </motion.div> */}
+        {/* <div className="mt-12 text-center">
+          <p className="text-lg md:text-xl font-semibold text-gray-900">
+            <span className="bg-gradient-to-r from-[#ADCBE2] to-[#8AD7C3] bg-clip-text text-transparent">
+              PsyCare is developed and validated in collaboration with clinicians and research partners.
+            </span>
+          </p>
+        </div> */}
       </div>
     </section>
   )

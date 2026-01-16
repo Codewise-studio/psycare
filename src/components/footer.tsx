@@ -1,17 +1,28 @@
+"use client"
+
 import Link from "next/link"
-import Image from "next/image"
+import { siteNavigation } from "@/lib/navigation"
+import {
+  CookiePolicyDialog,
+  DataProcessingAgreementDialog,
+  PrivacyPolicyDialog,
+  TermsOfServiceDialog,
+} from "@/components/footer-legal-dialogs"
 
 export function Footer() {
+  const currentYear = new Date().getFullYear()
+  const visibleNavigation = siteNavigation.filter((item) => item.showInMenu ?? true)
+
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
+      <div className="mx-auto max-w-7xl px-6 py-8 md:py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:gap-12">
           
           {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2">
               <img
-                src="/pasycare_white_color.webp"
+                src="/Cores.webp"
                 alt="Psycare Logo"
                 className="h-14 w-auto object-contain"
               />
@@ -23,7 +34,7 @@ export function Footer() {
             {/* Social Links */}
             <div className="mt-6 flex space-x-4">
               <Link
-                href="https://www.instagram.com/visualthinking.pt/"
+                href="https://www.instagram.com/psycare.studio/"
                 className="transition-all duration-200 ease-in-out"
                 aria-label="Instagram"
               >
@@ -67,30 +78,23 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Product Links */}
+          {/* Navigation Links */}
           <div>
-         <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
-    Psycare Studio
-  </h3>
-  <ul className="space-y-2">
-    {[
-      { label: "Why choose Psycare", href: "#whychoosepsycare" },
-      { label: "Features", href: "#features" },
-      { label: "Functionalities", href: "#functionalities" },
-      { label: "Case Studies", href: "#caseStudies" },
-      { label: "Team", href: "#team" },
-      { label: "Testimonials", href: "#testimonials" },
-    ].map((item) => (
-      <li key={item.href}>
-        <a
-          href={item.href}
-          className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors duration-200"
-        >
-          {item.label}
-        </a>
-      </li>
-    ))}
-  </ul>
+            <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
+              Navigation
+            </h3>
+            <ul className="space-y-2">
+              {visibleNavigation.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors duration-200"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contacts */}
@@ -137,27 +141,13 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-border">
+        <div className="mt-8 pt-6 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
             <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-6">
-              <Link
-                href="#"
-                className="text-xs text-muted-foreground hover:text-foreground hover:underline transition-all duration-200 ease-in-out"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="#"
-                className="text-xs text-muted-foreground hover:text-foreground hover:underline transition-all duration-200 ease-in-out"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                href="#"
-                className="text-xs text-muted-foreground hover:text-foreground hover:underline transition-all duration-200 ease-in-out"
-              >
-                Cookie Policy
-              </Link>
+              <PrivacyPolicyDialog />
+              <TermsOfServiceDialog />
+              <CookiePolicyDialog />
+              <DataProcessingAgreementDialog />
 
               {/* Divider */}
               <div className="hidden sm:block w-px h-4 bg-black" />
@@ -180,12 +170,12 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Designed by <span className="text-[#a3a1f0] transition-all duration-200 ease-in-out">CodeWise</span>
+                Designed by <span className="text-[#a3a1f0] transition-all duration-200 ease-in-out">codewise</span>
               </Link>
             </div>
 
             <p className="text-xs text-muted-foreground">
-              © 2025 Psycare Studio — All rights reserved
+              © {currentYear} Psycare Studio — All rights reserved
             </p>
           </div>
         </div>

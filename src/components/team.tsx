@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Award, BookOpen, Star } from "lucide-react"
@@ -29,6 +29,18 @@ const advisoryMembers: AdvisoryMember[] = [
     credentials: "",
     yearsExperience: undefined,
     group: "core",
+  }, 
+  {
+    id: "2",
+    name: "Miguel Caldas",
+    photo: "/team/MiguelCaldas.webp",
+    shortCV:
+      "",
+    role: "CTOO",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
+    group: "core",
   },
   {
     id: "2",
@@ -37,6 +49,18 @@ const advisoryMembers: AdvisoryMember[] = [
     shortCV:
       "",
     role: "Head Tech",
+    expertise: [""],
+    credentials: "",
+    yearsExperience: undefined,
+    group: "core",
+  },
+   {
+    id: "2",
+    name: "Isabel Mangas Palma",
+    photo: "/team/IsabelMangasPalma.webp",
+    shortCV:
+      "",
+    role: "Psychiatrist",
     expertise: [""],
     credentials: "",
     yearsExperience: undefined,
@@ -103,18 +127,18 @@ const advisoryMembers: AdvisoryMember[] = [
     yearsExperience: undefined,
     group: "scientific",
   },
-  {
-    id: "8",
-    name: "Manuel Dias",
-    photo: "/team/ManuelDias.webp",
-    shortCV:
-      "",
-    role: "National Technology Officer & Board Member",
-    expertise: [""],
-  credentials: "",
-    yearsExperience: undefined,
-    group: "advisory",
-  },
+  // {
+  //   id: "8",
+  //   name: "Manuel Dias",
+  //   photo: "/team/ManuelDias.webp",
+  //   shortCV:
+  //     "",
+  //   role: "National Technology Officer & Board Member",
+  //   expertise: [""],
+  // credentials: "",
+  //   yearsExperience: undefined,
+  //   group: "advisory",
+  // },
   {
     id: "9",
     name: "Patrice Vanderbeeken",
@@ -216,90 +240,10 @@ const advisoryMembers: AdvisoryMember[] = [
 ]
 
 export function Team() {
-  const tabs: Array<{ key: AdvisoryMember["group"]; label: string }> = [
-    { key: "core", label: "Core Team" },
-    { key: "advisory", label: "Advisory Board" },
-    { key: "scientific", label: "Scientific Team" },
-  ]
-  const [selectedTab, setSelectedTab] = useState<AdvisoryMember["group"]>("core")
   const [selectedMember, setSelectedMember] = useState<AdvisoryMember | null>(null)
 
-  // refs para rolar até a secção do grupo
-  const groupRefs = {
-    core: useRef<HTMLDivElement | null>(null),
-    advisory: useRef<HTMLDivElement | null>(null),
-    scientific: useRef<HTMLDivElement | null>(null),
-  } as Record<AdvisoryMember["group"], React.RefObject<HTMLDivElement>>
-
-  const filteredMembers = advisoryMembers.filter((m) => m.group === selectedTab)
-
-  // debug: log selectedTab and filtered count when tab changes
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log('selectedTab', selectedTab, 'filteredMembersCount', filteredMembers.length)
-  }, [selectedTab, filteredMembers.length])
-
-  const onTabClick = (key: AdvisoryMember["group"]) => {
-    setSelectedTab(key)
-    const ref = groupRefs[key]
-    if (ref?.current) ref.current.scrollIntoView({ behavior: "smooth", block: "start" })
-  }
-
-  // keyboard navigation for tabs (ArrowLeft / ArrowRight / Home / End)
-  const tabKeys = tabs.map((t) => t.key)
-  const onTabKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-    const idx = tabKeys.indexOf(selectedTab)
-    if (idx === -1) return
-
-    const safeIndex = (i: number) => ((i % tabKeys.length) + tabKeys.length) % tabKeys.length
-
-    if (e.key === "ArrowRight") {
-      const nextKey = tabKeys[safeIndex(idx + 1)]
-      if (nextKey) {
-        setSelectedTab(nextKey)
-        const ref = groupRefs[nextKey]
-        if (ref?.current) ref.current.scrollIntoView({ behavior: "smooth", block: "start" })
-      }
-      e.preventDefault()
-      return
-    }
-
-    if (e.key === "ArrowLeft") {
-      const prevKey = tabKeys[safeIndex(idx - 1)]
-      if (prevKey) {
-        setSelectedTab(prevKey)
-        const ref = groupRefs[prevKey]
-        if (ref?.current) ref.current.scrollIntoView({ behavior: "smooth", block: "start" })
-      }
-      e.preventDefault()
-      return
-    }
-
-    if (e.key === "Home") {
-      const firstKey = tabKeys[0]
-      if (firstKey) {
-        setSelectedTab(firstKey)
-        const ref = groupRefs[firstKey]
-        if (ref?.current) ref.current.scrollIntoView({ behavior: "smooth", block: "start" })
-      }
-      e.preventDefault()
-      return
-    }
-
-    if (e.key === "End") {
-      const lastKey = tabKeys[tabKeys.length - 1]
-      if (lastKey) {
-        setSelectedTab(lastKey)
-        const ref = groupRefs[lastKey]
-        if (ref?.current) ref.current.scrollIntoView({ behavior: "smooth", block: "start" })
-      }
-      e.preventDefault()
-      return
-    }
-  }
-
   return (
-    <section className="bg-white py-24 relative overflow-hidden">
+    <section className="bg-white section-y section-x relative section-visuals">
       {/* decorative overlay - must not capture pointer events */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse pointer-events-none" />
@@ -314,7 +258,7 @@ export function Team() {
       </div>
 
       <motion.div
-        className="max-w-7xl px-6 py-10 sm:px-8 lg:px-12 lg:py-14 mx-auto relative z-10"
+        className="section-container relative z-10"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -366,46 +310,8 @@ export function Team() {
           </div> */}
         </div>
 
-        {/* Tabs */}
-        <div className="max-w-4xl mx-auto mb-8">
-          <div role="tablist" aria-label="Team groups" className="flex flex-row flex-wrap items-center justify-center gap-2 sm:gap-3">
-            {tabs.map((t) => {
-              const active = t.key === selectedTab
-              const count = advisoryMembers.filter((m) => m.group === t.key).length
-              return (
-                <button
-                  key={t.key}
-                  type="button"
-                  role="tab"
-                  aria-selected={active}
-                  aria-controls={`team-${t.key}`}
-                  tabIndex={active ? 0 : -1}
-                  onKeyDown={onTabKeyDown}
-                  onClick={() => {
-                    // debug: log clicks
-                    // eslint-disable-next-line no-console
-                    console.log('tab click', t.key)
-                    onTabClick(t.key)
-                  }}
-                  className={`px-2 py-1 sm:px-4 sm:py-2 rounded-full font-medium transition-all duration-150 focus:outline-none flex items-center justify-center gap-1 sm:gap-2 ${
-                    active
-                      ? "bg-gradient-to-r from-[hsla(229,71%,77%,1)] to-[hsla(179,39%,68%,1)] text-white shadow-md"
-                      : "bg-white border border-gray-200 text-gray-700 hover:shadow-sm"
-                  }`}
-                >
-                  <span className="text-xs sm:text-base">{t.label}</span>
-                  <span className={`text-xs px-1 sm:px-2 py-0.5 rounded-full ${active ? 'bg-white/20' : 'bg-gray-100 text-gray-600'}`}>
-                    {count}
-                  </span>
-                </button>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* render apenas os membros do tab selecionado */}
+        {/* All members in a single section */}
         <motion.div
-          key={selectedTab}
           className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
           initial="hidden"
           whileInView="visible"
@@ -417,9 +323,9 @@ export function Team() {
             },
           }}
         >
-          {filteredMembers.map((member) => (
+          {advisoryMembers.map((member) => (
             <motion.div
-              key={member.id}
+              key={`${member.id}-${member.name}`}
               className="group relative bg-white rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               variants={{
                 hidden: { opacity: 0, y: 30 },
@@ -475,14 +381,14 @@ export function Team() {
                     ))}
                 </div>
 
-                <Button
+                {/* <Button
                   onClick={() => setSelectedMember(member)}
                   className="w-full bg-gradient-to-r from-[hsla(229,71%,77%,1)] to-[hsla(229,71%,77%,1)] text-white font-semibold rounded-full transition-all duration-300 group-hover:scale-105 text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-3"
                 >
                   <span className="hidden sm:inline">View Full Profile</span>
                   <span className="sm:hidden">View Profile</span>
                   <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
-                </Button>
+                </Button> */}
               </div>
             </motion.div>
           ))}

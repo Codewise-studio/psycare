@@ -13,6 +13,7 @@ import { EnhancedHeroSection  } from "@/components/enhanced-hero-section"
 import { EnhancedServicesSection } from "@/components/enhanced-services-section"  
 import FocusCareSection from "@/components/focus-care-section"
 import { TestimonialsMarqueeGrid } from "@/components/TestimonialsMarqueeGrid"
+import { ScienceValidationSection } from "@/components/science-validation-section"
 
 import { ScrollToTopButton } from "@/components/scrolltotop"
 
@@ -28,11 +29,11 @@ export default function HomePage() {
     <EnhancedHeroSection />
   </section>
 
-  <section id="focusCare" className="min-h-screen">
+  <section id="focusCare">
     <FocusCareSection />
   </section>
 
-  <section id="whychoosepsycare" className="min-h-screen">
+  <section id="about">
     <EnhancedServicesSection />
   </section>
 
@@ -43,38 +44,42 @@ export default function HomePage() {
     <Thefyuture />
   </section>
 
-   <section id="features" className="min-h-screen">
+   <section id="product">
     <FeaturesGrid />
   </section>
 
 
 
-  <section id="banner2 ">
+  <section id="banner2">
     <Banner2 />
   </section>
 
-  <section id="functionalities" className="min-h-screen">
+  <section id="privacy-security">
     <FunctionalitiesSection />
   </section>
 
-  <section id="caseStudies" className="min-h-screen">
+  <section id="science-validation">
+    <ScienceValidationSection />
+  </section>
+
+  <section id="caseStudies">
     <CaseStudiesSection />
   </section>
 
 
-  <section id="team" className="min-h-screen">
+  <section id="team">
     <Team />
   </section>
 
-  <section id="testimonials" className="min-h-screen">
+    <section id="testimonials">
      <TestimonialsMarqueeGrid /> 
   </section>
   
-  <section id="contact" className="min-h-screen">
+  <section id="contact">
     <ContactSection />
   </section>
 
-  <section id="footer" className="min-h-screen">
+  <section id="footer">
     <Footer />
   </section>
 

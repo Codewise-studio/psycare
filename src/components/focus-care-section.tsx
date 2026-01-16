@@ -7,23 +7,15 @@ import { Button } from "@/components/ui/button"
 const features = [
   {
     icon: Brain,
-    title: "Intelligent documentation automation",
-    description: "AI-powered note-taking that captures every detail",
+    title: "Reduce administrative burden",
   },
   {
     icon: Clock,
-    title: "Real-time session insights",
-    description: "Live analytics and pattern recognition during sessions",
+    title: "Preserve therapeutic presence",
   },
   {
     icon: Workflow,
-    title: "Automated workflow management",
-    description: "Streamlined processes that adapt to your practice",
-  },
-  {
-    icon: Target,
-    title: "Advanced pattern recognition",
-    description: "Deep insights into patient progress and outcomes",
+    title: "Support consistent, evidence-informed care",
   },
 ]
 
@@ -36,7 +28,7 @@ const dashboardElements = [
 
 export default function FocusCareSection() {
   return (
-    <section className="bg-white py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+    <section className="bg-white section-y section-x section-visuals relative">
       {/* Left Side Sound Waves */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 opacity-10">
         {[...Array(6)].map((_, i) => (
@@ -180,7 +172,7 @@ export default function FocusCareSection() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <motion.div
@@ -218,8 +210,7 @@ export default function FocusCareSection() {
                 viewport={{ once: true }}
                 className="text-xl text-gray-600 leading-relaxed max-w-lg"
               >
-                Focus on what matters most - your patients. Let AI handle the rest with intelligent documentation,
-                real-time insights, and automated workflows.
+                Spend less time documenting. More time with patients. Build stronger therapeutic relationships.
               </motion.p>
             </div>
 
@@ -240,19 +231,18 @@ export default function FocusCareSection() {
                   viewport={{ once: true }}
                   className="flex items-start gap-4 group hover:bg-gray-50 p-3 rounded-xl transition-all duration-300"
                 >
-                  <div className="flex-shrink-0">
+                  {/* <div className="flex-shrink-0">
                     <div className="w-8 h-8 bg-gradient-to-r from-[#85E1B9] to-[#6fcaa3] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Check className="h-4 w-4 text-white" />
                     </div>
-                  </div>
-                  <div className="space-y-1">
+                  </div> */}
+                    <div className="space-y-1">
                     <div className="flex items-center gap-2">
                       <feature.icon className="h-5 w-5 text-[#9d85f3]" />
                       <h3 className="font-semibold text-gray-900 group-hover:text-[#9d85f3] transition-colors duration-300">
                         {feature.title}
                       </h3>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}

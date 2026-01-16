@@ -13,7 +13,7 @@ const benefits = [
     icon: Brain,
     title: "Work smarter, care deeper",
     description:
-      "PsyCare handles documentation automatically so psychologists can build stronger therapeutic relationships. Focus fully on your patients while AI captures every detail.",
+      "Spend less time documenting. More time with patients. Build stronger therapeutic relationships.",
     color: "from-[#C4DCE4] to-[#96B9DF]",
     bgColor: "bg-[#C4DCE4]/50",
      imageSrc: "/image26.webp",
@@ -23,7 +23,7 @@ const benefits = [
     icon: Clock,
     title: "More time for patients",
     description:
-      "Automation eliminates scheduling, reminders, and admin tasks—reclaiming 3+ hours every day. Spend your time where it matters most.",
+      "Automation eliminates scheduling, reminders, and admin tasks—reclaiming up to 1.8h every day. Spend your time where it matters most.",
     color: "from-[#96B9DF] to-[#8ECDCC]",
     bgColor: "bg-[#8ECDCC]/50",
      imageSrc: "/image27.webp",
@@ -31,7 +31,7 @@ const benefits = [
   },
   {
     icon: Target,
-    title: "Personalized treatment, powered by AI",
+    title: "Evidence-informed personalization treatment, powered by AI",
     description:
       "Intelligent insights help tailor care plans, track progress, and improve outcomes. Data-driven decisions that enhance every patient journey.",
     color: "from-[#8ECDCC] to-[#85E1B9]",
@@ -41,7 +41,7 @@ const benefits = [
   },
   {
     icon: TrendingUp,
-    title: "Grow without limits",
+    title: "Scale care with clinical consistency",
     description:
       "See more patients without losing quality, supported by scalable automation. Your practice grows while care standards remain exceptional.",
     color: "from-[#85E1B9] to-[#9BAAEE]",
@@ -64,7 +64,7 @@ export function EnhancedServicesSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen px-4 py-24 md:py-32 bg-gradient-to-br from-white via-white to-purple-50/30 overflow-hidden"
+      className="relative min-h-screen px-4 py-24 md:py-32 bg-gradient-to-br from-white via-white to-purple-50/30 section-visuals"
     >
       {/* Background decorative blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -136,7 +136,7 @@ export function EnhancedServicesSection() {
                       ) : (
                         <img
                           src={`/.jpg?key=kixw6&height=600&width=800&query=${encodeURIComponent(
-                            benefit.imageQuery
+                            benefit.imageQuery ?? ""
                           )}`}
                           alt={benefit.title}
                           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
@@ -221,7 +221,7 @@ export function EnhancedServicesSection() {
               Ready to Transform Your Practice?
             </h3>
             <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto text-pretty leading-relaxed">
-              Join thousands of psychologists who are saving time and improving patient outcomes with PsyCare.
+              Join mental health professionals and psychologists who are saving time and improving patient outcomes with PsyCare.
             </p>
 
             <Link

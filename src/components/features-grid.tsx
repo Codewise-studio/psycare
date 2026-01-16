@@ -4,59 +4,49 @@ import { Brain, Mic, Video, BarChart3, Users, Eye, Activity, Target } from "luci
 const features = [
   {
     icon: <Mic className="w-5 h-5" />,
-    title: "Note-Free Sessions",
-    description: "AI-powered recording and transcription",
+    title: "During the session",
+    topics: [
+      "Secure speech-to-text transcription",
+      "Tele-health integration",
+      "Real-time session cues (non-diagnostic)",
+    ],
   },
   {
     icon: <Brain className="w-5 h-5" />,
-    title: "Real-time AI Analysis",
-    description: "Instant insights and pattern recognition",
+    title: "After the session",
+    topics: [
+      "Structured clinical notes (SOAP / DAP compatible)",
+      "Session summary and key themes",
+      "Progress indicators over time",
+      "Clinical decision support (non-diagnostic)",
+    ],
   },
   {
     icon: <Activity className="w-5 h-5" />,
-    title: "Biomarker Monitoring",
-    description: "Track physiological indicators",
-  },
-  {
-    icon: <Video className="w-5 h-5" />,
-    title: "Audio & Video Analysis",
-    description: "Comprehensive behavioral assessment",
-  },
-  {
-    icon: <Eye className="w-5 h-5" />,
-    title: "Gesture Recognition",
-    description: "Advanced emotion and body language AI",
-  },
-  {
-    icon: <BarChart3 className="w-5 h-5" />,
-    title: "Data-Driven Insights",
-    description: "Evidence-based treatment recommendations",
-  },
-  {
-    icon: <Users className="w-5 h-5" />,
-    title: "Patient App",
-    description: "Seamless client engagement platform",
-  },
-  {
-    icon: <Target className="w-5 h-5" />,
-    title: "Personalized Plans",
-    description: "AI-generated treatment pathways",
+    title: "Between sessions",
+    topics: [
+      "Patient app for reflections and followups",
+      "Homework and self-reported outcomes",
+      "Patient-reported mood tracking over time",
+      "Longitudinal trends to support clinical decisions",
+      "Optional wearable data integrations (research & pilots)",
+    ],
   },
 ]
 
 export function FeaturesGrid() {
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
+    <section className="relative section-y section-x section-visuals bg-white">
       {/* Blurred gradient circles */}
       <div className="absolute -top-20 -left-40 w-96 h-96 rounded-full bg-[hsla(179,39%,68%,0.4)] blur-3xl" />
       <div className="absolute top-20 -right-40 w-[500px] h-[500px] rounded-full bg-[hsla(229,71%,77%,0.35)] blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative section-container">
         <div className="text-center space-y-4 mb-16">
           <div className="flex items-center gap-2 w-fit mx-auto">
             <Brain className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
             <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
-              AI-Powered Features
+              Product
             </span>
           </div>
 
@@ -69,7 +59,7 @@ export function FeaturesGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <Card
               key={index}
@@ -81,7 +71,13 @@ export function FeaturesGrid() {
                 </div>
                 <div className="space-y-2">
                   <h3 className="font-semibold text-lg">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm">{feature.description}</p>
+              {feature.topics ? (
+                <ul className="text-muted-foreground text-sm space-y-1 list-disc list-inside">
+                  {feature.topics.map((topic) => (
+                    <li key={topic}>{topic}</li>
+                  ))}
+                </ul>
+              ) : null}
                 </div>
               </div>
             </Card>

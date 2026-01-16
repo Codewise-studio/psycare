@@ -30,8 +30,8 @@ export function ProcessSection() {
   ]
 
   return (
-    <section className="py-24 bg-primary text-white">
-      <div className="container mx-auto px-4">
+    <section className="section-y section-x bg-primary text-white">
+      <div className="section-container">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/20">
             Process
