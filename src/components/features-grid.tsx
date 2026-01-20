@@ -25,9 +25,9 @@ const features = [
     icon: <Activity className="w-5 h-5" />,
     title: "Between sessions",
     topics: [
-      "Patient app for reflections and followups",
+      "Patient app for reflections and follow-ups",
       "Homework and self-reported outcomes",
-      "Patient-reported mood tracking over time",
+      "Patient reported mood tracking over time",
       "Longitudinal trends to support clinical decisions",
       "Optional wearable data integrations (research & pilots)",
     ],

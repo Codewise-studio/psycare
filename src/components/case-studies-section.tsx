@@ -38,13 +38,13 @@ const caseStudies = [
     results: [
       { metric: "30%", description: "~30% reduction in documentation time" },
       { metric: "40%", description: "Increased consistency in clinical records" },
-      { metric: "60%", description: "Clearer longitudinal view of patientreported outcomes after 6 weeks" },
-      { metric: "90%", description: "Psychologists’ satisfaction with Psycare" },
+      { metric: "60%", description: "Clearer longitudinal view of patient reported outcomes after 6 weeks" },
+      { metric: "100%", description: "Psychologists’ satisfaction with Psycare" },
     ],
     testimonial:
       "PsyCare transformed our clinic. We can now fully focus on our patients while AI handles administrative tasks.",
     author: "",
-    role: "",
+    role: "Clinical Director",
     tags: ["AI Transcription", "Analytics", "Workflow Optimization"],
     color: "from-teal-500 to-blue-500",
   },
@@ -77,7 +77,7 @@ export function CaseStudiesSection() {
           <div className="inline-flex items-center gap-2 sm:gap-3">
             <Award className="h-5 w-5 sm:h-6 sm:w-6 text-[hsla(229,71%,77%,1)]" />
             <span className="text-[hsla(229,71%,77%,1)] font-semibold text-xs sm:text-sm uppercase tracking-wide">
-             Clinical usecases
+     Clinical use cases
             </span>
           </div>
 

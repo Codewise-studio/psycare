@@ -191,7 +191,7 @@ export function EnhancedHeroSection() {
                   <span className="text-sm font-medium text-gray-700">Speech-to-text</span>
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mt-1">Up to 98%</div>
-                <div className="text-xs text-gray-500">Accuracy (supported languages)</div>
+                <div className="text-xs text-gray-500">Accuracy in supported languages</div>
               </motion.div>
 
               <motion.div
@@ -204,7 +204,7 @@ export function EnhancedHeroSection() {
                   <span className="text-sm font-medium text-gray-700">Time Saved</span>
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mt-1">Up to 1.8h</div>
-                <div className="text-xs text-gray-500">Saved every day</div>
+                <div className="text-xs text-gray-500">Per day</div>
               </motion.div>
             </div>
 

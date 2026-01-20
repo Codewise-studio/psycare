@@ -31,7 +31,7 @@ const benefits = [
   },
   {
     icon: Target,
-    title: "Evidence-informed personalization treatment, powered by AI",
+    title: "Evidence-informed personalization",
     description:
       "Intelligent insights help tailor care plans, track progress, and improve outcomes. Data-driven decisions that enhance every patient journey.",
     color: "from-[#8ECDCC] to-[#85E1B9]",
@@ -221,7 +221,7 @@ export function EnhancedServicesSection() {
               Ready to Transform Your Practice?
             </h3>
             <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto text-pretty leading-relaxed">
-              Join mental health professionals and psychologists who are saving time and improving patient outcomes with PsyCare.
+              Join mental health professionals who are saving time and improving patient outcomes with PsyCare.
             </p>
 
             <Link

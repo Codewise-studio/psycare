@@ -210,7 +210,7 @@ export default function FocusCareSection() {
                 viewport={{ once: true }}
                 className="text-xl text-gray-600 leading-relaxed max-w-lg"
               >
-                Spend less time documenting. More time with patients. Build stronger therapeutic relationships.
+                Focus on what matters most – your patients.Let AI handle the rest with intelligent documentation, real-time insights and automated Workflows.  .
               </motion.p>
             </div>
 

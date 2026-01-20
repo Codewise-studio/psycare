@@ -27,7 +27,8 @@ const formSchema = z
 
     // individual
     name: z.string().optional(),
-    professionalRole: z.string().optional(),
+    professionalRole: z.enum(["Psychologist", "Psychiatrist", "Other"]).optional(),
+    professionalRoleOther: z.string().optional(),
     email: z.string().optional(),
 
     // organization
@@ -46,6 +47,10 @@ const formSchema = z
       }
       if (!data.professionalRole || data.professionalRole.trim() === "") {
         ctx.addIssue({ code: "custom", path: ["professionalRole"], message: "Professional role is required" })
+      } else if (data.professionalRole === "Other") {
+        if (!data.professionalRoleOther || data.professionalRoleOther.trim() === "") {
+          ctx.addIssue({ code: "custom", path: ["professionalRoleOther"], message: "Please specify your role" })
+        }
       }
       if (!data.email || data.email.trim() === "") {
         ctx.addIssue({ code: "custom", path: ["email"], message: "Email is required" })
@@ -99,7 +104,8 @@ export function ContactSection() {
     () => ({
       contactAs: "individual",
       name: "",
-      professionalRole: "",
+      professionalRole: undefined,
+      professionalRoleOther: "",
       country: "",
       email: "",
       message: "",
@@ -128,6 +134,7 @@ export function ContactSection() {
 
   const contactAs = watch("contactAs")
   const organizationType = watch("organizationType")
+  const professionalRole = watch("professionalRole")
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true)
@@ -144,7 +151,7 @@ export function ContactSection() {
         templateParams.from_name = data.name ?? ""
         templateParams.from_email = data.email ?? ""
         templateParams.country = data.country
-        templateParams.professional_role = data.professionalRole ?? ""
+        templateParams.professional_role = data.professionalRole === "Other" ? (data.professionalRoleOther ?? "") : (data.professionalRole ?? "")
       } else {
         templateParams.from_name = data.yourName ?? ""
         templateParams.from_email = data.workEmail ?? ""
@@ -456,18 +463,41 @@ Contacts
                         <div className="grid lg:grid-cols-2 gap-4">
                           <div className="space-y-2">
                             <Label htmlFor="professionalRole" className="text-foreground">
-                              Professional role (psychologist / psychiatry / other) *
+                              Professional role *
                             </Label>
-                            <Input
+                            <select
                               id="professionalRole"
                               {...register("professionalRole")}
-                              className="bg-slate-50 border-slate-200 text-foreground placeholder:text-slate-400 focus:border-[#9d9af0] focus:ring-[#9d9af0]/20"
-                              placeholder="Clinical Psychologist"
-                            />
+                              className="flex h-10 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-foreground placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9d9af0]/20 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                              defaultValue=""
+                            >
+                              <option value="" disabled>
+                                Select…
+                              </option>
+                              <option value="Psychologist">Psychologist</option>
+                              <option value="Psychiatrist">Psychiatrist</option>
+                              <option value="Other">Other</option>
+                            </select>
                             {errors.professionalRole && (
                               <p className="text-sm text-red-600">{errors.professionalRole.message}</p>
                             )}
                           </div>
+                          {professionalRole === "Other" ? (
+                            <div className="space-y-2">
+                              <Label htmlFor="professionalRoleOther" className="text-foreground">
+                                Please specify your role *
+                              </Label>
+                              <Input
+                                id="professionalRoleOther"
+                                {...register("professionalRoleOther")}
+                                className="bg-slate-50 border-slate-200 text-foreground placeholder:text-slate-400 focus:border-[#9d9af0] focus:ring-[#9d9af0]/20"
+                                placeholder="e.g., Art Therapist"
+                              />
+                              {errors.professionalRoleOther && (
+                                <p className="text-sm text-red-600">{errors.professionalRoleOther.message}</p>
+                              )}
+                            </div>
+                          ) : null}
                           <div className="space-y-2">
                             <Label htmlFor="country" className="text-foreground">
                               Country *

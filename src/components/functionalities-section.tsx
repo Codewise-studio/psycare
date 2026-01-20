@@ -33,7 +33,7 @@ const technologyFeatures = [
   { text: "Security (encryption, access control, audit logs)", icon: Video, description: "" },
   { text: "Privacy (GDPR-by-design, data minimization)", icon: Database, description: "" },
   { text: "AI governance (human-in-the-loop, evaluation)", icon: BarChart3, description: "" },
-  { text: "Deployment (cloud / on-prem if applicable)", icon: Puzzle, description: "" },
+  { text: "Deployment (cloud / on-prem)", icon: Puzzle, description: "" },
 
 ]
 
@@ -72,7 +72,7 @@ export default function FunctionalitiesSection() {
           <div className="flex items-center gap-2 w-fit mx-auto">
             <Shield className="h-6 w-6 text-[hsla(229,71%,77%,1)]" />
             <span className="text-[hsla(229,71%,77%,1)] font-semibold text-sm uppercase tracking-wide">
-              PsyCare Studio Functionalities
+              Product
             </span>
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-balance text-gray-900">
