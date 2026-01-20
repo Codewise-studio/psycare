@@ -43,7 +43,7 @@ export function FeatureCards() {
 
   return (
     <section className="section-y section-x bg-background">
-      <div className="section-container max-w-6xl">
+      <div className="section-container">
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <Card key={index} className="border-border hover:shadow-lg transition-shadow">

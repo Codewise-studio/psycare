@@ -18,8 +18,8 @@ export default function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang="en" className={`${geist.variable}`}>
-			<body>{children}</body>
-		</html>
+		   <html lang="en" className={`${geist.variable}`}>
+			   <body className="overflow-x-hidden">{children}</body>
+		   </html>
 	);
 }
