@@ -110,7 +110,7 @@ export function EnhancedHeroSection() {
   transition={{ duration: 0.8, delay: 0.8 }}
 >
   {/* Learn More */}
-  <Link href="#whychoosepsycare" scroll={true}>
+  <Link href="#focusCare" scroll={true}>
     <Button
       className="inline-flex items-center justify-center relative overflow-hidden rounded-full px-8 h-14 font-semibold bg-[#96B9DF] cursor-pointer group border border-[#96B9DF]"
     >
