@@ -4,6 +4,6 @@ export const siteNavigation = [
   { label: "Science", href: "#science-validation" },
   { label: "Privacy & Security", href: "#privacy-security", showInMenu: false },
   { label: "Clinical use cases", href: "#caseStudies" },
-  { label: "Team", href: "#team" },
+  // { label: "Team", href: "#team" },
   { label: "Testimonials", href: "#testimonials" },
 ]

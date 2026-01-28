@@ -328,79 +328,28 @@ export default function FocusCareSection() {
               />
             </div>
 
-            {/* Dashboard Container */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              className="relative bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
-            >
-              {/* Dashboard Header */}
-              <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    </div>
-                    <span className="text-gray-700 font-medium">PsyCare AI Dashboard</span>
-                  </div>
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                    className="w-2 h-2 bg-green-500 rounded-full"
-                  />
+            {/* Dashboard Image with Floating Stat Cards */}
+            <div className="relative flex items-center justify-center min-h-[350px]">
+              <img
+                src="/image24.webp"
+                alt="PsyCare AI Dashboard Mockup"
+                className="rounded-2xl shadow-2xl border border-gray-100 object-cover w-full max-w-[620px] min-h-[320px] bg-gray-50"
+                loading="lazy"
+              />
+              {/* Floating Stats Cards */}
+              <div className="absolute -bottom-6 -left-6">
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 min-w-[90px]">
+                  <div className="text-2xl font-bold text-green-600">23%</div>
+                  <div className="text-sm text-gray-600">Time Saved</div>
                 </div>
               </div>
-
-              {/* Dashboard Content */}
-              <div className="p-8 space-y-6">
-                {dashboardElements.map((element, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, width: 0 }}
-                    whileInView={{ opacity: 1, width: "auto" }}
-                    transition={{
-                      duration: 0.8,
-                      delay: element.delay,
-                      ease: "easeOut",
-                    }}
-                    viewport={{ once: true }}
-                    className={`h-4 ${element.color} ${element.width} rounded-full relative overflow-hidden`}
-                  >
-                    <motion.div
-                      animate={{ x: ["-100%", "100%"] }}
-                      transition={{
-                        duration: 2,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                        delay: element.delay + 1,
-                      }}
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                    />
-                  </motion.div>
-                ))}
-
-                {/* Interactive Elements */}
-                <div className="flex justify-between items-center pt-4">
-                  <motion.div
-                    // animate={{ scale: [1, 1.1, 1] }}
-                    // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                    // className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center"
-                  >
-                    {/* <Clock className="h-6 w-6 text-white" /> */}
-                  </motion.div>
-
-                  <motion.div
-                    animate={{ rotate: [0, 180, 360] }}
-                    transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-                    className="w-12 h-12 bg-gradient-to-r from-[hsla(179,39%,68%,1)] to-[hsla(229,71%,77%,1)] rounded-full flex items-center justify-center"
-                  >
-                    <Brain className="h-6 w-6 text-white" />
-                  </motion.div>
+              <div className="absolute -top-6 -right-6">
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 min-w-[90px]">
+                  <div className="text-2xl font-bold text-[#9BAAEE]">24/7</div>
+                  <div className="text-sm text-gray-600">AI Support</div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Floating Stats Cards */}
             <motion.div
@@ -410,7 +359,7 @@ export default function FocusCareSection() {
               viewport={{ once: true }}
               className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg border border-gray-100 p-4"
             >
-              <div className="text-2xl font-bold text-green-600">98%</div>
+              <div className="text-2xl font-bold text-green-600">23%</div>
               <div className="text-sm text-gray-600">Time Saved</div>
             </motion.div>
 

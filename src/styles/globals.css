@@ -253,3 +253,86 @@ section[id] {
 html {
   scroll-behavior: smooth;
 }
+
+/* Botões flutuantes de ação (consulta/whatsapp) */
+.botoes-flutuantes {
+  position: fixed;
+  bottom: 80px; /* Espaço para não sobrepor o botão de back to top */
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.btn-flutuante {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #1e293b;
+  box-shadow: 0 2px 8px rgba(30,41,59,0.15);
+  transition: transform 0.18s, box-shadow 0.18s;
+  overflow: visible;
+}
+
+.btn-flutuante svg {
+  width: 22px;
+  height: 22px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2;
+}
+
+.btn-flutuante:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 6px 18px rgba(30,41,59,0.22);
+}
+
+.btn-flutuante::after {
+  content: attr(data-label);
+  position: absolute;
+  right: 54px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #222;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s, right 0.18s;
+  min-width: 90px;
+  text-align: center;
+}
+
+.btn-flutuante:hover::after {
+  opacity: 1;
+  right: 64px;
+}
+
+@media (max-width: 768px) {
+  .botoes-flutuantes {
+    bottom: 60px;
+    right: 8px;
+    gap: 7px;
+  }
+  .btn-flutuante {
+    width: 36px;
+    height: 36px;
+  }
+  .btn-flutuante svg {
+    width: 16px;
+    height: 16px;
+  }
+  .btn-flutuante::after {
+    display: none;
+  }
+}

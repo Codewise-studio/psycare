@@ -18,7 +18,7 @@ export function Navbar() {
         <div className="flex items-center">
           <Link href="/">
           <img 
-            src="/Cores.webp" 
+            src="/Cores1.webp" 
             alt="Psycare Logo" 
             className="h-12 sm:h-14 w-auto" 
           />

@@ -67,9 +67,9 @@ export default function HomePage() {
   </section>
 
 
-  <section id="team">
+  {/* <section id="team">
     <Team />
-  </section>
+  </section> */}
 
     <section id="testimonials">
      <TestimonialsMarqueeGrid /> 
