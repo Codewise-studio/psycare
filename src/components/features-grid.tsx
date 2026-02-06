@@ -1,5 +1,7 @@
+import Image from "next/image"
+
 import { Card } from "@/components/ui/card"
-import { Brain, Mic, Video, BarChart3, Users, Eye, Activity, Target } from "lucide-react"
+import { Brain, Mic, Activity } from "lucide-react"
 
 const features = [
   {
@@ -59,29 +61,41 @@ export function FeaturesGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <Card
-              key={index}
-              className="p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/50 group bg-white/70 backdrop-blur-sm"
-            >
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  {feature.icon}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_0.8fr] items-start">
+          <div className="relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 shadow-xl lg:sticky lg:top-24">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.65),rgba(255,255,255,0))]" />
+            <Image
+              src="/image (4).png"
+              alt="Clinician reviewing session insights"
+              width={960}
+              height={520}
+              className="relative h-[260px] w-full object-cover sm:h-[360px] lg:h-[520px]"
+            />
+          </div>
+          <div className="grid grid-cols-1 gap-6">
+            {features.map((feature, index) => (
+              <Card
+                key={index}
+                className="p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/50 group bg-white/70 backdrop-blur-sm"
+              >
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    {feature.icon}
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="font-semibold text-lg">{feature.title}</h3>
+                    {feature.topics ? (
+                      <ul className="text-muted-foreground text-sm space-y-1 list-disc list-inside">
+                        {feature.topics.map((topic) => (
+                          <li key={topic}>{topic}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="font-semibold text-lg">{feature.title}</h3>
-              {feature.topics ? (
-                <ul className="text-muted-foreground text-sm space-y-1 list-disc list-inside">
-                  {feature.topics.map((topic) => (
-                    <li key={topic}>{topic}</li>
-                  ))}
-                </ul>
-              ) : null}
-                </div>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
