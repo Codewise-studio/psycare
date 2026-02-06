@@ -331,9 +331,9 @@ export default function FocusCareSection() {
             {/* Dashboard Image with Floating Stat Cards */}
             <div className="relative flex items-center justify-center min-h-[350px]">
               <img
-                src="/image24.webp"
+                src="/image (6).webp"
                 alt="PsyCare AI Dashboard Mockup"
-                className="rounded-2xl shadow-2xl border border-gray-100 object-cover w-full max-w-[620px] min-h-[320px] bg-gray-50"
+                className="rounded-2xl shadow-2xl border border-gray-100 object-full w-full max-w-[620px] min-h-[320px] bg-gray-50"
                 loading="lazy"
               />
               {/* Floating Stats Cards */}
