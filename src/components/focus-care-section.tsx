@@ -333,7 +333,7 @@ export default function FocusCareSection() {
               <img
                 src="/image (6).webp"
                 alt="PsyCare AI Dashboard Mockup"
-                className="rounded-2xl shadow-2xl border border-gray-100 object-full w-full max-w-[620px] min-h-[320px] bg-gray-50"
+                className="rounded-2xl shadow-2xl border border-gray-100 object-cover w-full max-w-[620px] h-auto bg-gray-50 sm:min-h-[320px]"
                 loading="lazy"
               />
               {/* Floating Stats Cards */}
