@@ -23,7 +23,7 @@ export function TestimonialSection() {
                 <img
                   src="/business-executive-headshot.webp"
                   alt="Client testimonial"
-                  className="w-15 h-15 rounded-full object-cover"
+                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover"
                 />
                 <div className="text-left">
                   <div className="font-semibold">Sarah Johnson</div>

@@ -26,7 +26,7 @@ const caseStudies = [
     location: "Lisbon, Portugal",
     type: "Outpatient Psychology",
     duration: "Ongoing",
-    image: "/hospital (3).webp",
+    image: "/image30.webp",
     context:
       "An outpatient clinic providing weekly psychotherapy sessions for adults with anxiety and mood-related difficulties.",
     intervention:
@@ -141,7 +141,7 @@ export function CaseStudiesSection() {
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6">
                   {/* Image Section */}
                   <div className="md:col-span-2 relative">
-                    <div className="h-64 sm:h-80 md:h-full relative overflow-hidden">
+                    <div className="relative overflow-hidden aspect-[4/3] sm:aspect-[16/10] md:aspect-auto md:h-full">
                       <img
                         src={caseStudies[selectedCase]?.image || "/placeholder.svg"}
                         alt={caseStudies[selectedCase]?.title || "Case study"}

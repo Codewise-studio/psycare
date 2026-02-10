@@ -171,13 +171,13 @@ export function EnhancedHeroSection() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <div className="relative">
+          <div className="relative w-full max-w-md lg:max-w-lg">
             {/* Main Image */}
-            <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 ">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-blue-100 to-purple-100">
               <img
                 src="/image24.webp"
                 alt="Modern therapy office with AI analytics overlay"
-                className="w-full max-w-md lg:max-w-lg drop-shadow-xl rounded-2xl"
+                className="h-full w-full object-cover drop-shadow-xl"
               />
 
               {/* Floating Stats Cards */}

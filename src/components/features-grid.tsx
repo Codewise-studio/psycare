@@ -64,13 +64,15 @@ export function FeaturesGrid() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_0.8fr] items-start">
           <div className="relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 shadow-xl lg:sticky lg:top-24">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.65),rgba(255,255,255,0))]" />
-            <Image
-              src="/image (4).png"
-              alt="Clinician reviewing session insights"
-              width={960}
-              height={520}
-              className="relative h-[260px] w-full object-cover sm:h-[360px] lg:h-[520px]"
-            />
+            <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/10]">
+              <Image
+                src="/image (4).png"
+                alt="Clinician reviewing session insights"
+                fill
+                sizes="(min-width: 1024px) 520px, (min-width: 640px) 60vw, 90vw"
+                className="object-cover"
+              />
+            </div>
           </div>
           <div className="grid grid-cols-1 gap-6">
             {features.map((feature, index) => (

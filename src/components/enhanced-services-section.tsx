@@ -16,7 +16,8 @@ const benefits = [
       "Spend less time documenting. More time with patients. Build stronger therapeutic relationships.",
     color: "from-[#C4DCE4] to-[#96B9DF]",
     bgColor: "bg-[#C4DCE4]/50",
-     imageSrc: "/image26.webp",
+    imageSrc: "/image (5).webp",
+    imageAlt: "Gravacao da consulta e controlos de sessao",
     imageQuery: "psychologist having meaningful conversation with patient in modern office",
   },
   {
@@ -26,7 +27,8 @@ const benefits = [
       "Automation eliminates scheduling, reminders, and admin tasks—reclaiming up to 1.8h every day. Spend your time where it matters most.",
     color: "from-[#96B9DF] to-[#8ECDCC]",
     bgColor: "bg-[#8ECDCC]/50",
-     imageSrc: "/image27.webp",
+    imageSrc: "/image24.webp",
+    imageAlt: "Painel principal com metricas e visao geral",
     imageQuery: "clock showing saved time with calendar and automation icons",
   },
   {
@@ -36,8 +38,8 @@ const benefits = [
       "Intelligent insights help tailor care plans, track progress, and improve outcomes. Data-driven decisions that enhance every patient journey.",
     color: "from-[#8ECDCC] to-[#85E1B9]",
     bgColor: "bg-[#85E1B9]/50",
-    imageSrc: "/image30.webp",
-    imageAlt: "AI analytics dashboard showing patient progress and treatment insights",
+    imageSrc: "/image (7).webp",
+    imageAlt: "Dashboard com progresso e insights clinicos",
   },
   {
     icon: TrendingUp,
@@ -126,7 +128,7 @@ export function EnhancedServicesSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: index * 0.1 + 0.2 }}
                   >
-                    <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                    <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl">
                       {benefit.imageSrc ? (
                         <img
                           src={benefit.imageSrc}
@@ -178,11 +180,11 @@ export function EnhancedServicesSection() {
                           </span>
                         </div>
 
-                        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight text-balance">
+                        <h3 className="text-3xl md:text-2xl font-bold text-gray-900 leading-tight text-balance">
                           {benefit.title}
                         </h3>
 
-                        <p className="text-lg md:text-xl text-gray-600 leading-relaxed text-pretty">
+                        <p className="text-md md:text-md text-gray-600 leading-relaxed text-pretty">
                           {benefit.description}
                         </p>
                       </div>

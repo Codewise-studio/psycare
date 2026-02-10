@@ -339,7 +339,7 @@ export function Team() {
                 <div className="flex flex-col items-center text-center mb-6">
                   <div className="relative mb-4">
                     <img
-                      className={`rounded-full w-24 h-24 object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300 ${member.id === '7' ? 'object-[center top]' : ''}`}
+                      className={`rounded-full w-20 h-20 sm:w-24 sm:h-24 object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300 ${member.id === '7' ? 'object-[center top]' : ''}`}
                       src={member.photo || "/placeholder.svg"}
                       alt={member.name}
                     />
@@ -413,7 +413,7 @@ export function Team() {
             <div className="text-center mb-8">
               <div className="relative inline-block mb-6">
                 <img
-                  className={`rounded-full w-32 h-32 object-cover border-4 border-blue-500/20 shadow-lg ${selectedMember.id === '7' ? 'object-[center top]' : ''}`}
+                  className={`rounded-full w-24 h-24 sm:w-32 sm:h-32 object-cover border-4 border-blue-500/20 shadow-lg ${selectedMember.id === '7' ? 'object-[center top]' : ''}`}
                   src={selectedMember.photo || "/placeholder.svg"}
                   alt={selectedMember.name}
                 />

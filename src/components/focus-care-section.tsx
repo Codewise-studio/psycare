@@ -329,24 +329,26 @@ export default function FocusCareSection() {
             </div>
 
             {/* Dashboard Image with Floating Stat Cards */}
-            <div className="relative flex items-center justify-center min-h-[350px]">
-              <img
-                src="/image (6).webp"
-                alt="PsyCare AI Dashboard Mockup"
-                className="rounded-2xl shadow-2xl border border-gray-100 object-cover w-full max-w-[620px] h-auto bg-gray-50 sm:min-h-[320px]"
-                loading="lazy"
-              />
-              {/* Floating Stats Cards */}
-              <div className="absolute -bottom-6 -left-6">
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 min-w-[90px]">
-                  <div className="text-2xl font-bold text-green-600">23%</div>
-                  <div className="text-sm text-gray-600">Time Saved</div>
+            <div className="flex items-center justify-center">
+              <div className="relative w-full max-w-[620px] aspect-[16/10]">
+                <img
+                  src="/image (6).webp"
+                  alt="PsyCare AI Dashboard Mockup"
+                  className="rounded-2xl shadow-2xl border border-gray-100 object-cover w-full h-full"
+                  loading="lazy"
+                />
+                {/* Floating Stats Cards */}
+                <div className="absolute -bottom-6 -left-6">
+                  <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 min-w-[90px]">
+                    <div className="text-2xl font-bold text-green-600">23%</div>
+                    <div className="text-sm text-gray-600">Time Saved</div>
+                  </div>
                 </div>
-              </div>
-              <div className="absolute -top-6 -right-6">
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 min-w-[90px]">
-                  <div className="text-2xl font-bold text-[#9BAAEE]">24/7</div>
-                  <div className="text-sm text-gray-600">AI Support</div>
+                <div className="absolute -top-6 -right-6">
+                  <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 min-w-[90px]">
+                    <div className="text-2xl font-bold text-[#9BAAEE]">24/7</div>
+                    <div className="text-sm text-gray-600">AI Support</div>
+                  </div>
                 </div>
               </div>
             </div>

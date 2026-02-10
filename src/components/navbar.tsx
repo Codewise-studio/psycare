@@ -20,7 +20,7 @@ export function Navbar() {
           <img 
             src="/Cores1.webp" 
             alt="Psycare Logo" 
-            className="h-12 sm:h-14 w-auto" 
+            className="h-12 sm:h-14 w-auto object-contain" 
           />
           </Link>
         </div>

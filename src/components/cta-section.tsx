@@ -13,7 +13,7 @@ export default function CtaSection() {
       <motion.img
         src="teste.webp"
         alt="fundo animado"
-        className="absolute inset-0 w-full h-[350px] object-contain opacity-20"
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
         animate={{
           transform: [
             "translate3d(0px, 0px, 0px) scale3d(1,1,1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)",
