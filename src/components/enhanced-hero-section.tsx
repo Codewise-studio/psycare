@@ -27,7 +27,7 @@ const FloatingIcon = ({ icon: Icon, className, delay = 0 }: { icon: any; classNa
 
 export function EnhancedHeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center section-x section-y section-visuals bg-white">
+    <section className="relative min-h-screen flex items-center justify-center section-x section-y pt-12 md:pt-16 section-visuals bg-white">
       {/* Enhanced Background */}
       <div className="absolute inset-0">
     

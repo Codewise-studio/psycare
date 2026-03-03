@@ -21,7 +21,7 @@ import { ScrollToTopButton } from "@/components/scrolltotop"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen relative overflow-x-hidden">
   <Navbar />
 
   {/* Colocando o id fora do componente */}
