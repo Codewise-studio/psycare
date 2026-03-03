@@ -77,7 +77,7 @@ export function EnhancedHeroSection() {
           </motion.div>
 
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-semib text-gray-900 leading-tight text-balance"
+            className="text-5xl md:text-5xl lg:text-5xl font-semib text-gray-900 leading-tight text-balance"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -94,7 +94,7 @@ export function EnhancedHeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <p className="text-xl md:text-2xl text-gray-600 text-pretty leading-relaxed">
+            <p className="text-xl md:text-xl text-gray-600 text-pretty leading-relaxed">
              At PsyCare, we combine expert psychological and psychiatry support with innovative technology to make mental health care more accessible, personal, and effective.
             </p>
             <p className="text-lg text-gray-500">
