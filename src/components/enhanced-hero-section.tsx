@@ -179,34 +179,34 @@ export function EnhancedHeroSection() {
                 alt="Modern therapy office with AI analytics overlay"
                 className="h-full w-full object-cover drop-shadow-xl"
               />
-
-              {/* Floating Stats Cards */}
-              <motion.div
-                className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg border border-gray-200"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-sm font-medium text-gray-700">Speech-to-text</span>
-                </div>
-                <div className="text-2xl font-bold text-gray-900 mt-1">Up to 98%</div>
-                <div className="text-xs text-gray-500">Accuracy in supported languages</div>
-              </motion.div>
-
-              <motion.div
-                className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-gray-200"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: 1.5 }}
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse" />
-                  <span className="text-sm font-medium text-gray-700">Time Saved</span>
-                </div>
-                <div className="text-2xl font-bold text-gray-900 mt-1">Up to 1.8h</div>
-                <div className="text-xs text-gray-500">Per day</div>
-              </motion.div>
             </div>
+
+            {/* Floating Stats Cards */}
+            <motion.div
+              className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg border border-gray-200"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-sm font-medium text-gray-700">Speech-to-1text</span>
+              </div>
+              <div className="text-2xl font-bold text-gray-900 mt-1">Up to 98%</div>
+              <div className="text-xs text-gray-500">Accuracy in supported languages</div>
+            </motion.div>
+
+            <motion.div
+              className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-gray-200"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: 1.5 }}
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse" />
+                <span className="text-sm font-medium text-gray-700">Time Saved</span>
+              </div>
+              <div className="text-2xl font-bold text-gray-900 mt-1">Up to 1.8h</div>
+              <div className="text-xs text-gray-500">Per day</div>
+            </motion.div>
 
             {/* Background Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-3xl blur-3xl -z-10 scale-110" />
