@@ -11,7 +11,7 @@ export function Navbar() {
   const visibleNavigation = siteNavigation.filter((item) => item.showInMenu ?? true)
 
   return (
-    <header className="w-full px-4 py-4 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+    <header className="fixed top-0 left-0 right-0 lg:sticky w-full px-4 py-4 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
 
         {/* Logo */}

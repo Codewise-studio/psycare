@@ -9,7 +9,7 @@ import { Brain, Mic, Video, BarChart3, Shield, Activity, Target, ArrowRight, Pla
 
 const FloatingIcon = ({ icon: Icon, className, delay = 0 }: { icon: any; className: string; delay?: number }) => (
   <motion.div
-    className={`absolute ${className} p-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20`}
+    className={`absolute hidden lg:block ${className} p-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20`}
     animate={{
       y: [0, -20, 0],
       rotate: [0, 5, 0],
@@ -183,7 +183,7 @@ export function EnhancedHeroSection() {
 
             {/* Floating Stats Cards */}
             <motion.div
-              className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg border border-gray-200"
+              className="absolute top-2 right-2 md:-top-3 md:-right-3 lg:-top-4 lg:-right-4 bg-white rounded-2xl p-3 md:p-4 shadow-lg border border-gray-200"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
             >
@@ -196,7 +196,7 @@ export function EnhancedHeroSection() {
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-gray-200"
+              className="absolute bottom-2 left-2 md:-bottom-3 md:-left-3 lg:-bottom-4 lg:-left-4 bg-white rounded-2xl p-3 md:p-4 shadow-lg border border-gray-200"
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: 1.5 }}
             >
